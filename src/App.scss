@@ -4,8 +4,3 @@ $footer-height: 130px;
 .App {
     background-color: #EDE7E3;
 }
-
-.HomePage, .AboutPage, .ServicesPage, .ContactPage {
-    min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
-    width: 100vw;
-}

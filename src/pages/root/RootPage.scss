@@ -1,0 +1,7 @@
+@import "../../App.scss";
+
+.RootPage {
+    min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
+    width: 100vw;
+    padding-top: $header-height;
+}
