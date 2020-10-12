@@ -1,7 +1,7 @@
-@import "../../App.scss";
+@import "../../variables.scss";
 
 .Header {
+    position: fixed;
     height: $header-height;
     width: 100%;
-    position: fixed;
 }

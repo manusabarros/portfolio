@@ -1,6 +1,7 @@
-@import "../../App.scss";
+@import "../../variables.scss";
 
 .Footer {
     height: $footer-height;
     width: 100%;
+    bottom: 0;
 }
