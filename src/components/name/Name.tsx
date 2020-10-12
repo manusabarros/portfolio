@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import "./Name.scss";
 
-const name = "<Manu/>";
+const text = "<Manu/>";
 
 const Name = () => {
     useEffect(() => {
-        const text = document.getElementById("name");
-        if (text) {
-            name.split("").forEach((c, i) => {
-                setTimeout(() => text.innerText += c, i * 150);
+        const name = document.getElementById("name");
+        if (name) {
+            text.split("").forEach((c, i) => {
+                setTimeout(() => name.textContent += c, i * 150);
             });
         }
         const line = document.getElementById("line");

@@ -16,6 +16,10 @@ const Home = () => {
         <div className="Home">
             <div className="background"></div>
             {name && <Name />}
+            <div className="welcome-text">
+                <h1>Hello, I'm Manuel Sabarrós,</h1>
+                <h1>a FullStack Developer</h1>
+            </div>
         </div>
     );
 };
