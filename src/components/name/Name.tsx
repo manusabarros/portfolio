@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Name.scss";
 
-const text = "<Manu/>";
+const text = "<Manu />";
 
 const Name = () => {
     useEffect(() => {

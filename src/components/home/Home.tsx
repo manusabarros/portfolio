@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import Name from "../name/Name";
+import { withNamespaces } from 'react-i18next';
 
-const Home = () => {
+const Home = ({ t }: any) => {
     const [name, setName] = useState(true);
 
     useEffect(() => {
@@ -17,11 +18,10 @@ const Home = () => {
             <div className="background"></div>
             {name && <Name />}
             <div className="welcome-text">
-                <h1>Hello, I'm Manuel Sabarrós,</h1>
-                <h1>a FullStack Developer</h1>
+                <p>{t("WELCOME_TEXT")}<br/>{t("FULLSTACK_DEVELOPER")}</p>
             </div>
         </div>
     );
 };
 
-export default Home;
+export default withNamespaces()(Home);
