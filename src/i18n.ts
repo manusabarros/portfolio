@@ -1,20 +1,14 @@
 import i18n from "i18next";
-import { reactI18nextModule } from "react-i18next";
+import Backend from "i18next-http-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
 
-import translationEN from "./assets/i18n/en.json";
-
-// the translations
-const resources = {
-    en: {
-        translation: translationEN,
-    },
-};
-
-i18n.use(reactI18nextModule as any) // passes i18n down to react-i18next
+i18n.use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next) // passes i18n down to react-i18next
     .init({
-        resources,
-        lng: "en",
-        keySeparator: false, // we do not use keys in form messages.welcome
+        fallbackLng: "en",
+        debug: true,
         interpolation: {
             escapeValue: false, // react already safes from xss
         },
