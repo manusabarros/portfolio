@@ -1,52 +1,43 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import "./Name.scss";
 
-const text = "<Manu />";
+const nameText = "<Manu />";
+let showLine = true;
 
 const Name = () => {
     const [show, setShow] = useState(true);
-    const [count, setCount] = useState(0);
-    const [name, setName] = useState(text);
+    const [name, setName] = useState("");
     const [line, setLine] = useState("|");
 
-    const toggleLine = useCallback(() => {
-        setCount(1);
-        return setInterval(() => {
-            if (line === "|") setLine(" ");
-            else setLine("|");
-        }, 500);
-    }, [line]);
-
     useEffect(() => {
-        const interval = setInterval(() => {
+        let showInterval = setInterval(() => {
             setShow(false);
             setShow(true);
-            setCount(0);
         }, 6500);
-        return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {
-        text.split("").forEach((c, i) => {
-            setTimeout(() => setName(text.slice(0, i + 1)), i * 150);
+        let nameTimeout: NodeJS.Timeout;
+        nameText.split("").forEach((c, i) => {
+            nameTimeout = setTimeout(() => setName(nameText.slice(0, i + 1)), i * 150);
         });
+        let lineInterval: NodeJS.Timeout;
+        let lineTimeout = setTimeout(() => {
+            lineInterval = setInterval(() => {
+                if (showLine) setLine(" ");
+                else setLine("|");
+                showLine = !showLine;
+            }, 500);
+        }, 1000);
+        return () => {
+            clearInterval(showInterval);
+            clearTimeout(nameTimeout);
+            clearTimeout(lineTimeout);
+            clearInterval(lineInterval);
+        };
     }, [show]);
-
-    useEffect(() => {
-        let interval: any;
-        if (count) interval = toggleLine();
-        else setTimeout(() => interval = toggleLine(), 1000);
-        return () => clearInterval(interval);
-    }, [line, count]);
 
     return (
         <div className="Name">
-            {show && (
-                <div>
-                    <span>{name}</span>
-                    <span>{line}</span>
-                </div>
-            )}
+            {show && <span>{name}</span>}
+            <span>{line}</span>
         </div>
     );
 };
