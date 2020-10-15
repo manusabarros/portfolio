@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
-.RootPage {
-    min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
+.Root {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
     width: 100%;
     padding-top: $header-height;
 }

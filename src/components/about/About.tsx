@@ -2,11 +2,7 @@ import React from "react";
 import "./About.scss";
 
 const About = () => {
-    return (
-        <div>
-            <h2>About</h2>
-        </div>
-    );
+    return <div className="About"></div>;
 };
 
 export default About;
