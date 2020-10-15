@@ -36,8 +36,7 @@ const Name = () => {
 
     return (
         <div className="Name">
-            {show && <span>{name}</span>}
-            <span>{line}</span>
+            <p>{name}{line}</p>
         </div>
     );
 };

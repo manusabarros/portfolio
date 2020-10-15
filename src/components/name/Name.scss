@@ -1,18 +1,16 @@
 @import "../../variables.scss";
 
 .Name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    span {
+    p {
+        text-align: center;
         font-family: 'Source Code Pro', monospace;
         font-weight: bold;
-        font-size: 9rem;
+        font-size: 8rem;
         @media screen and (max-width: $tablet-large-width) {
             font-size: 5rem;
         }
         @media screen and (max-width: $mobile-large-width) {
-            font-size: 3rem;
+            font-size: 2rem;
         }
     }
 }
