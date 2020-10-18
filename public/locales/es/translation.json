@@ -1,4 +1,9 @@
 {
     "WELCOME_TEXT": "Hola, soy Manuel Sabarrós,",
-    "FULLSTACK": "un desarrollador FullStack"
+    "FULLSTACK": "un desarrollador FullStack",
+    "HOME": "Inicio",
+    "ABOUT ME": "Quien soy",
+    "WORK": "Trabajo",
+    "TECHNOLOGIES": "Tecnologías",
+    "CONTACT ME": "Contacto"
 }

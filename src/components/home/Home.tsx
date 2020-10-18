@@ -7,13 +7,13 @@ const Home = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="Home">
+        <section className="Home">
             <div className="background"></div>
             <Name />
             <div className="welcome-text">
                 <p>{t("WELCOME_TEXT")}<br />{t("FULLSTACK")}</p>
             </div>
-        </div>
+        </section>
     );
 };
 
