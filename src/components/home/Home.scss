@@ -5,7 +5,7 @@
     width: 100%;
     padding-top: $header-height;
     .welcome {
-        margin-top: 10%;
+        margin-top: 5%;
         text-align: center;
         font-size: 1.8rem;
         .developer {
@@ -25,21 +25,49 @@
         .bottom-text span {
             animation-name: showBottomText;
         }
+        @keyframes showTopText {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        @keyframes showBottomText {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
     }
-    @keyframes showTopText {
-        from {
-            transform: translateY(100%);
+    .gif {
+        margin: 5% auto auto auto;
+        overflow: hidden;
+        width: fit-content;
+        height: fit-content;
+        .container {
+            $image-size: 250px;
+            width: $image-size;
+            height: $image-size;
+            background-color: $black;
+            border-radius: 50%;
+            animation-name: showGif;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            img {
+                width: $image-size;
+                height: $image-size;
+            }
         }
-        to {
-            transform: translateY(0);
-        }
-    }
-    @keyframes showBottomText {
-        from {
-            transform: translateY(-100%);
-        }
-        to {
-            transform: translateY(0);
+        @keyframes showGif {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
         }
     }
 }
