@@ -1,7 +1,10 @@
+@import "./variables.scss";
+
 .App {
     min-height: 100vh;
     max-width: 100%;
     position: relative;
     font-family: "Montserrat";
-    color: #FFFFFF;
+    color: $black;
+    background-color: $white;
 }

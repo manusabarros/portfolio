@@ -8,10 +8,16 @@ const Home = () => {
 
     return (
         <section className="Home">
-            <div className="background"></div>
-            <Name />
-            <div className="welcome-text">
-                <p>{t("WELCOME_TEXT")}<br />{t("FULLSTACK")}</p>
+            <div className="welcome">
+                <div className="text top-text">
+                    <span>{t("HELLO")}</span>
+                </div>
+                <Name />
+                <div className="text bottom-text">
+                    <span>{t("A")}</span>
+                    <span className="developer">&nbsp;{t("DEVELOPER")}&nbsp;</span>
+                    <span>{t("BASED_ARGENTINA")}</span>
+                </div>
             </div>
         </section>
     );

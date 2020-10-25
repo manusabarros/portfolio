@@ -1,9 +1,11 @@
 {
-    "WELCOME_TEXT": "Hello, I'm Manuel Sabarrós,",
-    "FULLSTACK": "a FullStack Developer",
+    "HELLO": "Hello, I'm",
+    "A": "a",
+    "DEVELOPER": "developer",
+    "BASED_ARGENTINA": "based in Argentina",
     "HOME": "Home",
-    "ABOUT ME": "About Me",
+    "ABOUT": "About",
     "WORK": "Work",
-    "TECHNOLOGIES": "Technologies",
-    "CONTACT ME": "Contact Me"
+    "SKILLS": "Skills",
+    "CONTACT": "Contact"
 }

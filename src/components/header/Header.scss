@@ -6,28 +6,44 @@ header {
     height: $header-height;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     div {
         display: flex;
         align-items: center;
     }
-    .name {
-        justify-content: flex-start;
-        span {
-            font-size: 1.2rem;
-            margin-left: 30px;
-            cursor: default;
-        }
-    }
     .links {
-        justify-content: flex-end;
         span {
             font-size: 0.8rem;
-            margin-right: 30px;
+            margin-left: 20px;
             cursor: pointer;
+            text-align: center;
         }
         span:hover {
-            color: lightgrey;
+            color: $lightgrey;
+        }
+    }
+    .name {
+        justify-content: center;
+        text-align: center;
+        span {
+            font-size: 1.2rem;
+            cursor: default;
+            color: $orange;
+        }
+    }
+    .languages {
+        justify-content: flex-end;
+        margin-right: 10px;
+        span {
+            font-size: 0.8rem;
+            cursor: default;
+        }
+        .language {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .language:hover {
+            color: $lightgrey;
         }
     }
 }

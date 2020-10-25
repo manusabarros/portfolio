@@ -1,9 +1,11 @@
 {
-    "WELCOME_TEXT": "Hola, soy Manuel Sabarrós,",
-    "FULLSTACK": "un desarrollador FullStack",
+    "HELLO": "Hola, soy",
+    "A": "un",
+    "DEVELOPER": "desarrollador",
+    "BASED_ARGENTINA": "situado en Argentina",
     "HOME": "Inicio",
-    "ABOUT ME": "Quien soy",
+    "ABOUT": "Quien soy",
     "WORK": "Trabajo",
-    "TECHNOLOGIES": "Tecnologías",
-    "CONTACT ME": "Contacto"
+    "SKILLS": "Habilidades",
+    "CONTACT": "Contacto"
 }

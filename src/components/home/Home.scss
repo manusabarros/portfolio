@@ -1,23 +1,45 @@
 @import "../../variables.scss";
 
 .Home {
-    height: calc(100vh - $header-height);
+    height: calc(100vh - #{$header-height});
     width: 100%;
     padding-top: $header-height;
-    .background {
-        height: 100vh;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        background-image: url("../../assets/vinyl2.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        // opacity: 80%;
-    }
-    .welcome-text {
+    .welcome {
+        margin-top: 10%;
         text-align: center;
         font-size: 1.8rem;
+        .developer {
+            color: $orange;
+        }
+        .text {
+            overflow: hidden;
+            span {
+                display: inline-block;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+        }
+        .top-text span {
+            animation-name: showTopText;
+        }
+        .bottom-text span {
+            animation-name: showBottomText;
+        }
+    }
+    @keyframes showTopText {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    @keyframes showBottomText {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
     }
 }
