@@ -1,22 +1,22 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Home.scss";
 import Name from "../name/Name";
 import { useTranslation } from "react-i18next";
 
-const Home = () => {
+const Home = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
 
     return (
-        <section className="Home">
+        <section className="Home" ref={ref}>
             <div className="welcome">
                 <div className="text top-text">
-                    <span>{t("HELLO")}</span>
+                    <p>{t("HELLO")}</p>
                 </div>
                 <Name />
                 <div className="text bottom-text">
-                    <span>{t("A")}</span>
-                    <span className="developer">&nbsp;{t("DEVELOPER")}&nbsp;</span>
-                    <span>{t("BASED_ARGENTINA")}</span>
+                    <p>{t("A")}</p>
+                    <p className="developer">&nbsp;{t("DEVELOPER")}&nbsp;</p>
+                    <p>{t("BASED_ARGENTINA")}</p>
                 </div>
             </div>
             <div className="gif">
@@ -26,6 +26,6 @@ const Home = () => {
             </div>
         </section>
     );
-};
+});
 
 export default Home;

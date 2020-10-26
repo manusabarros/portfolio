@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Technologies.scss";
 
-const Technologies = () => {
-    return <section className="Technologies"></section>;
-};
+const Technologies = forwardRef((props: any, ref: any) => {
+    return <section className="Technologies" ref={ref}></section>;
+});
 
 export default Technologies;

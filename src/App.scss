@@ -4,7 +4,10 @@
     min-height: 100vh;
     max-width: 100%;
     position: relative;
-    font-family: "Montserrat";
     color: $black;
     background-color: $white;
+    font-family: "Montserrat";
+    section:last-child {
+        padding-bottom: $footer-height;
+    }
 }

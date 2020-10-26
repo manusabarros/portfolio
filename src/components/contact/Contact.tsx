@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Contact.scss";
 
-const Contact = () => {
-    return <section className="Contact"></section>;
-};
+const Contact = forwardRef((props: any, ref: any) => {
+    return <section className="Contact" ref={ref}></section>;
+});
 
 export default Contact;

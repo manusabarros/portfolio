@@ -5,12 +5,12 @@ import i18n from "../../i18n";
 
 const links = ["HOME", "ABOUT", "WORK", "SKILLS", "CONTACT"];
 
-const Header = () => {
+const Header = ({ onGoTo }: any) => {
     const { t } = useTranslation();
 
     const goTo = useCallback((link: any) => {
         return () => {
-            console.log(link);
+            onGoTo(link);
         };
     }, []);
 

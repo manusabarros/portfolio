@@ -13,16 +13,16 @@
         }
         .text {
             overflow: hidden;
-            span {
+            p {
                 display: inline-block;
                 animation-duration: 1s;
                 animation-fill-mode: forwards;
             }
         }
-        .top-text span {
+        .top-text p {
             animation-name: showTopText;
         }
-        .bottom-text span {
+        .bottom-text p {
             animation-name: showBottomText;
         }
         @keyframes showTopText {

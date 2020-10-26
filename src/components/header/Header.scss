@@ -1,15 +1,17 @@
 @import "../../variables.scss";
 
 header {
-    position: fixed;
-    top: 0;
-    height: $header-height;
     width: 100%;
+    height: $header-height;
+    top: 0;
+    position: fixed;
+    background-color: transparent;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     div {
         display: flex;
         align-items: center;
+        text-align: center;
     }
     .links {
         justify-content: flex-start;
@@ -17,7 +19,6 @@ header {
             font-size: 0.8rem;
             margin-left: 20px;
             cursor: pointer;
-            text-align: center;
         }
         span:hover {
             color: $lightgrey;
@@ -25,7 +26,6 @@ header {
     }
     .name {
         justify-content: center;
-        text-align: center;
         span {
             font-size: 1.2rem;
             cursor: default;
