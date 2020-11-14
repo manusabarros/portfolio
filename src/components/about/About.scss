@@ -1,7 +1,9 @@
 @import "../../variables.scss";
 
 .About {
-    height: 500px;
+    width: 100%;
+    height: calc(100vh - #{$header-height});
+    padding-top: $header-height;
     // color: $white;
     background-color: $orange;
 }

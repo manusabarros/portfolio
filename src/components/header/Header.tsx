@@ -1,27 +1,36 @@
-import React, { useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import "./Header.scss";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 
-const links = ["HOME", "ABOUT", "WORK", "SKILLS", "CONTACT"];
+export enum Links {
+    HOME = "HOME",
+    ABOUT = "ABOUT",
+    WORK = "WORK",
+    SKILLS = "SKILLS",
+    CONTACT = "CONTACT",
+}
 
-const Header = ({ onGoTo }: any) => {
+const links = [Links.HOME, Links.ABOUT, Links.WORK, Links.SKILLS, Links.CONTACT];
+
+const Header = ({ onGoTo, backgroundColor }: any) => {
     const { t } = useTranslation();
+    const headerRef = useRef<HTMLElement | null>(null);
+    const backgroundColorRef = useRef(backgroundColor);
 
-    const goTo = useCallback((link: any) => {
-        return () => {
-            onGoTo(link);
-        };
-    }, []);
+    useEffect(() => {
+        if (headerRef.current) {
+            headerRef.current.animate({ backgroundColor: [backgroundColorRef.current, backgroundColor] }, { duration: 500, fill: "forwards" });
+            backgroundColorRef.current = backgroundColor;
+        }
+    }, [backgroundColor]);
 
-    const changeLanguage = useCallback((lng: string) => {
-        return () => {
-            i18n.changeLanguage(lng);
-        };
-    }, []);
+    const goTo = useCallback((link: any) => () => onGoTo(link), [onGoTo]);
+
+    const changeLanguage = useCallback((lng: string) => () => i18n.changeLanguage(lng), []);
 
     return (
-        <header>
+        <header ref={headerRef}>
             <div className="links">
                 {links.map((link, i) => <span key={i} onClick={goTo(link)}>{t(link).toUpperCase()}</span> )}
             </div>

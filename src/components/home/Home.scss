@@ -1,8 +1,8 @@
 @import "../../variables.scss";
 
 .Home {
-    height: calc(100vh - #{$header-height});
     width: 100%;
+    height: calc(100vh - #{$header-height});
     padding-top: $header-height;
     .welcome {
         margin-top: 5%;
@@ -48,7 +48,7 @@
         width: fit-content;
         height: fit-content;
         .container {
-            $image-size: 250px;
+            $image-size: 35vmin;
             width: $image-size;
             height: $image-size;
             background-color: $black;

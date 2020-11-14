@@ -1,50 +1,72 @@
-import React, { useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import "./App.scss";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
+import Header, { Links } from "./components/header/Header";
 import Home from "./components/home/Home";
-import Services from "./components/services/Services";
-import Technologies from "./components/technologies/Technologies";
+import Work from "./components/work/Work";
+import Skills from "./components/skills/Skills";
 
-const scrollBehavior = { behavior: "smooth" };
+export enum Colors {
+    WHITE = "#fffcf2",
+    BLACK = "#252422",
+    DARKGREY = "#403d39",
+    LIGHTGREY = "#ccc5b9",
+    ORANGE = "#eb5e28"
+}
+
+const scrollBehavior: ScrollIntoViewOptions = { behavior: "smooth" };
 
 const App = () => {
-    const home = useRef(undefined as any);
-    const about = useRef(undefined as any);
-    const services = useRef(undefined as any);
-    const technologies = useRef(undefined as any);
-    const contact = useRef(undefined as any);
+    const [headerBackground, setHeaderBackground] = useState(Colors.WHITE);
 
-    const goTo = (link: any) => {
+    const home = useRef<HTMLElement | null>(null);
+    const about = useRef<HTMLElement | null>(null);
+    const work = useRef<HTMLElement | null>(null);
+    const skills = useRef<HTMLElement | null>(null);
+    const contact = useRef<HTMLElement | null>(null);
+
+    const goTo = useCallback((link: any) => {
         switch (link) {
-            case "HOME":
-                home.current.scrollIntoView(scrollBehavior);
+            case Links.HOME:
+                if (home.current) home.current.scrollIntoView(scrollBehavior);
                 break;
-            case "ABOUT":
-                about.current.scrollIntoView(scrollBehavior);
+            case Links.ABOUT:
+                if (about.current) about.current.scrollIntoView(scrollBehavior);
                 break;
-            case "SERVICES":
-                home.current.scrollIntoView(scrollBehavior);
+            case Links.WORK:
+                if (home.current) home.current.scrollIntoView(scrollBehavior);
                 break;
-            case "TECHNOLOGIES":
-                home.current.scrollIntoView(scrollBehavior);
+            case Links.SKILLS:
+                if (home.current) home.current.scrollIntoView(scrollBehavior);
                 break;
-            case "CONTACT":
-                home.current.scrollIntoView(scrollBehavior);
+            case Links.CONTACT:
+                if (home.current) home.current.scrollIntoView(scrollBehavior);
                 break;
         }
-    };
+    }, []);
+
+    const getCurrentScroll = useCallback(() => window.pageYOffset || document.documentElement.scrollTop, []);
+
+    window.addEventListener("scroll", () => {
+        const scroll = getCurrentScroll();
+        if (home.current && about.current && work.current && skills.current && contact.current) {
+            if (scroll < about.current.offsetTop) setHeaderBackground(Colors.WHITE);
+            else if (scroll < work.current.offsetTop) setHeaderBackground(Colors.ORANGE);
+            else if (scroll < skills.current.offsetTop) setHeaderBackground(Colors.WHITE);
+            else if (scroll < contact.current.offsetTop) setHeaderBackground(Colors.ORANGE);
+        }
+    });
 
     return (
         <div className="App">
-            <Header onGoTo={goTo} />
+            <Header onGoTo={goTo} backgroundColor={headerBackground} />
             <main>
                 <Home ref={home} />
                 <About ref={about} />
-                <Services ref={services} />
-                <Technologies ref={technologies} />
+                <Work ref={work} />
+                <Skills ref={skills} />
                 <Contact ref={contact} />
             </main>
             <Footer />
