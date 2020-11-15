@@ -16,9 +16,18 @@ header {
     .links {
         justify-content: flex-start;
         span {
-            font-size: 0.8rem;
-            margin-left: 20px;
+            display: none;
+            margin-left: 10px;
+            font-size: 0.7rem;
+            white-space: nowrap;
             cursor: pointer;
+            @media screen and (min-width: $desktop-large-width) {
+                font-size: 0.8rem;
+                margin-left: 20px;
+            }
+            @media screen and (min-width: $tablet-large-width) {
+                display: inline;
+            }
         }
         span:hover {
             color: $lightgrey;
@@ -28,16 +37,15 @@ header {
         justify-content: center;
         span {
             font-size: 1.2rem;
-            cursor: default;
             color: $orange;
         }
     }
     .languages {
         justify-content: flex-end;
-        margin-right: 10px;
-        span {
+        font-size: 0.7rem;
+        @media screen and (min-width: $desktop-large-width) {
             font-size: 0.8rem;
-            cursor: default;
+            margin-right: 10px;
         }
         .language {
             margin: 0 10px;

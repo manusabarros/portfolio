@@ -6,11 +6,20 @@
         font-family: 'Source Code Pro', monospace;
         font-weight: bold;
         font-size: 8rem;
+        @media screen and (max-width: $desktop-large-width) {
+            font-size: 6.5rem;
+        }
         @media screen and (max-width: $tablet-large-width) {
             font-size: 5rem;
         }
+        @media screen and (max-width: $tablet-small-width) {
+            font-size: 4rem;
+        }
         @media screen and (max-width: $mobile-large-width) {
-            font-size: 2rem;
+            font-size: 3.5rem;
+        }
+        @media screen and (max-width: $mobile-small-width) {
+            font-size: 3rem;
         }
     }
 }

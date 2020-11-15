@@ -2,12 +2,23 @@
 
 .Home {
     width: 100%;
-    height: calc(100vh - #{$header-height});
+    min-height: calc(100vh - #{$header-height});
     padding-top: $header-height;
+    display: flex;
+    align-items: center;
     .welcome {
-        margin-top: 5%;
+        width: 100%;
         text-align: center;
         font-size: 1.8rem;
+        @media screen and (max-width: $desktop-large-width) {
+            // font-size: 1.6rem;
+        }
+        @media screen and (max-width: $tablet-small-width) {
+            font-size: 1.5rem;
+        }
+        @media screen and (max-width: $mobile-large-width) {
+            font-size: 1.2rem;
+        }
         .developer {
             color: $orange;
         }
@@ -43,11 +54,17 @@
         }
     }
     .gif {
-        margin: 5% auto auto auto;
         overflow: hidden;
         width: fit-content;
         height: fit-content;
-        .container {
+        margin: 5% auto 0;
+        @media screen and (max-width: calc(#{$tablet-large-width} + 1px)) {
+            margin: 10% auto 5%;
+        }
+        @media screen and (max-width: calc(#{$mobile-large-width} + 1px)) {
+            margin: 30% auto 10%;
+        }
+        .gif-container {
             $image-size: 35vmin;
             width: $image-size;
             height: $image-size;

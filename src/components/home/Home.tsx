@@ -9,19 +9,21 @@ const Home = forwardRef((props: any, ref: any) => {
     return (
         <section className="Home" ref={ref}>
             <div className="welcome">
-                <div className="text top-text">
-                    <p>{t("HELLO")}</p>
+                <div className="welcome">
+                    <div className="text top-text">
+                        <p>{t("HELLO")}</p>
+                    </div>
+                    <Name />
+                    <div className="text bottom-text">
+                        <p>{t("A")}</p>
+                        <p className="developer">&nbsp;{t("DEVELOPER")}&nbsp;</p>
+                        <p>{t("BASED_ARGENTINA")}</p>
+                    </div>
                 </div>
-                <Name />
-                <div className="text bottom-text">
-                    <p>{t("A")}</p>
-                    <p className="developer">&nbsp;{t("DEVELOPER")}&nbsp;</p>
-                    <p>{t("BASED_ARGENTINA")}</p>
-                </div>
-            </div>
-            <div className="gif">
-                <div className="container">
-                    <img src="https://media.giphy.com/media/RIvo7FJpGa1eGtkfZ3/giphy.gif" alt="coffee-gif" />
+                <div className="gif">
+                    <div className="gif-container">
+                        <img src="https://media.giphy.com/media/RIvo7FJpGa1eGtkfZ3/giphy.gif" alt="coffee-gif" />
+                    </div>
                 </div>
             </div>
         </section>
