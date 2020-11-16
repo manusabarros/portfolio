@@ -2,6 +2,7 @@
 
 .Work {
     width: 100%;
-    // height: calc(100vh - #{$header-height});
-    // padding-top: $header-height;
+    height: calc(100vh - #{$header-height});
+    padding-top: $header-height;
+    background-color: $white;
 }

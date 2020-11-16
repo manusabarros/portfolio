@@ -4,6 +4,7 @@
     width: 100%;
     min-height: calc(100vh - #{$header-height});
     padding-top: $header-height;
+    background-color: $white;
     display: flex;
     align-items: center;
     .welcome {

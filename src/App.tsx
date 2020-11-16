@@ -19,7 +19,7 @@ export enum Colors {
 const scrollBehavior: ScrollIntoViewOptions = { behavior: "smooth" };
 
 const App = () => {
-    const [headerBackground, setHeaderBackground] = useState(Colors.WHITE);
+    const [headerColor, setHeaderColor] = useState(Colors.WHITE);
 
     const home = useRef<HTMLElement | null>(null);
     const about = useRef<HTMLElement | null>(null);
@@ -36,13 +36,13 @@ const App = () => {
                 if (about.current) about.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.WORK:
-                if (home.current) home.current.scrollIntoView(scrollBehavior);
+                if (work.current) work.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.SKILLS:
-                if (home.current) home.current.scrollIntoView(scrollBehavior);
+                if (skills.current) skills.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.CONTACT:
-                if (home.current) home.current.scrollIntoView(scrollBehavior);
+                if (contact.current) contact.current.scrollIntoView(scrollBehavior);
                 break;
         }
     }, []);
@@ -51,17 +51,17 @@ const App = () => {
 
     window.addEventListener("scroll", () => {
         const scroll = getCurrentScroll();
-        if (home.current && about.current && work.current && skills.current && contact.current) {
-            if (scroll < about.current.offsetTop) setHeaderBackground(Colors.WHITE);
-            else if (scroll < work.current.offsetTop) setHeaderBackground(Colors.ORANGE);
-            else if (scroll < skills.current.offsetTop) setHeaderBackground(Colors.WHITE);
-            else if (scroll < contact.current.offsetTop) setHeaderBackground(Colors.ORANGE);
+        if (about.current && work.current && skills.current && contact.current) {
+            if (scroll < about.current.offsetTop - 0.2) setHeaderColor(Colors.WHITE);
+            else if (scroll < work.current.offsetTop - 0.2) setHeaderColor(Colors.ORANGE);
+            else if (scroll < skills.current.offsetTop - 0.2) setHeaderColor(Colors.WHITE);
+            else if (scroll < contact.current.offsetTop - 0.2) setHeaderColor(Colors.ORANGE);
         }
     });
 
     return (
         <div className="App">
-            <Header onGoTo={goTo} backgroundColor={headerBackground} />
+            <Header onGoTo={goTo} color={headerColor} />
             <main>
                 <Home ref={home} />
                 <About ref={about} />

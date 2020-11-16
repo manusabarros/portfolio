@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useCallback } from "react";
 import "./Header.scss";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
+import { Colors } from "../../App";
 
 export enum Links {
     HOME = "HOME",
@@ -13,17 +14,22 @@ export enum Links {
 
 const links = [Links.HOME, Links.ABOUT, Links.WORK, Links.SKILLS, Links.CONTACT];
 
-const Header = ({ onGoTo, backgroundColor }: any) => {
+const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwards" };
+
+const Header = ({ onGoTo, color }: any) => {
     const { t } = useTranslation();
     const headerRef = useRef<HTMLElement | null>(null);
-    const backgroundColorRef = useRef(backgroundColor);
+    const nameRef = useRef<HTMLElement | null>(null);
+    const colorRef = useRef(color);
 
     useEffect(() => {
-        if (headerRef.current) {
-            headerRef.current.animate({ backgroundColor: [backgroundColorRef.current, backgroundColor] }, { duration: 500, fill: "forwards" });
-            backgroundColorRef.current = backgroundColor;
+        if (headerRef.current && nameRef.current) {
+            headerRef.current.animate({ backgroundColor: [colorRef.current, color] }, animationOptions);
+            if (color === colorRef.current) nameRef.current.animate({ color: [color, Colors.ORANGE] }, animationOptions);
+            else nameRef.current.animate({ color: [color, colorRef.current] }, animationOptions);
+            colorRef.current = color;
         }
-    }, [backgroundColor]);
+    }, [color]);
 
     const goTo = useCallback((link: any) => () => onGoTo(link), [onGoTo]);
 
@@ -35,12 +41,12 @@ const Header = ({ onGoTo, backgroundColor }: any) => {
                 {links.map((link, i) => <span key={i} onClick={goTo(link)}>{t(link).toUpperCase()}</span> )}
             </div>
             <div className="name">
-                <span>manuel<br/>sabarrós</span>
+                <span ref={nameRef}>manuel<br/>sabarrós</span>
             </div>
             <div className="languages">
-                <span className="language" onClick={changeLanguage("en")}>EN</span>
-                <span>/</span>
-                <span className="language" onClick={changeLanguage("es")}>ES</span>
+                <span onClick={changeLanguage("en")}>EN</span>
+                /
+                <span onClick={changeLanguage("es")}>ES</span>
             </div>
         </header>
     );
