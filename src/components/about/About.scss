@@ -6,5 +6,27 @@
     padding-top: $header-height;
     color: $white;
     background-color: $orange;
-    text-align: center;
+    > div {
+        width: 80%;
+        margin: 5% auto auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        .text {
+            flex-direction: column;
+            text-align: left;
+            font-size: 0.9rem;
+            font-family: 'Source Code Pro', monospace;
+        }
+        .profile-picture {
+            img {
+                width: 40vmin;
+                border-radius: 50%;
+            }
+        }
+    }
 }
