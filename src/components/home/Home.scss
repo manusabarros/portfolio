@@ -65,7 +65,7 @@
         @media screen and (max-width: calc(#{$mobile-large-width} + 1px)) {
             margin: 30% auto 10%;
         }
-        .gif-container {
+        div {
             $image-size: 35vmin;
             width: $image-size;
             height: $image-size;

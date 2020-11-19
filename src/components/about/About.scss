@@ -23,9 +23,16 @@
             font-family: 'Source Code Pro', monospace;
         }
         .profile-picture {
-            img {
-                width: 40vmin;
-                border-radius: 50%;
+            align-items: center;
+            div {
+                $picture-size: 40vmin;
+                width: $picture-size;
+                height: $picture-size;
+                img {
+                    width: $picture-size;
+                    height: $picture-size;
+                    border-radius: 50%;
+                }
             }
         }
     }

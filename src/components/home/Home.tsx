@@ -21,7 +21,7 @@ const Home = forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
                 <div className="gif">
-                    <div className="gif-container">
+                    <div>
                         <img src="https://media.giphy.com/media/RIvo7FJpGa1eGtkfZ3/giphy.gif" alt="coffee-gif" />
                     </div>
                 </div>

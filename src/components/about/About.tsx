@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import "./About.scss";
-import profilePicture from "../../assets/profile-picture.jpg";
+import profilePicture from "../../assets/profile-picture.jpeg";
 
 const About = forwardRef((props: any, ref: any) => {
     return (
@@ -17,7 +17,9 @@ const About = forwardRef((props: any, ref: any) => {
                         so I can collaborate with solutions for many areas of your organization.</p>
                 </div>
                 <div className="profile-picture">
-                    <img src={profilePicture} alt="profile-pic" />
+                    <div>
+                        <img src={profilePicture} alt="profile-pic" />
+                    </div>
                 </div>
             </div>
         </section>
