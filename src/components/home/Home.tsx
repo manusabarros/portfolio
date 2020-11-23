@@ -1,10 +1,15 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef, useEffect } from "react";
 import "./Home.scss";
 import Name from "../name/Name";
 import { useTranslation } from "react-i18next";
 
 const Home = forwardRef((props: any, ref: any) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const text = useRef<HTMLParagraphElement | null>(null);
+
+    useEffect(() => {
+        if (text.current) text.current.innerHTML = i18n.t("A");
+    }, []);
 
     return (
         <section className="Home" ref={ref}>
@@ -15,9 +20,7 @@ const Home = forwardRef((props: any, ref: any) => {
                     </div>
                     <Name />
                     <div className="text bottom-text">
-                        <p>{t("A")}</p>
-                        <p className="developer">&nbsp;{t("DEVELOPER")}&nbsp;</p>
-                        <p>{t("BASED_ARGENTINA")}</p>
+                        <p ref={text}></p>
                     </div>
                 </div>
                 <div className="gif">

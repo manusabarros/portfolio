@@ -9,26 +9,18 @@
     align-items: center;
     .welcome {
         width: 100%;
+        margin-top: 2vmin;
         text-align: center;
-        font-size: 1.8rem;
-        @media screen and (max-width: $desktop-large-width) {
-            // font-size: 1.6rem;
-        }
-        @media screen and (max-width: $tablet-small-width) {
-            font-size: 1.5rem;
-        }
-        @media screen and (max-width: $mobile-large-width) {
-            font-size: 1.2rem;
-        }
-        .developer {
-            color: $orange;
-        }
+        font-size: 5vmin;
         .text {
             overflow: hidden;
             p {
                 display: inline-block;
                 animation-duration: 1s;
                 animation-fill-mode: forwards;
+                span {
+                    color: $orange;
+                }
             }
         }
         .top-text p {
@@ -58,12 +50,9 @@
         overflow: hidden;
         width: fit-content;
         height: fit-content;
-        margin: 5% auto 0;
-        @media screen and (max-width: calc(#{$tablet-large-width} + 1px)) {
-            margin: 10% auto 5%;
-        }
-        @media screen and (max-width: calc(#{$mobile-large-width} + 1px)) {
-            margin: 30% auto 10%;
+        margin: 25vmin auto 10vmin;
+        @media screen and (min-width: $tablet-small-width) {
+            margin: 10vmin auto 5vmin;
         }
         div {
             $image-size: 35vmin;
