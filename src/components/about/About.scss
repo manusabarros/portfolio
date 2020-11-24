@@ -2,66 +2,86 @@
 
 .About {
     width: 100%;
-    height: calc(100vh - #{$header-height});
+    min-height: calc(100vh - #{$header-height});
     padding-top: $header-height;
     color: $white;
     background-color: $orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     > div {
-        width: 90%;
-        margin: 5% auto auto;
-        display: grid;
-        grid-gap: 5%;
-        grid-template-rows: auto;
-        grid-template-columns: auto auto;
-        @media screen and (max-width: $tablet-large-width) {
-            grid-template-rows: auto auto;
-            grid-template-columns: auto;
+        // width: 80%;
+        padding: 3%;
+        @media screen and (min-width: $tablet-large-width) {
+            padding: 5%;
+        }
+        > p {
+            text-align: center;
+            font-size: 2.7vmin;
+            margin-bottom: 7%;
+            span {
+                color: $black;
+                font-weight: bold;
+            }
+            @media screen and (min-width: $tablet-large-width) {
+                font-size: 3.5vmin;
+            }
+            @media screen and (max-width: $tablet-large-width) {
+                margin-bottom: 4%;
+            }
         }
         > div {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        .text {
-            height: 100%;
-            > div {
-                > p {
-                    text-align: center;
-                    font-size: 3.5vmin;
-                    span {
-                        color: $black;
-                        font-weight: bold;
-                    }
-                }
-                .row {
-                    hr {
-                        width: 15%;
-                        margin: 3% auto;
-                        border: none;
-                        border-top: 0.5vmin dotted $white;
-                    }
+            .about-me {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                div {
+                    width: 100%;
+                    margin-bottom: 10%;
+                    font-size: 2.2vmin;
                     p {
-                        width: 80%;
-                        font-size: 3vmin;
+                        width: 70%;
+                    }
+                    @media screen and (max-width: $tablet-large-width) {
+                        margin-bottom: 4%;
+                        font-size: 2vmin;
                     }
                 }
-                .row:nth-child(odd) {
+                div:last-child {
+                    margin-bottom: 0;
+                }
+                div:nth-child(even) {
                     p {
                         margin-left: auto;
                     }
                 }
             }
-        }
-        .profile-picture {
-            div {
-                $picture-size: 40vmin;
-                width: $picture-size;
-                height: $picture-size;
+            .profile-picture {
                 img {
-                    width: $picture-size;
-                    height: $picture-size;
+                    width: 40vmin;
+                    height: 40vmin;
                     border-radius: 50%;
                 }
+                @media screen and (min-width: $tablet-large-width) {
+                    margin: 0 0 0 7%;
+                }
+                @media screen and (max-width: calc(#{$tablet-large-width} - 1px)) {
+                    margin: 7% 0 0 0;
+                }
+                @media screen and (max-width: $tablet-large-width) {
+                    img {
+                        width: 30vmin;
+                        height: 30vmin;
+                    }
+                }
+            }
+            @media screen and (min-width: $tablet-large-width) {
+                flex-direction: row;
             }
         }
     }

@@ -33,7 +33,7 @@ const Header = ({ onGoTo, color }: any) => {
 
     const goTo = useCallback((link: any) => () => onGoTo(link), [onGoTo]);
 
-    const changeLanguage = useCallback((lng: string) => () => i18n.changeLanguage(lng), []);
+    const changeLanguage = (lng: string) => () => i18n.changeLanguage(lng);
 
     return (
         <header ref={headerRef}>

@@ -1,11 +1,13 @@
 {
     "HELLO": "Hola! Soy",
-    "A": "un",
-    "DEVELOPER": "desarrollador",
-    "BASED_ARGENTINA": "situado en Argentina",
+    "A_DEVELOPER": "un <span>desarrollador</span> situado en Argentina",
     "HOME": "Inicio",
     "ABOUT": "Quién soy",
     "WORK": "Trabajo",
     "SKILLS": "Habilidades",
-    "CONTACT": "Contacto"
+    "CONTACT": "Contacto",
+    "NICE_TO_MEET_YOU": "Hola! Un gusto conocerte! Mi nombre es <span>Manuel Sabarrós</span><br />y soy un desarrollador de software viviendo en Argentina.",
+    "MY_EXPERIENCE": "Tengo experiencia en desarrollo fullstack, pero mi principal competencia es el mundo frontend. Me encanta diseñar aplicaciones móviles y sitios web atractivos y crear plataformas con buena experiencia de usuario.",
+    "TECH_IS_MY_PASSION": "La tecnología es mi pasión! Siempre estoy aprendiendo nuevas cosas para sumar a mis habilidades, especialmente las modernas, así podré ayudarte sumando valor a tu proyecto y entregando un producto de gran calidad.",
+    "BUSINESS_ANALYSIS_EASE": "Y por último pero no menos importante, tengo facilidad para el análisis de negocio debido a la carrera que actualmente estudio, por lo que podré colaborar con soluciones en varias áreas de tu organización."
 }

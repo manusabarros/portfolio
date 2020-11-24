@@ -18,16 +18,19 @@ header {
         justify-content: flex-start;
         span {
             display: none;
-            margin-left: 10px;
+            margin-left: 8px;
             font-size: 0.7rem;
             white-space: nowrap;
             cursor: pointer;
-            @media screen and (min-width: $desktop-large-width) {
-                font-size: 0.8rem;
-                margin-left: 20px;
-            }
             @media screen and (min-width: $tablet-large-width) {
                 display: inline;
+            }
+            @media screen and (min-width: $desktop-small-width) {
+                margin-left: 14px;
+                font-size: 0.8rem;
+            }
+            @media screen and (min-width: $desktop-medium-width) {
+                margin-left: 20px;
             }
         }
         span:hover {
@@ -37,23 +40,34 @@ header {
     .name {
         justify-content: center;
         span {
-            font-size: 1.2rem;
-            // color: $orange;
+            font-size: 1rem;
+            @media screen and (min-width: $tablet-large-width) {
+                font-size: 1.2rem;
+            }
         }
     }
     .languages {
         justify-content: flex-end;
         font-size: 0.7rem;
-        @media screen and (min-width: $desktop-large-width) {
-            font-size: 0.8rem;
-            margin-right: 10px;
-        }
         span {
-            margin: 0 10px;
+            margin: 0 8px;
             cursor: pointer;
         }
         span:hover {
             color: $lightgrey;
+        }
+        @media screen and (min-width: $desktop-small-width) {
+            margin-right: 7px;
+            font-size: 0.8rem;
+            span {
+                margin: 0 7px;
+            }
+        }
+        @media screen and (min-width: $desktop-medium-width) {
+            margin-right: 10px;
+            span {
+                margin: 0 10px;
+            }
         }
     }
 }
