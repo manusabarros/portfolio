@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef } from "react";
 import "./App.scss";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
@@ -27,7 +27,7 @@ const App = () => {
     const skills = useRef<HTMLElement | null>(null);
     const contact = useRef<HTMLElement | null>(null);
 
-    const goTo = useCallback((link: any) => {
+    const goTo = (link: string) => {
         switch (link) {
             case Links.HOME:
                 if (home.current) home.current.scrollIntoView(scrollBehavior);
@@ -45,19 +45,23 @@ const App = () => {
                 if (contact.current) contact.current.scrollIntoView(scrollBehavior);
                 break;
         }
-    }, []);
+    };
 
-    const getCurrentScroll = useCallback(() => window.pageYOffset || document.documentElement.scrollTop, []);
+    const getCurrentScroll = () => window.pageYOffset || document.documentElement.scrollTop;
 
-    window.addEventListener("scroll", () => {
+    const verifyHeaderColor = () => {
         const scroll = getCurrentScroll();
         if (about.current && work.current && skills.current && contact.current) {
-            if (scroll < about.current.offsetTop - 0.2) setHeaderColor(Colors.WHITE);
-            else if (scroll < work.current.offsetTop - 0.2) setHeaderColor(Colors.ORANGE);
-            else if (scroll < skills.current.offsetTop - 0.2) setHeaderColor(Colors.WHITE);
-            else if (scroll < contact.current.offsetTop - 0.2) setHeaderColor(Colors.ORANGE);
+            const pxTolerance = 1;
+            if (scroll < about.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
+            else if (scroll < work.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
+            else if (scroll < skills.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
+            else if (scroll < contact.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
         }
-    });
+    }
+
+    window.addEventListener("scroll", verifyHeaderColor);
+    window.addEventListener("resize", verifyHeaderColor);
 
     return (
         <div className="App">

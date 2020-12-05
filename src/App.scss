@@ -6,7 +6,7 @@
     position: relative;
     color: $black;
     background-color: $white;
-    font-family: "Montserrat";
+    font-family: $sans-serif, sans-serif;
     section:last-child {
         padding-bottom: $footer-height;
     }

@@ -6,8 +6,9 @@
     "WORK": "Trabajo",
     "SKILLS": "Habilidades",
     "CONTACT": "Contacto",
-    "NICE_TO_MEET_YOU": "Hola! Un gusto conocerte! Mi nombre es <span>Manuel Sabarrós</span><br />y soy un desarrollador de software viviendo en Argentina.",
-    "MY_EXPERIENCE": "Tengo experiencia en desarrollo fullstack, pero mi principal competencia es el mundo frontend. Me encanta diseñar aplicaciones móviles y sitios web atractivos y crear plataformas con buena experiencia de usuario.",
+    "NICE_TO_MEET_YOU_1": "Hola! Un gusto conocerte! Mi nombre es <span>Manuel Sabarrós</span><br />y soy un desarrollador de software viviendo en Argentina.",
+    "NICE_TO_MEET_YOU_2": "Hola! Un gusto conocerte!<br />Mi nombre es <span>Manuel Sabarrós</span><br />y soy un desarrollador de software<br />viviendo en Argentina.",
+    "MY_EXPERIENCE": "Tengo experiencia en desarrollo fullstack, pero mi principal competencia es el mundo frontend. Me encanta desarrollar aplicaciones móviles y sitios web atractivos y crear plataformas con buen diseño.",
     "TECH_IS_MY_PASSION": "La tecnología es mi pasión! Siempre estoy aprendiendo nuevas cosas para sumar a mis habilidades, especialmente las modernas, así podré ayudarte sumando valor a tu proyecto y entregando un producto de gran calidad.",
     "BUSINESS_ANALYSIS_EASE": "Y por último pero no menos importante, tengo facilidad para el análisis de negocio debido a la carrera que actualmente estudio, por lo que podré colaborar con soluciones en varias áreas de tu organización."
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Header.scss";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
@@ -31,7 +31,7 @@ const Header = ({ onGoTo, color }: any) => {
         }
     }, [color]);
 
-    const goTo = useCallback((link: any) => () => onGoTo(link), [onGoTo]);
+    const goTo = (link: any) => () => onGoTo(link);
 
     const changeLanguage = (lng: string) => () => i18n.changeLanguage(lng);
 

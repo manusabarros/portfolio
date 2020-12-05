@@ -2,7 +2,16 @@
 
 .Skills {
     width: 100%;
-    height: calc(100vh - #{$header-height});
+    min-height: calc(100vh - #{$header-height});
     padding-top: $header-height;
     background-color: $orange;
+    > div {
+        > div {
+            display: inline-block;
+            > img {
+                height: 150px;
+                max-width: 300px;
+            }
+        }
+    }
 }

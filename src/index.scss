@@ -9,6 +9,10 @@ body {
     overflow: overlay;
 }
 
+a, a:visited {
+    text-decoration: none;
+}
+
 ::-webkit-scrollbar {
     width: $scrollbar-width;
 }

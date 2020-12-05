@@ -6,8 +6,9 @@
     "WORK": "Work",
     "SKILLS": "Skills",
     "CONTACT": "Contact",
-    "NICE_TO_MEET_YOU": "Hi! Nice to meet you! My name is <span>Manuel Sabarrós</span><br />and I'm a software developer living in Argentina.",
-    "MY_EXPERIENCE": "I have experience in fullstack development, but my main expertise is the frontend world. I love design beautiful websites and mobile apps and create platforms with great user experience.",
+    "NICE_TO_MEET_YOU_1": "Hi! Nice to meet you! My name is <span>Manuel Sabarrós</span><br />and I'm a software developer living in Argentina.",
+    "NICE_TO_MEET_YOU_2": "Hi! Nice to meet you!<br />My name is <span>Manuel Sabarrós</span><br />and I'm a software developer<br />living in Argentina.",
+    "MY_EXPERIENCE": "I have experience in fullstack development, but my main expertise is the frontend world. I love develop beautiful websites and mobile apps and create platforms with great design.",
     "TECH_IS_MY_PASSION": "Technology is my passion! I'm always learning new things to add to my skill set, especially modern ones, so that I can help you by adding value to your project and delivering a high quality product.",
     "BUSINESS_ANALYSIS_EASE": "And last but not least, I have ease for business analysis due to the degree I'm currently studying, so I can collaborate with solutions for many areas of your organization."
 }

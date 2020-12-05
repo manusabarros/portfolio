@@ -2,7 +2,61 @@
 
 .Work {
     width: 100%;
-    height: calc(100vh - #{$header-height});
+    min-height: calc(100vh - #{$header-height});
     padding-top: $header-height;
     background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+        width: 90%;
+        display: grid;
+        grid-gap: 5%;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        p {
+            margin-bottom: 1%;
+        }
+        .section {
+            > div:first-child {
+                margin-bottom: 7%;
+            }
+            .speech .description span {
+                font-size: 2vmin;
+                color: $lightgrey;
+            }
+        }
+        .title {
+            text-align: center;
+            font-size: 3vmin;
+            margin-bottom: 5%;
+        }
+        .year {
+            text-align: right;
+            font-size: 2.2vmin;
+            color: $lightgrey;
+            font-family: $monospace;
+        }
+        .job-title {
+            font-size: 4vmin;
+            color: $orange;
+            font-weight: bold;
+            a, a:visited {
+                color: $orange;
+            }
+            a:hover {
+                color: $darkgrey;
+            }
+        }
+        .description {
+            text-align: justify;
+            font-size: 2.5vmin;
+            a, a:visited {
+                color: $orange;
+            }
+            a:hover {
+                color: $lightgrey;
+            }
+        }
+    }
 }
