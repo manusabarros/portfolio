@@ -13,29 +13,35 @@ const Skills = forwardRef((props: any, ref: any) => {
         <section className="Skills" ref={ref}>
             <div>
                 <div>
-                    <img src={computer} alt="computer"/>
-                    <p className="title">FRONTEND</p>
-                    <div>
+                    <div className="image">
+                        <img src={computer} alt="computer"/>
+                    </div>
+                    <p>FRONTEND</p>
+                    <div className="skills">
                         {frontendSkills.map(skill => (
-                            <p key={skill} className="skill">{skill}</p>
+                            <p key={skill}>{skill}</p>
                         ))}
                     </div>
                 </div>
                 <div>
-                    <img src={server} alt="server"/>
-                    <p className="title">BACKEND</p>
-                    <div>
+                    <div className="image">
+                        <img src={server} alt="server"/>
+                    </div>
+                    <p>BACKEND</p>
+                    <div className="skills">
                         {backendSkills.map(skill => (
-                            <p key={skill} className="skill">{skill}</p>
+                            <p key={skill}>{skill}</p>
                         ))}
                     </div>
                 </div>
                 <div>
-                    <img src={cloud} alt="cloud"/>
-                    <p className="title">OTHERS</p>
-                    <div>
+                    <div className="image">
+                        <img src={cloud} alt="cloud"/>
+                    </div>
+                    <p>OTHERS</p>
+                    <div className="skills">
                         {othersSkills.map(skill => (
-                            <p key={skill} className="skill">{skill}</p>
+                            <p key={skill}>{skill}</p>
                         ))}
                     </div>
                 </div>
