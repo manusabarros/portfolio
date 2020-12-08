@@ -11,9 +11,12 @@ const Work = forwardRef((props: any, ref: any) => {
                         <div className="bombieri">
                             <p className="year">2019 - Date.now()</p>
                             <p className="job-title">FRONTEND DEVELOPER - <a href="https://bombieri.com.ar" target="_blank" rel="noopener noreferrer">BOMBIERI®</a></p>
+                            <p className="description">I started as a frontend developer, but after a few month I moved to an agile team for a client in the insurance industry.</p>
+                            <p className="description">There, my first works were related to the backend, and now I'm more focus on the client side of the applications we develop.</p>
+                            <p className="description">A bit about what I do:</p>
                             <ul className="description">
-                                <li>Responsive web and mobile development.</li>
-                                <li>APIs and web services consumption and development.</li>
+                                <li>Responsive web and mobile development. (Angular & Ionic)</li>
+                                <li>APIs and web services consumption and development. (Java & Spring)</li>
                                 <li>Agile methodologies (SCRUM).</li>
                             </ul>
                         </div>
@@ -36,7 +39,6 @@ const Work = forwardRef((props: any, ref: any) => {
                                 <li>UTN - FRCU (National Technology University).</li>
                                 <li>4° year ended.</li>
                             </ul>
-                            {/* <p className="description">FRONTEND DEVELOPER</p> */}
                         </div>
                     </div>
                     <p className="title">Participations</p>
