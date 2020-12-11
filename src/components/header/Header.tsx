@@ -38,15 +38,21 @@ const Header = ({ onGoTo, color }: any) => {
     return (
         <header ref={headerRef}>
             <div className="links">
-                {links.map((link, i) => <span key={i} onClick={goTo(link)}>{t(link).toUpperCase()}</span> )}
+                {links.map((link, i) => (
+                    <span key={i} onClick={goTo(link)}>
+                        {t(link).toUpperCase()}
+                    </span>
+                ))}
             </div>
             <div className="name">
-                <span ref={nameRef}>manuel<br/>sabarrós</span>
+                <span ref={nameRef}>
+                    manuel
+                    <br />
+                    sabarrós
+                </span>
             </div>
             <div className="languages">
-                <span onClick={changeLanguage("en")}>EN</span>
-                /
-                <span onClick={changeLanguage("es")}>ES</span>
+                <span onClick={changeLanguage("en")}>EN</span>/<span onClick={changeLanguage("es")}>ES</span>
             </div>
         </header>
     );

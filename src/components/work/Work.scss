@@ -48,7 +48,8 @@
                 .description {
                     text-align: justify;
                     font-size: 2.3vmin;
-                    a, a:visited {
+                    a,
+                    a:visited {
                         color: $orange;
                     }
                     a:hover {

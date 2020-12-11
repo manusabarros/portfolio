@@ -29,7 +29,7 @@ const About = forwardRef((props: any, ref: any) => {
                 <p dangerouslySetInnerHTML={{ __html: t(hello) }}></p>
                 <div>
                     <div className="about-me">
-                        {aboutMe.map(el => (
+                        {aboutMe.map((el) => (
                             <div key={el.key}>
                                 <p>{t(el.text)}</p>
                             </div>

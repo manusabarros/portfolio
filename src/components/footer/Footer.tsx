@@ -31,17 +31,20 @@ const Footer = forwardRef((props: any, ref: any) => {
             <div>
                 <div>
                     <a ref={githubRef} href="https://github.com/manusabarros" target="_blank" rel="noopener noreferrer">
-                        <img src={githubImage} alt="github" className="github" />@manusabarros
+                        <img src={githubImage} alt="github" className="github" />
+                        @manusabarros
                     </a>
                 </div>
                 <div>
                     <a ref={emailRef} href="mailto:sabarros.manuel@gmail.com">
-                        <img src={emailImage} alt="email" className="email" />sabarros.manuel@gmail.com
+                        <img src={emailImage} alt="email" className="email" />
+                        sabarros.manuel@gmail.com
                     </a>
                 </div>
                 <div>
                     <a ref={linkedinRef} href="https://linkedin.com/in/manuel-sabarros" target="_blank" rel="noopener noreferrer">
-                        <img src={linkedinImage} alt="linkedin" className="linkedin" />/in/manuel-sabarros
+                        <img src={linkedinImage} alt="linkedin" className="linkedin" />
+                        /in/manuel-sabarros
                     </a>
                 </div>
             </div>

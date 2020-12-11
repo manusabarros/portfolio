@@ -36,7 +36,10 @@ const Name = () => {
 
     return (
         <div className="Name">
-            <p>{name}{line}</p>
+            <p>
+                {name}
+                {line}
+            </p>
         </div>
     );
 };

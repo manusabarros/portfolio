@@ -5,7 +5,6 @@ import server from "../../assets/server.svg";
 import cloud from "../../assets/cloud.svg";
 import { useTranslation } from "react-i18next";
 
-
 const Skills = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
     const frontendSkills = ["HTML - CSS - SASS", "JavaScript - TypeScript", "React", "Angular", "Ionic"];
@@ -17,33 +16,33 @@ const Skills = forwardRef((props: any, ref: any) => {
             <div>
                 <div>
                     <div className="image">
-                        <img src={computer} alt="computer"/>
+                        <img src={computer} alt="computer" />
                     </div>
                     <p>FRONTEND</p>
                     <div className="skills">
-                        {frontendSkills.map(skill => (
+                        {frontendSkills.map((skill) => (
                             <p key={skill}>{skill}</p>
                         ))}
                     </div>
                 </div>
                 <div>
                     <div className="image">
-                        <img src={server} alt="server"/>
+                        <img src={server} alt="server" />
                     </div>
                     <p>BACKEND</p>
                     <div className="skills">
-                        {backendSkills.map(skill => (
+                        {backendSkills.map((skill) => (
                             <p key={skill}>{skill}</p>
                         ))}
                     </div>
                 </div>
                 <div>
                     <div className="image">
-                        <img src={cloud} alt="cloud"/>
+                        <img src={cloud} alt="cloud" />
                     </div>
                     <p>{t("OTHERS")}</p>
                     <div className="skills">
-                        {othersSkills.map(skill => (
+                        {othersSkills.map((skill) => (
                             <p key={skill}>{skill}</p>
                         ))}
                     </div>

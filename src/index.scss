@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Code+Pro&display=swap");
 @import "./variables.scss";
 
-body, h1, h2, h3, h4, h5, h6, p {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
@@ -9,7 +16,8 @@ body {
     overflow: overlay;
 }
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
 }
 

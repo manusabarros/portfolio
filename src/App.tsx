@@ -13,7 +13,7 @@ export enum Colors {
     BLACK = "#252422",
     DARKGREY = "#403d39",
     LIGHTGREY = "#ccc5b9",
-    ORANGE = "#eb5e28"
+    ORANGE = "#eb5e28",
 }
 
 const scrollBehavior: ScrollIntoViewOptions = { behavior: "smooth" };
@@ -58,7 +58,7 @@ const App = () => {
             else if (scroll < skills.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
             else if (scroll < contact.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
         }
-    }
+    };
 
     window.addEventListener("scroll", verifyHeaderColor);
     window.addEventListener("resize", verifyHeaderColor);
