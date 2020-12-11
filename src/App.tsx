@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./App.scss";
 import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Header, { Links } from "./components/header/Header";
 import Home from "./components/home/Home";
@@ -21,28 +20,28 @@ const scrollBehavior: ScrollIntoViewOptions = { behavior: "smooth" };
 const App = () => {
     const [headerColor, setHeaderColor] = useState(Colors.WHITE);
 
-    const home = useRef<HTMLElement | null>(null);
-    const about = useRef<HTMLElement | null>(null);
-    const work = useRef<HTMLElement | null>(null);
-    const skills = useRef<HTMLElement | null>(null);
-    const contact = useRef<HTMLElement | null>(null);
+    const homeRef = useRef<HTMLElement | null>(null);
+    const aboutRef = useRef<HTMLElement | null>(null);
+    const workRef = useRef<HTMLElement | null>(null);
+    const skillsRef = useRef<HTMLElement | null>(null);
+    const footerRef = useRef<HTMLElement | null>(null);
 
     const goTo = (link: string) => {
         switch (link) {
             case Links.HOME:
-                if (home.current) home.current.scrollIntoView(scrollBehavior);
+                if (homeRef.current) homeRef.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.ABOUT:
-                if (about.current) about.current.scrollIntoView(scrollBehavior);
+                if (aboutRef.current) aboutRef.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.WORK:
-                if (work.current) work.current.scrollIntoView(scrollBehavior);
+                if (workRef.current) workRef.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.SKILLS:
-                if (skills.current) skills.current.scrollIntoView(scrollBehavior);
+                if (skillsRef.current) skillsRef.current.scrollIntoView(scrollBehavior);
                 break;
             case Links.CONTACT:
-                if (contact.current) contact.current.scrollIntoView(scrollBehavior);
+                if (footerRef.current) footerRef.current.scrollIntoView(scrollBehavior);
                 break;
         }
     };
@@ -51,12 +50,12 @@ const App = () => {
 
     const verifyHeaderColor = () => {
         const scroll = getCurrentScroll();
-        if (about.current && work.current && skills.current && contact.current) {
+        if (aboutRef.current && workRef.current && skillsRef.current && footerRef.current) {
             const pxTolerance = 1;
-            if (scroll < about.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
-            else if (scroll < work.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
-            else if (scroll < skills.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
-            else if (scroll < contact.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
+            if (scroll < aboutRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
+            else if (scroll < workRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
+            else if (scroll < skillsRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
+            else if (scroll < footerRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
         }
     };
 
@@ -67,13 +66,12 @@ const App = () => {
         <div className="App">
             <Header onGoTo={goTo} color={headerColor} />
             <main>
-                <Home ref={home} />
-                <About ref={about} />
-                <Work ref={work} />
-                <Skills ref={skills} />
-                {/* <Contact ref={contact} /> */}
+                <Home ref={homeRef} />
+                <About ref={aboutRef} />
+                <Work ref={workRef} />
+                <Skills ref={skillsRef} />
             </main>
-            <Footer ref={contact} />
+            <Footer ref={footerRef} />
         </div>
     );
 };
