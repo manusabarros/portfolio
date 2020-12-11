@@ -1,18 +1,10 @@
 @import "../../variables.scss";
 
 .Work {
-    width: 100%;
-    min-height: calc(100vh - #{$header-height});
-    padding-top: $header-height;
-    background-color: $white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     > div {
         width: 90%;
-        margin: 5%;
         display: grid;
-        grid-gap: 5%;
+        gap: 5vmin;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         > div {

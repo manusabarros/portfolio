@@ -1,17 +1,8 @@
 @import "../../variables.scss";
 
 .About {
-    width: 100%;
-    min-height: calc(100vh - #{$header-height});
-    padding-top: $header-height;
-    color: $white;
-    background-color: $orange;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     > div {
         width: 90%;
-        margin: 5%;
         > p {
             text-align: center;
             font-size: 3.1vmin;

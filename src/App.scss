@@ -1,13 +1,31 @@
 @import "./variables.scss";
 
 .App {
-    max-width: 100%;
+    width: 100%;
     min-height: 100vh;
     position: relative;
-    color: $black;
-    background-color: $white;
     font-family: $sans-serif, sans-serif;
-    section:last-child {
-        padding-bottom: $footer-height;
+    main {
+        $padding-bottom: calc(#{$header-height} / 2);
+        section {
+            width: 100%;
+            min-height: calc(100vh - #{$header-height} - #{$padding-bottom});
+            padding: $header-height 0 $padding-bottom;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section:last-child {
+            $last-padding-bottom: calc(#{$padding-bottom} + #{$footer-height});
+            padding: $header-height 0 $last-padding-bottom;
+        }
+        section:nth-child(odd) {
+            color: $black;
+            background-color: $white;
+        }
+        section:nth-child(even) {
+            color: $white;
+            background-color: $orange;
+        }
     }
 }

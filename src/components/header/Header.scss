@@ -1,9 +1,9 @@
 @import "../../variables.scss";
 
 header {
-    width: 100%;
     height: $header-height;
     padding-right: $scrollbar-width;
+    width: calc(100% - #{$scrollbar-width});
     top: 0;
     position: fixed;
     z-index: 1;
@@ -57,17 +57,18 @@ header {
             color: $lightgrey;
         }
         @media screen and (min-width: $desktop-small-width) {
-            margin-right: 7px;
             font-size: 0.8rem;
             span {
                 margin: 0 7px;
             }
         }
         @media screen and (min-width: $desktop-medium-width) {
-            margin-right: 10px;
             span {
                 margin: 0 10px;
             }
+        }
+        span:last-child {
+            margin-right: 20px;
         }
     }
 }

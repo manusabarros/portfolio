@@ -71,9 +71,9 @@ const App = () => {
                 <About ref={about} />
                 <Work ref={work} />
                 <Skills ref={skills} />
-                <Contact ref={contact} />
+                {/* <Contact ref={contact} /> */}
             </main>
-            <Footer />
+            <Footer ref={contact} />
         </div>
     );
 };

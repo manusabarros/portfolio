@@ -1,16 +1,8 @@
 @import "../../variables.scss";
 
 .Skills {
-    width: 100%;
-    min-height: calc(100vh - #{$header-height});
-    padding-top: $header-height;
-    background-color: $orange;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     > div {
         width: 90%;
-        margin: 5%;
         display: grid;
         grid-gap: 5%;
         grid-template-rows: repeat(1, 1fr);
@@ -35,7 +27,6 @@
                 font-size: 2rem;
                 font-weight: bold;
                 margin: 5% auto 15%;
-                color: $white;
             }
             .skills {
                 > p {
@@ -45,9 +36,6 @@
                 }
                 > p:last-child {
                     margin-bottom: 0;
-                }
-                > p:nth-child(even) {
-                    color: $white;
                 }
             }
         }

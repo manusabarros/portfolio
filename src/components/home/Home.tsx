@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import "./Home.scss";
+import coffeeGif from "../../assets/coffee.gif";
 import Name from "../name/Name";
 import { useTranslation } from "react-i18next";
 
@@ -8,19 +9,19 @@ const Home = forwardRef((props: any, ref: any) => {
 
     return (
         <section className="Home" ref={ref}>
-            <div className="welcome">
+            <div>
                 <div className="welcome">
-                    <div className="text top-text">
-                        <p>{t("HELLO")}</p>
+                    <div className="text">
+                        <p className="top-text">{t("HELLO")}</p>
                     </div>
                     <Name />
-                    <div className="text bottom-text">
-                        <p dangerouslySetInnerHTML={{ __html: t("A_DEVELOPER") }}></p>
+                    <div className="text">
+                        <p className="bottom-text" dangerouslySetInnerHTML={{ __html: t("A_DEVELOPER") }}></p>
                     </div>
                 </div>
                 <div className="gif">
                     <div>
-                        <img src="https://media.giphy.com/media/RIvo7FJpGa1eGtkfZ3/giphy.gif" alt="coffee-gif" />
+                        <img src={coffeeGif} alt="coffee-gif" />
                     </div>
                 </div>
             </div>
