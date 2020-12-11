@@ -41,7 +41,7 @@ const Skills = forwardRef((props: any, ref: any) => {
                     <div className="image">
                         <img src={cloud} alt="cloud"/>
                     </div>
-                    <p>OTHERS</p>
+                    <p>{t("OTHERS")}</p>
                     <div className="skills">
                         {othersSkills.map(skill => (
                             <p key={skill}>{skill}</p>

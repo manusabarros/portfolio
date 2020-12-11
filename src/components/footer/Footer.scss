@@ -14,19 +14,33 @@ footer {
         width: 90%;
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         > div {
             display: flex;
             align-items: center;
             justify-content: center;
-            a, a:visited {
+            a {
+                width: 100%;
                 color: $white;
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                font-size: 2.1vmin;
                 img {
-                    width: 5vmin;
-                    margin-right: 5%;
+                    margin-right: 3%;
                 }
+                .github {
+                    width: 4.5vmin;
+                }
+                .email {
+                    width: 4vmin;
+                }
+                .linkedin {
+                    width: 3.5vmin;
+                }
+            }
+            a:visited {
+                color: $white;
             }
             a:hover {
                 color: $orange;

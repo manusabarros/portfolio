@@ -10,18 +10,21 @@
         > div {
             > p {
                 text-align: center;
-                margin-bottom: 5%;
                 font-size: 3vmin;
+                margin-bottom: 3%;
             }
             > div {
                 margin-bottom: 5%;
+                p {
+                    margin-top: 1%;
+                }
                 ul {
                     margin: 0;
                 }
                 .year {
                     text-align: right;
-                    font-size: 2.3vmin;
                     color: $lightgrey;
+                    font-size: 2.3vmin;
                     font-family: $monospace;
                 }
                 .title {
@@ -29,11 +32,14 @@
                     margin: 2% auto;
                     font-size: 4vmin;
                     font-weight: bold;
-                    a, a:visited {
+                    a {
                         color: $orange;
                         img {
                             height: 2.7vmin;
                         }
+                    }
+                    a:visited {
+                        color: $orange;
                     }
                     a:hover {
                         color: $darkgrey;
