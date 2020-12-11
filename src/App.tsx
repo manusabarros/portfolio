@@ -51,7 +51,7 @@ const App = () => {
     const verifyHeaderColor = () => {
         const scroll = getCurrentScroll();
         if (aboutRef.current && workRef.current && skillsRef.current && footerRef.current) {
-            const pxTolerance = 1;
+            const pxTolerance = 2;
             if (scroll < aboutRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
             else if (scroll < workRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
             else if (scroll < skillsRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
