@@ -10,8 +10,8 @@ import Skills from "./components/skills/Skills";
 export enum Colors {
     WHITE = "#fffcf2",
     BLACK = "#252422",
-    DARKGREY = "#403d39",
-    LIGHTGREY = "#ccc5b9",
+    DARKGREY = "#55504a",
+    LIGHTGREY = "#b9b2a4",
     ORANGE = "#eb5e28",
 }
 
