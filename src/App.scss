@@ -6,18 +6,18 @@
     position: relative;
     font-family: $sans-serif, sans-serif;
     main {
-        $padding-bottom: calc(#{$header-height} / 2);
+        $padding-top: calc(#{$header-height} * 1.5);
         section {
             width: 100%;
-            min-height: calc(100vh - #{$header-height} - #{$padding-bottom});
-            padding: $header-height 0 $padding-bottom;
+            min-height: calc(100vh - #{$padding-top} - #{$header-height});
+            padding: $padding-top 0 $header-height;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         section:last-child {
-            $last-padding-bottom: calc(#{$padding-bottom} + #{$footer-height});
-            padding: $header-height 0 $last-padding-bottom;
+            $padding-bottom: calc(#{$header-height} + #{$footer-height});
+            padding: $padding-top 0 $padding-bottom;
         }
         section:nth-child(odd) {
             color: $black;

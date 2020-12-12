@@ -38,11 +38,17 @@ const Header = ({ onGoTo, color }: any) => {
     return (
         <header ref={headerRef}>
             <div className="links">
-                {links.map((link, i) => (
-                    <span key={i} onClick={goTo(link)}>
-                        {t(link).toUpperCase()}
-                    </span>
-                ))}
+                <div>
+                    <div>
+                        <span onClick={goTo(Links.HOME)}>{t(Links.HOME)}</span>
+                        <span onClick={goTo(Links.ABOUT)}>{t(Links.ABOUT)}</span>
+                        <span onClick={goTo(Links.WORK)}>{t(Links.WORK)}</span>
+                    </div>
+                    <div>
+                        <span onClick={goTo(Links.SKILLS)}>{t(Links.SKILLS)}</span>
+                        <span onClick={goTo(Links.CONTACT)}>{t(Links.CONTACT)}</span>
+                    </div>
+                </div>
             </div>
             <div className="name">
                 <span ref={nameRef}>

@@ -1,74 +1,81 @@
 @import "../../variables.scss";
 
 header {
-    height: $header-height;
+    min-height: $header-height;
     padding-right: $scrollbar-width;
     width: calc(100% - #{$scrollbar-width});
     top: 0;
     position: fixed;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    div {
+    grid-template-columns: 1fr min-content 1fr;
+    > div {
         display: flex;
         align-items: center;
-        text-align: center;
     }
     .links {
         justify-content: flex-start;
-        span {
-            display: none;
-            margin-left: 8px;
-            font-size: 0.7rem;
-            white-space: nowrap;
-            cursor: pointer;
-            @media screen and (min-width: $tablet-large-width) {
-                display: inline;
+        > div {
+            width: 100%;
+            > div {
+                margin: 0.5vmin 0;
+                display: inline-block;
+                span {
+                    display: none;
+                    font-size: 3.5vmin;
+                    margin-left: 2vmin;
+                    white-space: nowrap;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    @media screen and (min-width: $tablet-large-width) {
+                        display: inline;
+                        font-size: 1.7vmin;
+                    }
+                }
+                span:hover {
+                    color: $lightgrey;
+                }
             }
-            @media screen and (min-width: $desktop-small-width) {
-                margin-left: 14px;
-                font-size: 0.8rem;
-            }
-            @media screen and (min-width: $desktop-medium-width) {
-                margin-left: 20px;
-            }
-        }
-        span:hover {
-            color: $lightgrey;
         }
     }
     .name {
         justify-content: center;
+        text-align: center;
         span {
-            font-size: 1rem;
+            margin: 1vmin;
+            font-size: 5vmin;
+            @media screen and (min-width: $mobile-medium-width) {
+                font-size: 4.2vmin;
+            }
+            @media screen and (min-width: $tablet-small-width) {
+                font-size: 3.5vmin;
+            }
             @media screen and (min-width: $tablet-large-width) {
-                font-size: 1.2rem;
+                font-size: 2.7vmin;
             }
         }
     }
     .languages {
         justify-content: flex-end;
-        font-size: 0.7rem;
+        font-size: 3.5vmin;
         span {
-            margin: 0 8px;
+            margin: 0 1vmin;
             cursor: pointer;
+        }
+        @media screen and (min-width: $mobile-medium-width) {
+            font-size: 2.9vmin;
+        }
+        @media screen and (min-width: $tablet-small-width) {
+            font-size: 2.3vmin;
+        }
+        @media screen and (min-width: $tablet-large-width) {
+            font-size: 1.7vmin;
         }
         span:hover {
             color: $lightgrey;
         }
-        @media screen and (min-width: $desktop-small-width) {
-            font-size: 0.8rem;
-            span {
-                margin: 0 7px;
-            }
-        }
-        @media screen and (min-width: $desktop-medium-width) {
-            span {
-                margin: 0 10px;
-            }
-        }
         span:last-child {
-            margin-right: 20px;
+            margin-right: 2vmin;
         }
     }
 }
