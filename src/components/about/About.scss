@@ -6,7 +6,7 @@
         > p {
             text-align: center;
             font-size: 3.1vmin;
-            margin-bottom: 5%;
+            margin-bottom: 8vmin;
             span {
                 color: $black;
                 font-weight: bold;
@@ -18,11 +18,12 @@
                 margin-bottom: 5%;
             }
         }
-        > div {
+        .info {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin-bottom: 7vmin;
             .about-me {
                 display: flex;
                 flex-direction: column;
@@ -30,7 +31,7 @@
                 justify-content: center;
                 div {
                     width: 100%;
-                    margin-bottom: 7%;
+                    margin-bottom: 8vmin;
                     font-size: 2.4vmin;
                     p {
                         width: 70%;
@@ -67,6 +68,27 @@
             }
             @media screen and (min-width: $tablet-large-width) {
                 flex-direction: row;
+            }
+        }
+        .button {
+            button {
+                background-color: $white;
+                color: $orange;
+                border: none;
+                border-radius: 2vmin;
+                padding: 1.5vmin 2vmin;
+                display: block;
+                margin: auto;
+                outline: none;
+                cursor: pointer;
+                font-size: 3vmin;
+                font-weight: bold;
+                font-family: $monospace;
+                text-transform: uppercase;
+                transition-duration: 0.2s;
+            }
+            button:hover {
+                background-color: $lightgrey;
             }
         }
     }

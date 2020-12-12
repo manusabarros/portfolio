@@ -46,6 +46,8 @@ const App = () => {
         }
     };
 
+    const contact = () => { if (footerRef.current) footerRef.current.scrollIntoView(scrollBehavior); };
+
     const getCurrentScroll = () => window.pageYOffset || document.documentElement.scrollTop;
 
     const verifyHeaderColor = () => {
@@ -67,7 +69,7 @@ const App = () => {
             <Header onGoTo={goTo} color={headerColor} />
             <main>
                 <Home ref={homeRef} />
-                <About ref={aboutRef} />
+                <About ref={aboutRef} contact={contact} />
                 <Work ref={workRef} />
                 <Skills ref={skillsRef} />
             </main>

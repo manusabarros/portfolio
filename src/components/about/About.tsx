@@ -9,7 +9,7 @@ const aboutMe = [
     { key: 2, text: "BUSINESS_ANALYSIS_EASE" },
 ];
 
-const About = forwardRef((props: any, ref: any) => {
+const About = forwardRef(({ contact }: any, ref: any) => {
     const { t } = useTranslation();
     const [hello, setHello] = useState("NICE_TO_MEET_YOU_1");
 
@@ -27,7 +27,7 @@ const About = forwardRef((props: any, ref: any) => {
         <section className="About" ref={ref}>
             <div>
                 <p dangerouslySetInnerHTML={{ __html: t(hello) }}></p>
-                <div>
+                <div className="info">
                     <div className="about-me">
                         {aboutMe.map((el) => (
                             <div key={el.key}>
@@ -38,6 +38,9 @@ const About = forwardRef((props: any, ref: any) => {
                     <div className="profile-picture">
                         <img src={profilePicture} alt="profile-pic" />
                     </div>
+                </div>
+                <div className="button">
+                    <button onClick={() => contact()}>{t("CONTACT_ME")}</button>
                 </div>
             </div>
         </section>

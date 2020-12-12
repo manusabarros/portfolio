@@ -11,12 +11,14 @@
     "MY_EXPERIENCE": "I have experience in fullstack development, but my main expertise is the frontend world. I love develop beautiful websites and mobile apps and create platforms with great design.",
     "TECH_IS_MY_PASSION": "Technology is my passion! I'm always learning new things to add to my skill set, especially modern ones, so that I can help you by adding value to your project and delivering a high quality product.",
     "BUSINESS_ANALYSIS_EASE": "And last but not least, I have ease for business analysis due to the degree I'm currently studying, so I can collaborate with solutions for many areas of your organization.",
+    "CONTACT_ME": "Contact Me",
     "WORK_EXPERIENCE": "Work Experience",
     "FRONTEND_DEVELOPER": "FRONTEND DEVELOPER",
     "BOMBIERI_EXPERIENCE_1": "I started as a frontend developer, but after a few month I moved to an agile team for a client in the insurance industry, and in there, my first works were related to the backend. Now I'm more focus on the client side of the applications we develop.",
     "BOMBIERI_EXPERIENCE_2": "A bit about what I do:",
     "BOMBIERI_EXPERIENCE_3": "Responsive web and mobile development (Angular & Ionic).",
     "BOMBIERI_EXPERIENCE_4": "APIs and web services consumption and development (Java & Spring).",
+    "AGILE_METHODOLOGIES": "Agile Methodologies (SCRUM)",
     "PROGRAMMING_TEACHER": "PROGRAMMING TEACHER",
     "TEACHER_EXPERIENCE_1": "I taught the basics of web development in a programme implemented by Bombieri and the regional faculty to promote the local industry and give the opportunity to people who wanted to take their first steps in the IT world.",
     "TEACHER_EXPERIENCE_2": "Course Duration: 90hs (10 weeks).",
@@ -34,5 +36,6 @@
     "TALK_EXPERIENCE_4": " - in spanish :(",
     "TECHNOLOGIES": "Technologies",
     "OTHERS": "OTHERS",
-    "AGILE_METHODOLOGIES": "Agile Methodologies (SCRUM)"
+    "MORE_ABOUT_ME": "If you want to know more about<br />me, send me an email at",
+    "FIND_ME": "Or find me on"
 }
