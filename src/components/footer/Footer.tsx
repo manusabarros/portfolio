@@ -56,7 +56,7 @@ const Footer = forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
             </div>
-            <span>v1.0.2</span>
+            <span>v{process.env.REACT_APP_VERSION}</span>
         </footer>
     );
 });
