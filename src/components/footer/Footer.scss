@@ -121,4 +121,11 @@ footer {
             }
         }
     }
+    > span {
+        color: $lightgrey;
+        position: absolute;
+        right: 3vmin;
+        bottom: 2vmin;
+        font-size: 1.8vmin;
+    }
 }
