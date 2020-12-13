@@ -12,6 +12,8 @@ export enum Links {
     CONTACT = "CONTACT",
 }
 
+const links = [Links.HOME, Links.ABOUT, Links.WORK, Links.SKILLS, Links.CONTACT];
+
 const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwards" };
 
 const Header = ({ onGoTo, color }: any) => {
@@ -36,17 +38,9 @@ const Header = ({ onGoTo, color }: any) => {
     return (
         <header ref={headerRef}>
             <div className="links">
-                <div>
-                    <div>
-                        <span onClick={goTo(Links.HOME)}>{t(Links.HOME)}</span>
-                        <span onClick={goTo(Links.ABOUT)}>{t(Links.ABOUT)}</span>
-                        <span onClick={goTo(Links.WORK)}>{t(Links.WORK)}</span>
-                    </div>
-                    <div>
-                        <span onClick={goTo(Links.SKILLS)}>{t(Links.SKILLS)}</span>
-                        <span onClick={goTo(Links.CONTACT)}>{t(Links.CONTACT)}</span>
-                    </div>
-                </div>
+                {links.map((link) => (
+                    <span key={link} onClick={goTo(link)}>{t(link)}</span>
+                ))}
             </div>
             <div className="name">
                 <span ref={nameRef}>

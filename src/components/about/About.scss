@@ -19,9 +19,9 @@
                         font-size: 4.5vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) {
-                        font-size: 3.1vmin;
+                        font-size: 2vmin;
                     }
-                    @media screen and (min-width: $desktop-small-width) {
+                    @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                         font-size: 4vmin;
                     }
                 }
@@ -52,9 +52,9 @@
                             font-size: 3.3vmin;
                         }
                         @media screen and (min-width: $tablet-large-width) {
-                            font-size: 2.4vmin;
+                            font-size: 3vmin;
                         }
-                        @media screen and (min-width: $desktop-small-width) {
+                        @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                             font-size: 2.6vmin;
                         }
                     }
@@ -76,7 +76,10 @@
                     height: 40vmin;
                     border-radius: 50%;
                 }
-                @media screen and (min-width: $tablet-large-width) {
+                @media screen and (min-height: $tablet-large-width) {
+                    margin: 10vmin 0 0 0;
+                }
+                @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                     margin: 0 0 0 10vmin;
                 }
                 @media screen and (max-width: calc(#{$tablet-large-width} - 1px)) {
@@ -89,7 +92,7 @@
                     }
                 }
             }
-            @media screen and (min-width: $tablet-large-width) {
+            @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                 flex-direction: row;
             }
         }

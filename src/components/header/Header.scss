@@ -15,27 +15,19 @@ header {
     }
     .links {
         justify-content: flex-start;
-        > div {
-            width: 100%;
-            > div {
-                margin: 0.5vmin 0;
-                display: inline-block;
-                span {
-                    display: none;
-                    font-size: 3.5vmin;
-                    margin-left: 2vmin;
-                    white-space: nowrap;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    @media screen and (min-width: $tablet-large-width) {
-                        display: inline;
-                        font-size: 1.7vmin;
-                    }
-                }
-                span:hover {
-                    color: $lightgrey;
-                }
+        span {
+            display: none;
+            margin-left: 2vmin;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                display: inline;
+                font-size: 1.7vmin;
             }
+        }
+        span:hover {
+            color: $lightgrey;
         }
     }
     .name {
@@ -51,6 +43,9 @@ header {
                 font-size: 3.5vmin;
             }
             @media screen and (min-width: $tablet-large-width) {
+                font-size: 3.2vmin;
+            }
+            @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                 font-size: 2.7vmin;
             }
         }
@@ -75,6 +70,9 @@ header {
             font-size: 2.3vmin;
         }
         @media screen and (min-width: $tablet-large-width) {
+            font-size: 2vmin;
+        }
+        @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
             font-size: 1.7vmin;
         }
     }
