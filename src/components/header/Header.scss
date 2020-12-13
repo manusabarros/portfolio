@@ -25,6 +25,10 @@ header {
                 display: inline;
                 font-size: 1.7vmin;
             }
+            @media screen and (min-width: $desktop-medium-width) {
+                display: inline;
+                font-size: 1.7vmin;
+            }
         }
         span:hover {
             color: $lightgrey;
@@ -46,6 +50,9 @@ header {
                 font-size: 3.2vmin;
             }
             @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                font-size: 2.7vmin;
+            }
+            @media screen and (min-width: $desktop-medium-width) {
                 font-size: 2.7vmin;
             }
         }
@@ -73,6 +80,9 @@ header {
             font-size: 2vmin;
         }
         @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+            font-size: 1.7vmin;
+        }
+        @media screen and (min-width: $desktop-medium-width) {
             font-size: 1.7vmin;
         }
     }

@@ -33,6 +33,10 @@ footer {
             grid-template-rows: 1fr;
             grid-template-columns: 1fr 1fr;
         }
+        @media screen and (min-width: $desktop-medium-width) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
         > div {
             display: flex;
             flex-direction: column;
@@ -44,6 +48,9 @@ footer {
                     font-size: 3.6vmin;
                 }
                 @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                    font-size: 3.2vmin;
+                }
+                @media screen and (min-width: $desktop-medium-width) {
                     font-size: 3.2vmin;
                 }
             }
@@ -81,6 +88,18 @@ footer {
                         }
                     }
                     @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                        font-size: 2.4vmin;
+                        .github {
+                            width: 4.5vmin;
+                        }
+                        .email {
+                            width: 4vmin;
+                        }
+                        .linkedin {
+                            width: 3.5vmin;
+                        }
+                    }
+                    @media screen and (min-width: $desktop-medium-width) {
                         font-size: 2.4vmin;
                         .github {
                             width: 4.5vmin;

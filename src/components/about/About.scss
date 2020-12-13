@@ -82,6 +82,9 @@
                 @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                     margin: 0 0 0 10vmin;
                 }
+                @media screen and (min-width: $desktop-medium-width) {
+                    margin: 0 0 0 10vmin;
+                }
                 @media screen and (max-width: calc(#{$tablet-large-width} - 1px)) {
                     margin: 10vmin 0 0 0;
                 }
@@ -93,6 +96,9 @@
                 }
             }
             @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                flex-direction: row;
+            }
+            @media screen and (min-width: $desktop-medium-width) {
                 flex-direction: row;
             }
         }
