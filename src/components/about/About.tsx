@@ -1,6 +1,6 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef } from "react";
 import "./About.scss";
-import profilePicture from "../../assets/profile-picture.jpeg";
+import profilePicture from "../../assets/profile-picture.png";
 import { useTranslation } from "react-i18next";
 
 const aboutMe = [

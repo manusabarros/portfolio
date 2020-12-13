@@ -56,7 +56,7 @@ const Footer = forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
             </div>
-            <span>v1.0.0</span>
+            <span>v1.0.1</span>
         </footer>
     );
 });
