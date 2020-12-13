@@ -14,20 +14,44 @@ footer {
         width: 90%;
         margin: 2% auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        >div {
+        gap: 5vmin;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        @media screen and (min-width: $mobile-medium-width) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (min-width: $tablet-small-width) {
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr;
+        }
+        @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        > div {
             display: flex;
             flex-direction: column;
             align-items: center;
             p {
                 text-align: center;
-                font-size: 3.5vmin;
+                font-size: 4.5vmin;
+                @media screen and (min-width: $tablet-small-width) {
+                    font-size: 3.6vmin;
+                }
+                @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                    font-size: 3.2vmin;
+                }
             }
             > div {
-                font-size: 2.1vmin;
                 margin-top: 5vmin;
                 a {
                     color: $white;
+                    font-size: 3.4vmin;
                     white-space: nowrap;
                     display: flex;
                     align-items: center;
@@ -36,13 +60,37 @@ footer {
                         margin-right: 2vmin;
                     }
                     .github {
-                        width: 4.5vmin;
+                        width: 6vmin;
                     }
                     .email {
-                        width: 4vmin;
+                        width: 5.5vmin;
                     }
                     .linkedin {
-                        width: 3.5vmin;
+                        width: 5vmin;
+                    }
+                    @media screen and (min-width: $tablet-small-width) {
+                        font-size: 3vmin;
+                        .github {
+                            width: 5.2vmin;
+                        }
+                        .email {
+                            width: 4.7vmin;
+                        }
+                        .linkedin {
+                            width: 4.2vmin;
+                        }
+                    }
+                    @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                        font-size: 2.4vmin;
+                        .github {
+                            width: 4.5vmin;
+                        }
+                        .email {
+                            width: 4vmin;
+                        }
+                        .linkedin {
+                            width: 3.5vmin;
+                        }
                     }
                 }
                 a:visited {

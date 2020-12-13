@@ -19,7 +19,7 @@
                     font-size: 4vmin;
                 }
                 @media screen and (min-width: $tablet-large-width) {
-                    font-size: 2.5vmin;
+                    font-size: 3.3vmin;
                 }
                 @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                     font-size: 3vmin;
@@ -43,7 +43,7 @@
                         font-size: 3vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) {
-                        font-size: 1.3vmin;
+                        font-size: 2.7vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                         font-size: 2.3vmin;
@@ -58,7 +58,7 @@
                         font-size: 4.5vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) {
-                        font-size: 3.5vmin;
+                        font-size: 3.9vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                         font-size: 3.6vmin;
@@ -68,11 +68,14 @@
                         white-space: nowrap;
                         img {
                             height: 3.6vmin;
+                            @media screen and (min-width: $mobile-large-width) {
+                                height: 3.8vmin;
+                            }
                             @media screen and (min-width: $tablet-small-width) {
                                 height: 3.1vmin;
                             }
                             @media screen and (min-width: $tablet-large-width) {
-                                height: 3.7vmin;
+                                height: 2.9vmin;
                             }
                             @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                                 height: 2.7vmin;
@@ -96,7 +99,7 @@
                         font-size: 3vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) {
-                        font-size: 1.3vmin;
+                        font-size: 2.7vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                         font-size: 2.3vmin;
@@ -132,8 +135,17 @@
                 grid-column: 2 / 3;
             }
             .talk .description span {
-                font-size: 2vmin;
+                font-size: 3vmin;
                 color: $lightgrey;
+                @media screen and (min-width: $tablet-small-width) {
+                    font-size: 2.7vmin;
+                }
+                @media screen and (min-width: $tablet-large-width) {
+                    font-size: 2.4vmin;
+                }
+                @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                    font-size: 2.1vmin;
+                }
             }
         }
     }
