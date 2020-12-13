@@ -8,7 +8,16 @@
         align-items: center;
         text-align: center;
         .welcome {
-            margin-bottom: 8vmin;
+            margin-bottom: 30vmin;
+            @media screen and (min-width: $mobile-large-width) {
+                margin-bottom: 10vmin;
+            }
+            @media screen and (min-width: $tablet-small-width) {
+                margin-bottom: 20vmin;
+            }
+            @media screen and (min-width: $tablet-large-width) {
+                margin-bottom: 10vmin;
+            }
             .text {
                 font-size: 5vmin;
                 overflow: hidden;

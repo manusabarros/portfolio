@@ -12,8 +12,6 @@ export enum Links {
     CONTACT = "CONTACT",
 }
 
-const links = [Links.HOME, Links.ABOUT, Links.WORK, Links.SKILLS, Links.CONTACT];
-
 const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwards" };
 
 const Header = ({ onGoTo, color }: any) => {

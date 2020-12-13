@@ -3,7 +3,7 @@
 header {
     min-height: $header-height;
     padding-right: $scrollbar-width;
-    width: calc(100% - #{$scrollbar-width});
+    width: calc(100vw - #{$scrollbar-width});
     top: 0;
     position: fixed;
     z-index: 1;
@@ -62,6 +62,12 @@ header {
             margin: 0 1vmin;
             cursor: pointer;
         }
+        span:hover {
+            color: $lightgrey;
+        }
+        span:last-child {
+            margin-right: 2vmin;
+        }
         @media screen and (min-width: $mobile-medium-width) {
             font-size: 2.9vmin;
         }
@@ -70,12 +76,6 @@ header {
         }
         @media screen and (min-width: $tablet-large-width) {
             font-size: 1.7vmin;
-        }
-        span:hover {
-            color: $lightgrey;
-        }
-        span:last-child {
-            margin-right: 2vmin;
         }
     }
 }

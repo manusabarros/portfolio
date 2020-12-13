@@ -3,19 +3,28 @@
 .About {
     > div {
         width: 90%;
-        > p {
-            text-align: center;
-            font-size: 3.1vmin;
-            margin-bottom: 8vmin;
-            span {
-                color: $black;
-                font-weight: bold;
-            }
-            @media screen and (min-width: $tablet-large-width) {
-                font-size: 3.5vmin;
-            }
-            @media screen and (max-width: $tablet-large-width) {
-                margin-bottom: 5%;
+        .welcome {
+            margin-bottom: 7vmin;
+            > div {
+                text-align: center;
+                p {
+                    display: inline;
+                    font-size: 5vmin;
+                    white-space: nowrap;
+                    span {
+                        color: $black;
+                        font-weight: bold;
+                    }
+                    @media screen and (min-width: $tablet-small-width) {
+                        font-size: 4.5vmin;
+                    }
+                    @media screen and (min-width: $tablet-large-width) {
+                        font-size: 3.1vmin;
+                    }
+                    @media screen and (min-width: $desktop-small-width) {
+                        font-size: 4vmin;
+                    }
+                }
             }
         }
         .info {
@@ -31,19 +40,33 @@
                 justify-content: center;
                 div {
                     width: 100%;
-                    margin-bottom: 8vmin;
-                    font-size: 2.4vmin;
+                    margin-bottom: 7vmin;
                     p {
-                        width: 70%;
+                        width: 90%;
+                        margin: 0 auto;
+                        font-size: 3.8vmin;
                         text-align: justify;
+                        @media screen and (min-width: $tablet-small-width) {
+                            margin: 0;
+                            width: 70%;
+                            font-size: 3.3vmin;
+                        }
+                        @media screen and (min-width: $tablet-large-width) {
+                            font-size: 2.4vmin;
+                        }
+                        @media screen and (min-width: $desktop-small-width) {
+                            font-size: 2.6vmin;
+                        }
                     }
                 }
                 div:last-child {
                     margin-bottom: 0;
                 }
-                div:nth-child(even) {
-                    p {
-                        margin-left: auto;
+                @media screen and (min-width: $tablet-small-width) {
+                    div:nth-child(even) {
+                        p {
+                            margin-left: auto;
+                        }
                     }
                 }
             }
@@ -54,15 +77,15 @@
                     border-radius: 50%;
                 }
                 @media screen and (min-width: $tablet-large-width) {
-                    margin: 0 0 0 7%;
+                    margin: 0 0 0 10vmin;
                 }
                 @media screen and (max-width: calc(#{$tablet-large-width} - 1px)) {
-                    margin: 7% 0 0 0;
+                    margin: 10vmin 0 0 0;
                 }
                 @media screen and (max-width: $tablet-large-width) {
                     img {
-                        width: 30vmin;
-                        height: 30vmin;
+                        width: 35vmin;
+                        height: 35vmin;
                     }
                 }
             }
@@ -81,11 +104,14 @@
                 margin: auto;
                 outline: none;
                 cursor: pointer;
-                font-size: 3vmin;
+                font-size: 4vmin;
                 font-weight: bold;
                 font-family: $monospace;
                 text-transform: uppercase;
                 transition-duration: 0.2s;
+                @media screen and (min-width: $tablet-large-width) {
+                    font-size: 3vmin;
+                }
             }
             button:hover {
                 background-color: $lightgrey;

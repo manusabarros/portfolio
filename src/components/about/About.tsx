@@ -11,22 +11,18 @@ const aboutMe = [
 
 const About = forwardRef(({ contact }: any, ref: any) => {
     const { t } = useTranslation();
-    const [hello, setHello] = useState("NICE_TO_MEET_YOU_1");
-
-    const splitText = () => {
-        if (document.documentElement.clientWidth >= 768) setHello("NICE_TO_MEET_YOU_1");
-        else setHello("NICE_TO_MEET_YOU_2");
-    };
-
-    useEffect(() => {
-        splitText();
-        window.addEventListener("resize", splitText);
-    }, []);
 
     return (
         <section className="About" ref={ref}>
             <div>
-                <p dangerouslySetInnerHTML={{ __html: t(hello) }}></p>
+                <div className="welcome">
+                    <div>
+                        <p>{t("NICE_TO_MEET_YOU_1")}</p> <p>{t("NICE_TO_MEET_YOU_2")} <span>Manuel Sabarrós</span></p>
+                    </div>
+                    <div>
+                        <p>{t("NICE_TO_MEET_YOU_3")}</p> <p>{t("NICE_TO_MEET_YOU_4")}</p>
+                    </div>
+                </div>
                 <div className="info">
                     <div className="about-me">
                         {aboutMe.map((el) => (
