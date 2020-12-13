@@ -10,13 +10,13 @@
     "NICE_TO_MEET_YOU_2": "My name is",
     "NICE_TO_MEET_YOU_3": "and I'm a software developer",
     "NICE_TO_MEET_YOU_4": "living in Argentina.",
-    "MY_EXPERIENCE": "I have experience in fullstack development, but my main expertise is the frontend world. I love develop beautiful websites and mobile apps and create platforms with great design.",
+    "MY_EXPERIENCE": "I have experience in fullstack development, but my main expertise is the frontend world. I love developing beautiful websites and mobile apps and creating platforms with great design.",
     "TECH_IS_MY_PASSION": "Technology is my passion! I'm always learning new things to add to my skill set, especially modern ones, so that I can help you by adding value to your project and delivering a high quality product.",
     "BUSINESS_ANALYSIS_EASE": "And last but not least, I have ease for business analysis due to the degree I'm currently studying, so I can collaborate with solutions for many areas of your organization.",
     "CONTACT_ME": "Contact Me",
     "WORK_EXPERIENCE": "Work Experience",
     "FRONTEND_DEVELOPER": "FRONTEND DEVELOPER",
-    "BOMBIERI_EXPERIENCE_1": "I started as a frontend developer, but after a few month I moved to an agile team for a client in the insurance industry, and in there, my first works were related to the backend. Now I'm more focus on the client side of the applications we develop.",
+    "BOMBIERI_EXPERIENCE_1": "I started as a frontend developer, but after a few month I moved to an agile team for a client in the insurance industry, and in there, my first works were related to the backend. Now I'm more focused on the client side of the applications we develop.",
     "BOMBIERI_EXPERIENCE_2": "A bit about what I do:",
     "BOMBIERI_EXPERIENCE_3": "Responsive web and mobile development (Angular & Ionic).",
     "BOMBIERI_EXPERIENCE_4": "APIs and web services consumption and development (Java & Spring).",
@@ -39,5 +39,5 @@
     "TECHNOLOGIES": "Technologies",
     "OTHERS": "OTHERS",
     "MORE_ABOUT_ME": "If you want to know more about<br />me, send me an email at",
-    "FIND_ME": "Or find me on"
+    "FIND_ME": "You can also find me on"
 }
