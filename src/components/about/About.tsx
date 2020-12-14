@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import "./About.scss";
-import profilePicture from "../../assets/profile-picture.png";
+import profilePicture from "../../assets/profile-picture.jpg";
 import { useTranslation } from "react-i18next";
 
 const aboutMe = [
