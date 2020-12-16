@@ -3,6 +3,7 @@ import "./Header.scss";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 import { Colors } from "../../App";
+import menu from "../../assets/menu.svg";
 
 export enum Links {
     HOME = "HOME",
@@ -19,6 +20,7 @@ const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwa
 const Header = ({ onGoTo, color }: any) => {
     const { t } = useTranslation();
     const headerRef = useRef<HTMLElement | null>(null);
+    const menuRef = useRef<HTMLDivElement | null>(null);
     const nameRef = useRef<HTMLElement | null>(null);
     const colorRef = useRef(color);
 
@@ -35,12 +37,34 @@ const Header = ({ onGoTo, color }: any) => {
 
     const changeLanguage = (lng: string) => () => i18n.changeLanguage(lng);
 
+    const closeMenu = () => {
+        if (menuRef.current) {
+            menuRef.current.classList.remove("show-menu");
+            menuRef.current.classList.add("hide-menu");
+            document.removeEventListener("click", closeMenu);
+        }
+    };
+
+    const toggleMenu = () => {
+        if (menuRef.current) {
+            if (!menuRef.current.classList.value) menuRef.current.classList.add("hide-menu");
+            menuRef.current.classList.toggle("hide-menu");
+            menuRef.current.classList.toggle("show-menu");
+            document.addEventListener("click", closeMenu);
+        }
+    };
+
     return (
         <header ref={headerRef}>
             <div className="links">
-                {links.map((link) => (
-                    <span key={link} onClick={goTo(link)}>{t(link)}</span>
-                ))}
+                <img src={menu} alt="menu" onClick={toggleMenu} />
+                <div>
+                    <div ref={menuRef}>
+                        {links.map((link) => (
+                            <span key={link} onClick={goTo(link)}>{t(link)}</span>
+                        ))}
+                    </div>
+                </div>
             </div>
             <div className="name">
                 <span ref={nameRef}>

@@ -15,23 +15,123 @@ header {
     }
     .links {
         justify-content: flex-start;
-        span {
-            display: none;
-            margin-left: 2vmin;
-            white-space: nowrap;
-            text-transform: uppercase;
+        img {
             cursor: pointer;
+            margin-left: 2vmin;
+            width: 8vmin;
+            @media screen and (min-width: $mobile-medium-width) {
+                width: 6vmin;
+            }
+            @media screen and (min-width: $tablet-small-width) {
+                width: 5vmin;
+            }
+            @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
+                width: 6vmin;
+            }
+            @media screen and (min-width: $tablet-large-width) {
+                width: 5vmin;
+            }
             @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
-                display: inline;
-                font-size: 1.7vmin;
+                display: none;
             }
             @media screen and (min-width: $desktop-medium-width) {
-                display: inline;
-                font-size: 1.7vmin;
+                display: none;
             }
         }
-        span:hover {
-            color: $lightgrey;
+        > div {
+            overflow: hidden;
+            position: absolute;
+            transform: translateY(65%);
+            padding: 2vmin 4vmin 4vmin 2vmin;
+            @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                padding: 0;
+                transform: translateY(0);
+            }
+            @media screen and (min-width: $desktop-medium-width) {
+                padding: 0;
+                transform: translateY(0);
+            }
+            > div {
+                border-radius: 1vmin;
+                background-color: $white;
+                box-shadow: 3px 3px 10px $darkgrey;
+                transform: translateY(-130%);
+                @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                    transform: translateY(0) !important;
+                    box-shadow: none;
+                    border-radius: 0;
+                    background-color: transparent !important;
+                }
+                @media screen and (min-width: $desktop-medium-width) {
+                    transform: translateY(0) !important;
+                    box-shadow: none;
+                    border-radius: 0;
+                    background-color: transparent !important;
+                }
+                span {
+                    display: block;
+                    margin: 0 2vmin;
+                    padding-top: 1vmin;
+                    white-space: nowrap;
+                    font-size: 3vmin;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    @media screen and (min-width: $mobile-medium-width) {
+                        font-size: 3vmin;
+                    }
+                    @media screen and (min-width: $tablet-small-width) {
+                        font-size: 2.5vmin;
+                    }
+                    @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
+                        font-size: 3vmin;
+                    }
+                    @media screen and (min-width: $tablet-large-width) {
+                        font-size: 2.2vmin;
+                    }
+                    @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                        display: inline;
+                        margin-right: 0;
+                        font-size: 1.7vmin;
+                    }
+                    @media screen and (min-width: $desktop-medium-width) {
+                        display: inline;
+                        margin-right: 0;
+                        font-size: 1.7vmin;
+                    }
+                }
+                span:hover {
+                    color: $lightgrey;
+                }
+                span:last-child {
+                    padding: 1vmin 0;
+                }
+            }
+            .hide-menu {
+                animation-name: hideMenu;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+            .show-menu {
+                animation-name: showMenu;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes hideMenu {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(-130%);
+                }
+            }
+            @keyframes showMenu {
+                from {
+                    transform: translateY(-130%);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
         }
     }
     .name {
@@ -45,6 +145,9 @@ header {
             }
             @media screen and (min-width: $tablet-small-width) {
                 font-size: 3.5vmin;
+            }
+            @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
+                font-size: 4vmin;
             }
             @media screen and (min-width: $tablet-large-width) {
                 font-size: 3.2vmin;
@@ -75,6 +178,9 @@ header {
         }
         @media screen and (min-width: $tablet-small-width) {
             font-size: 2.3vmin;
+        }
+        @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
+            font-size: 2.9vmin;
         }
         @media screen and (min-width: $tablet-large-width) {
             font-size: 2vmin;
