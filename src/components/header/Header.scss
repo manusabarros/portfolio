@@ -73,20 +73,20 @@ header {
                     margin: 0 2vmin;
                     padding-top: 1vmin;
                     white-space: nowrap;
-                    font-size: 3vmin;
+                    font-size: 3.5vmin;
                     text-transform: uppercase;
                     cursor: pointer;
                     @media screen and (min-width: $mobile-medium-width) {
-                        font-size: 3vmin;
+                        font-size: 2.9vmin;
                     }
                     @media screen and (min-width: $tablet-small-width) {
-                        font-size: 2.5vmin;
+                        font-size: 2.3vmin;
                     }
                     @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
-                        font-size: 3vmin;
+                        font-size: 2.9vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) {
-                        font-size: 2.2vmin;
+                        font-size: 2vmin;
                     }
                     @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                         display: inline;
