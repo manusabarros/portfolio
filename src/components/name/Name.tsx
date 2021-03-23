@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./Name.scss";
+import { useState, useEffect } from "react";
+import styles from "./Name.module.scss";
 
 const nameText = "<Manu />";
 let showLine = true;
@@ -35,7 +35,7 @@ const Name = () => {
     }, [show]);
 
     return (
-        <div className="Name">
+        <div className={styles.Name}>
             <p>
                 {name}
                 {line}

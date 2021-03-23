@@ -1,5 +1,5 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
-import "./Footer.scss";
+import { forwardRef, useEffect, useRef, useState } from "react";
+import styles from "./Footer.module.scss";
 import githubWhite from "../../assets/github-white.png";
 import githubOrange from "../../assets/github-orange.png";
 import emailWhite from "../../assets/email-white.png";
@@ -29,13 +29,13 @@ const Footer = forwardRef((props: any, ref: any) => {
     }, []);
 
     return (
-        <footer ref={ref}>
+        <footer ref={ref} className={styles.Footer}>
             <div>
                 <div>
                     <p dangerouslySetInnerHTML={{ __html: t("MORE_ABOUT_ME") }}></p>
                     <div>
                         <a ref={emailRef} href="mailto:sabarros.manuel@gmail.com">
-                            <img src={emailImage} alt="email" className="email" />
+                            <img src={emailImage} alt="email" className={styles.email} />
                             sabarros.manuel@gmail.com
                         </a>
                     </div>
@@ -44,19 +44,19 @@ const Footer = forwardRef((props: any, ref: any) => {
                     <p>{t("FIND_ME")}</p>
                     <div>
                         <a ref={githubRef} href="https://github.com/manusabarros" target="_blank" rel="noopener noreferrer">
-                            <img src={githubImage} alt="github" className="github" />
+                            <img src={githubImage} alt="github" className={styles.github} />
                             @manusabarros
                         </a>
                     </div>
                     <div>
                         <a ref={linkedinRef} href="https://linkedin.com/in/manuel-sabarros" target="_blank" rel="noopener noreferrer">
-                            <img src={linkedinImage} alt="linkedin" className="linkedin" />
+                            <img src={linkedinImage} alt="linkedin" className={styles.linkedin} />
                             /in/manuel-sabarros
                         </a>
                     </div>
                 </div>
             </div>
-            <span>v{process.env.REACT_APP_VERSION}</span>
+            <span>v{process.env.NEXT_PUBLIC_VERSION}</span>
         </footer>
     );
 });

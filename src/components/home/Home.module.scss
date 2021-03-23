@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../pages/variables.scss";
 
 .Home {
     > div {
@@ -30,10 +30,10 @@
                     }
                 }
             }
-            .top-text {
+            .topText {
                 animation-name: showTopText;
             }
-            .bottom-text {
+            .bottomText {
                 animation-name: showBottomText;
             }
             @keyframes showTopText {

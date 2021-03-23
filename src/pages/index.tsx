@@ -1,11 +1,13 @@
-import React, { useState, useRef } from "react";
-import "./App.scss";
-import About from "./components/about/About";
-import Footer from "./components/footer/Footer";
-import Header, { Links } from "./components/header/Header";
-import Home from "./components/home/Home";
-import Work from "./components/work/Work";
-import Skills from "./components/skills/Skills";
+import { useEffect, useRef, useState } from "react";
+import styles from "./index.module.scss";
+import About from "../components/about/About";
+import Footer from "../components/footer/Footer";
+import Header, { Links } from "../components/header/Header";
+import Home from "../components/home/Home";
+import Work from "../components/work/Work";
+import Skills from "../components/skills/Skills";
+import "../../i18n";
+import Head from "next/head";
 
 export enum Colors {
     WHITE = "#fffcf2",
@@ -17,7 +19,7 @@ export enum Colors {
 
 const scrollBehavior: ScrollIntoViewOptions = { behavior: "smooth" };
 
-const App = () => {
+const Index = () => {
     const [headerColor, setHeaderColor] = useState(Colors.WHITE);
 
     const homeRef = useRef<HTMLElement | null>(null);
@@ -61,11 +63,18 @@ const App = () => {
         }
     };
 
-    window.addEventListener("scroll", verifyHeaderColor);
-    window.addEventListener("resize", verifyHeaderColor);
+    useEffect(() => {
+        window.addEventListener("scroll", verifyHeaderColor);
+        window.addEventListener("resize", verifyHeaderColor);
+    }, []);
 
     return (
-        <div className="App">
+        <div className={styles.Index}>
+            <Head>
+                <title>Manu Sabarrós</title>
+                <meta name="author" content="Manuel Sabarrós" />
+                <meta name="description" content="Manu Sabarrós' Portfolio. Software Developer based in Argentina" />
+            </Head>
             <Header onGoTo={goTo} color={headerColor} />
             <main>
                 <Home ref={homeRef} />
@@ -78,4 +87,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Index;

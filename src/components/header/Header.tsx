@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import "./Header.scss";
+import { useEffect, useRef } from "react";
+import styles from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n";
-import { Colors } from "../../App";
+import i18n from "../../../i18n";
+import { Colors } from "../../pages/index";
 import menu from "../../assets/menu.svg";
 
 export enum Links {
@@ -55,8 +55,8 @@ const Header = ({ onGoTo, color }: any) => {
     };
 
     return (
-        <header ref={headerRef}>
-            <div className="links">
+        <header ref={headerRef} className={styles.Header}>
+            <div className={styles.links}>
                 <img src={menu} alt="menu" onClick={toggleMenu} />
                 <div>
                     <div ref={menuRef}>
@@ -66,14 +66,14 @@ const Header = ({ onGoTo, color }: any) => {
                     </div>
                 </div>
             </div>
-            <div className="name">
+            <div className={styles.name}>
                 <span ref={nameRef}>
                     manuel
                     <br />
                     sabarrós
                 </span>
             </div>
-            <div className="languages">
+            <div className={styles.languages}>
                 <span onClick={changeLanguage("en")}>EN</span>/<span onClick={changeLanguage("es")}>ES</span>
             </div>
         </header>

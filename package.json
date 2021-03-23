@@ -2,48 +2,26 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.58",
-    "@types/react": "^16.9.49",
-    "@types/react-dom": "^16.9.8",
-    "i18next": "^19.8.2",
-    "i18next-browser-languagedetector": "^6.0.1",
-    "i18next-http-backend": "^1.0.21",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-i18next": "^11.7.3",
-    "react-scripts": "3.4.3",
-    "typescript": "^3.7.5"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "rimraf .next/ out/* && next build && next export",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "i18next": "^20.0.0",
+    "i18next-browser-languagedetector": "^6.1.0",
+    "i18next-http-backend": "^1.2.0",
+    "next": "10.0.5",
+    "next-images": "^1.7.0",
+    "node-sass": "^5.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-i18next": "^11.8.10",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "@types/i18next": "^13.0.0",
-    "@types/i18next-browser-languagedetector": "^3.0.0",
-    "@types/react-i18next": "^8.1.0",
-    "node-sass": "^4.14.1"
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "typescript": "^4.1.3"
   }
 }

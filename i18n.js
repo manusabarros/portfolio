@@ -5,12 +5,12 @@ import { initReactI18next } from "react-i18next";
 
 i18n.use(Backend)
     .use(LanguageDetector)
-    .use(initReactI18next) // passes i18n down to react-i18next
+    .use(initReactI18next)
     .init({
         fallbackLng: "en",
-        debug: true,
-        interpolation: {
-            escapeValue: false, // react already safes from xss
+        react: {
+            useSuspense: false,
+            wait: true,
         },
     });
 

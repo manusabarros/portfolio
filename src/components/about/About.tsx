@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
-import "./About.scss";
+import { forwardRef } from "react";
+import styles from "./About.module.scss";
 import profilePicture from "../../assets/profile-picture.jpg";
 import { useTranslation } from "react-i18next";
 
@@ -13,9 +13,9 @@ const About = forwardRef(({ contact }: any, ref: any) => {
     const { t } = useTranslation();
 
     return (
-        <section className="About" ref={ref}>
+        <section className={styles.About} ref={ref}>
             <div>
-                <div className="welcome">
+                <div className={styles.welcome}>
                     <div>
                         <p>{t("NICE_TO_MEET_YOU_1")}</p> <p>{t("NICE_TO_MEET_YOU_2")} <span>Manuel Sabarrós</span></p>
                     </div>
@@ -23,19 +23,19 @@ const About = forwardRef(({ contact }: any, ref: any) => {
                         <p>{t("NICE_TO_MEET_YOU_3")}</p> <p>{t("NICE_TO_MEET_YOU_4")}</p>
                     </div>
                 </div>
-                <div className="info">
-                    <div className="about-me">
+                <div className={styles.info}>
+                    <div className={styles.aboutMe}>
                         {aboutMe.map((el) => (
                             <div key={el.key}>
                                 <p>{t(el.text)}</p>
                             </div>
                         ))}
                     </div>
-                    <div className="profile-picture">
+                    <div className={styles.profilePicture}>
                         <img src={profilePicture} alt="profile-pic" />
                     </div>
                 </div>
-                <div className="button">
+                <div className={styles.button}>
                     <button onClick={() => contact()}>{t("CONTACT_ME")}</button>
                 </div>
             </div>

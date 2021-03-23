@@ -1,6 +1,6 @@
-@import "../../variables.scss";
+@import "../../pages/variables.scss";
 
-header {
+.Header {
     min-height: $header-height;
     padding-right: $scrollbar-width;
     width: calc(100vw - #{$scrollbar-width});
