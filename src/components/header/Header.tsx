@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
@@ -39,18 +39,23 @@ const Header = ({ onGoTo, color }: any) => {
 
     const closeMenu = () => {
         if (menuRef.current) {
-            menuRef.current.classList.remove("show-menu");
-            menuRef.current.classList.add("hide-menu");
+            console.log("CLOSE MENU");
+            menuRef.current.classList.remove(styles.showMenu);
+            menuRef.current.classList.add(styles.hideMenu);
             document.removeEventListener("click", closeMenu);
         }
     };
 
     const toggleMenu = () => {
         if (menuRef.current) {
-            if (!menuRef.current.classList.value) menuRef.current.classList.add("hide-menu");
-            menuRef.current.classList.toggle("hide-menu");
-            menuRef.current.classList.toggle("show-menu");
-            document.addEventListener("click", closeMenu);
+            if (!menuRef.current.classList.value || menuRef.current.classList.contains(styles.hideMenu)) {
+                menuRef.current.classList.remove(styles.hideMenu);
+                menuRef.current.classList.add(styles.showMenu);
+                setTimeout(() => document.addEventListener("click", closeMenu), 0);
+            } else {
+                menuRef.current.classList.remove(styles.showMenu);
+                menuRef.current.classList.add(styles.hideMenu);
+            }
         }
     };
 

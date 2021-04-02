@@ -16,8 +16,8 @@
     .links {
         justify-content: flex-start;
         img {
-            cursor: pointer;
             margin-left: 2vmin;
+            cursor: pointer;
             width: 8vmin;
             @media screen and (min-width: $mobile-medium-width) {
                 width: 6vmin;
@@ -106,12 +106,12 @@
                     padding: 1vmin 0;
                 }
             }
-            .hide-menu {
+            .hideMenu {
                 animation-name: hideMenu;
                 animation-duration: 0.5s;
                 animation-fill-mode: forwards;
             }
-            .show-menu {
+            .showMenu {
                 animation-name: showMenu;
                 animation-duration: 0.5s;
                 animation-fill-mode: forwards;

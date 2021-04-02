@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const Skills = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
-    const frontendSkills = ["HTML - CSS - SASS", "JavaScript - TypeScript", "React", "Angular", "Ionic"];
+    const frontendSkills = ["HTML - CSS - SASS", "JavaScript - TypeScript", "React / Angular", "React Native / Ionic", "NextJS"];
     const backendSkills = ["Node.js", "REST APIs (Express.js)", "GraphQL (Apollo)", "SQL (PostgreSQL)", "NoSQL (MongoDB)"];
     const othersSkills = ["GIT", "GNU/Linux", "Docker", "AWS (EC2, S3, RDS, Route53)", t("AGILE_METHODOLOGIES")];
 
