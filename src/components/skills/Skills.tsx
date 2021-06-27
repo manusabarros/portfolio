@@ -3,7 +3,7 @@ import styles from "./Skills.module.scss";
 import computer from "../../assets/computer.svg";
 import server from "../../assets/server.svg";
 import cloud from "../../assets/cloud.svg";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Skills = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();

@@ -6,7 +6,7 @@ import emailWhite from "../../assets/email-white.png";
 import emailOrange from "../../assets/email-orange.png";
 import linkedinWhite from "../../assets/linkedin-white.png";
 import linkedinOrange from "../../assets/linkedin-orange.png";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Footer = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();

@@ -2,7 +2,7 @@ import { forwardRef, useState, useEffect, useRef } from "react";
 import styles from "./Work.module.scss";
 import redirectOrange from "../../assets/redirect-orange.png";
 import redirectDarkGrey from "../../assets/redirect-darkgrey.png";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Work = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();

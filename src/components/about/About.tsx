@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import styles from "./About.module.scss";
 import profilePicture from "../../assets/profile-picture.jpg";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const aboutMe = [
     { key: 0, text: "MY_EXPERIENCE" },

@@ -1,9 +1,9 @@
-import { forwardRef, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./Header.module.scss";
-import { useTranslation } from "react-i18next";
-import i18n from "../../../i18n";
+import { useTranslation } from "next-i18next";
 import { Colors } from "../../pages/index";
 import menu from "../../assets/menu.svg";
+import { useRouter } from "next/dist/client/router";
 
 export enum Links {
     HOME = "HOME",
@@ -19,6 +19,7 @@ const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwa
 
 const Header = ({ onGoTo, color }: any) => {
     const { t } = useTranslation();
+    const { push } = useRouter();
     const headerRef = useRef<HTMLElement | null>(null);
     const menuRef = useRef<HTMLDivElement | null>(null);
     const nameRef = useRef<HTMLElement | null>(null);
@@ -35,7 +36,7 @@ const Header = ({ onGoTo, color }: any) => {
 
     const goTo = (link: any) => () => onGoTo(link);
 
-    const changeLanguage = (lng: string) => () => i18n.changeLanguage(lng);
+    const changeLanguage = (locale: string) => () => push("/", "/", { locale });
 
     const closeMenu = () => {
         if (menuRef.current) {
@@ -65,8 +66,10 @@ const Header = ({ onGoTo, color }: any) => {
                 <img src={menu} alt="menu" onClick={toggleMenu} />
                 <div>
                     <div ref={menuRef}>
-                        {links.map((link) => (
-                            <span key={link} onClick={goTo(link)}>{t(link)}</span>
+                        {links.map(link => (
+                            <span key={link} onClick={goTo(link)}>
+                                {t(link)}
+                            </span>
                         ))}
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import styles from "./Home.module.scss";
 import coffeeGif from "../../assets/coffee.gif";
 import Name from "../name/Name";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 const Home = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();

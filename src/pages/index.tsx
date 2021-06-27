@@ -6,7 +6,7 @@ import Header, { Links } from "../components/header/Header";
 import Home from "../components/home/Home";
 import Work from "../components/work/Work";
 import Skills from "../components/skills/Skills";
-import "../../i18n";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 
 export enum Colors {
@@ -48,7 +48,9 @@ const Index = () => {
         }
     };
 
-    const contact = () => { if (footerRef.current) footerRef.current.scrollIntoView(scrollBehavior); };
+    const contact = () => {
+        if (footerRef.current) footerRef.current.scrollIntoView(scrollBehavior);
+    };
 
     const getCurrentScroll = () => window.pageYOffset || document.documentElement.scrollTop;
 
@@ -88,3 +90,5 @@ const Index = () => {
 };
 
 export default Index;
+
+export const getStaticProps = async ({ locale }) => ({ props: { ...(await serverSideTranslations(locale)) } });
