@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import { useTranslation } from "next-i18next";
 import { Colors } from "../../pages/index";
 import menu from "../../assets/menu.svg";
-import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
 
 export enum Links {
     HOME = "HOME",
@@ -19,7 +19,6 @@ const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwa
 
 const Header = ({ onGoTo, color }: any) => {
     const { t } = useTranslation();
-    const { push } = useRouter();
     const headerRef = useRef<HTMLElement | null>(null);
     const menuRef = useRef<HTMLDivElement | null>(null);
     const nameRef = useRef<HTMLElement | null>(null);
@@ -35,8 +34,6 @@ const Header = ({ onGoTo, color }: any) => {
     }, [color]);
 
     const goTo = (link: any) => () => onGoTo(link);
-
-    const changeLanguage = (locale: string) => () => push("/", "/", { locale });
 
     const closeMenu = () => {
         if (menuRef.current) {
@@ -82,7 +79,13 @@ const Header = ({ onGoTo, color }: any) => {
                 </span>
             </div>
             <div className={styles.languages}>
-                <span onClick={changeLanguage("en")}>EN</span>/<span onClick={changeLanguage("es")}>ES</span>
+                <Link href="/" locale="en" scroll={false}>
+                    <span>EN</span>
+                </Link>
+                /
+                <Link href="/" locale="es" scroll={false}>
+                    <span>ES</span>
+                </Link>
             </div>
         </header>
     );

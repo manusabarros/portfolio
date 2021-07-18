@@ -11,13 +11,17 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JJ1MR3NXV"></script>
-                    <script dangerouslySetInnerHTML={{ __html: `
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
 
                         gtag('config', 'G-8JJ1MR3NXV');
-                    ` }}></script>
+                    `,
+                        }}
+                    ></script>
                 </Head>
                 <body>
                     <Main />
