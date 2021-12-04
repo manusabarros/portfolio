@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
+import { useEffect, useRef, useState } from "react";
 import About from "../components/about/About";
 import Footer from "../components/footer/Footer";
 import Header, { Links } from "../components/header/Header";
@@ -22,11 +22,11 @@ const scrollBehavior: ScrollIntoViewOptions = { behavior: "smooth" };
 const Index = () => {
     const [headerColor, setHeaderColor] = useState(Colors.WHITE);
 
-    const homeRef = useRef<HTMLElement | null>(null);
-    const aboutRef = useRef<HTMLElement | null>(null);
-    const workRef = useRef<HTMLElement | null>(null);
-    const skillsRef = useRef<HTMLElement | null>(null);
-    const footerRef = useRef<HTMLElement | null>(null);
+    const homeRef = useRef<HTMLElement>();
+    const aboutRef = useRef<HTMLElement>();
+    const workRef = useRef<HTMLElement>();
+    const skillsRef = useRef<HTMLElement>();
+    const footerRef = useRef<HTMLElement>();
 
     const goTo = (link: string) => {
         switch (link) {
@@ -55,9 +55,9 @@ const Index = () => {
     const getCurrentScroll = () => window.pageYOffset || document.documentElement.scrollTop;
 
     const verifyHeaderColor = () => {
-        const scroll = getCurrentScroll();
         if (aboutRef.current && workRef.current && skillsRef.current && footerRef.current) {
             const pxTolerance = 1;
+            const scroll = getCurrentScroll();
             if (scroll < aboutRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
             else if (scroll < workRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.ORANGE);
             else if (scroll < skillsRef.current.offsetTop - pxTolerance) setHeaderColor(Colors.WHITE);
@@ -71,21 +71,35 @@ const Index = () => {
     }, []);
 
     return (
-        <div className={styles.Index}>
+        <>
             <Head>
                 <title>Manu Sabarrós</title>
-                <meta name="author" content="Manuel Sabarrós" />
-                <meta name="description" content="Manu Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <link rel="canonical" href="https://manusabarros.com/" />
+                <meta name="description" content="Manuel Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <meta
+                    name="keywords"
+                    content="Manuel Sabarrós, Manu Sabarrós, software, developer, frontend, front end, front-end, backend, back end, back-end, fullstack, full stack, full-stack, web developer, mobile developer, react developer, react, next js, next.js, react native, node js"
+                />
+
+                <meta name="twitter:title" content="Manu Sabarrós" />
+                <meta name="twitter:description" content="Manuel Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <meta name="twitter:url" content="https://manusabarros.com/" />
+
+                <meta property="og:title" content="Manu Sabarrós" />
+                <meta property="og:description" content="Manuel Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <meta property="og:url" content="https://manusabarros.com/" />
             </Head>
-            <Header onGoTo={goTo} color={headerColor} />
-            <main>
-                <Home ref={homeRef} />
-                <About ref={aboutRef} contact={contact} />
-                <Work ref={workRef} />
-                <Skills ref={skillsRef} />
-            </main>
-            <Footer ref={footerRef} />
-        </div>
+            <div className={styles.Index}>
+                <Header onGoTo={goTo} color={headerColor} />
+                <main>
+                    <Home ref={homeRef} />
+                    <About ref={aboutRef} contact={contact} />
+                    <Work ref={workRef} />
+                    <Skills ref={skillsRef} />
+                </main>
+                <Footer ref={footerRef} />
+            </div>
+        </>
     );
 };
 

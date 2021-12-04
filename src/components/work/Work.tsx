@@ -1,26 +1,10 @@
-import { forwardRef, useState, useEffect, useRef } from "react";
 import styles from "./Work.module.scss";
-import redirectOrange from "../../assets/redirect-orange.png";
-import redirectDarkGrey from "../../assets/redirect-darkgrey.png";
+import { forwardRef } from "react";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 const Work = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
-    const [bombieriRedirect, setBombieriRedirect] = useState(redirectOrange);
-    const [ortexRedirect, setOrtexRedirect] = useState(redirectOrange);
-    const bombieriRef = useRef<HTMLAnchorElement | null>(null);
-    const ortexRef = useRef<HTMLAnchorElement | null>(null);
-
-    useEffect(() => {
-        if (bombieriRef.current) {
-            bombieriRef.current.addEventListener("mouseover", () => setBombieriRedirect(redirectDarkGrey));
-            bombieriRef.current.addEventListener("mouseout", () => setBombieriRedirect(redirectOrange));
-        }
-        if (ortexRef.current) {
-            ortexRef.current.addEventListener("mouseover", () => setOrtexRedirect(redirectDarkGrey));
-            ortexRef.current.addEventListener("mouseout", () => setOrtexRedirect(redirectOrange));
-        }
-    }, []);
 
     return (
         <section className={styles.Work} ref={ref}>
@@ -32,8 +16,14 @@ const Work = forwardRef((props: any, ref: any) => {
                             <p className={styles.year}>Mar 2021 {"->"} Date.now()</p>
                             <p className={styles.title}>
                                 {t("FRONTEND_DEVELOPER") + " - "}
-                                <a href="https://ortex.com" target="_blank" rel="noopener noreferrer" ref={ortexRef}>
-                                    ORTEX <img src={ortexRedirect} alt="redirect" />
+                                <a href="https://ortex.com" target="_blank" rel="noopener noreferrer">
+                                    ORTEX
+                                    <span>
+                                        <Image src="/assets/redirect-orange.png" alt="redirect" layout="fill" priority />
+                                    </span>
+                                    <span>
+                                        <Image src="/assets/redirect-darkgrey.png" alt="redirect" layout="fill" priority />
+                                    </span>
                                 </a>
                             </p>
                             <p className={styles.description}>{t("ORTEX_EXPERIENCE")}</p>
@@ -82,8 +72,14 @@ const Work = forwardRef((props: any, ref: any) => {
                             <p className={styles.year}>Sep 2019 {"->"} Feb 2021</p>
                             <p className={styles.title}>
                                 {t("FRONTEND_DEVELOPER") + " - "}
-                                <a href="https://bombieri.com.ar" target="_blank" rel="noopener noreferrer" ref={bombieriRef}>
-                                    BOMBIERI <img src={bombieriRedirect} alt="redirect" />
+                                <a href="https://bombieri.com.ar" target="_blank" rel="noopener noreferrer">
+                                    BOMBIERI
+                                    <span>
+                                        <Image src="/assets/redirect-orange.png" alt="redirect" layout="fill" priority />
+                                    </span>
+                                    <span>
+                                        <Image src="/assets/redirect-darkgrey.png" alt="redirect" layout="fill" priority />
+                                    </span>
                                 </a>
                             </p>
                             <p className={styles.description}>{t("BOMBIERI_EXPERIENCE_1")}</p>

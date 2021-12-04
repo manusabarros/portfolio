@@ -1,32 +1,10 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
 import styles from "./Footer.module.scss";
-import githubWhite from "../../assets/github-white.png";
-import githubOrange from "../../assets/github-orange.png";
-import emailWhite from "../../assets/email-white.png";
-import emailOrange from "../../assets/email-orange.png";
-import linkedinWhite from "../../assets/linkedin-white.png";
-import linkedinOrange from "../../assets/linkedin-orange.png";
+import { forwardRef } from "react";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 const Footer = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
-    const [githubImage, setGithubImage] = useState(githubWhite);
-    const [emailImage, setEmailImage] = useState(emailWhite);
-    const [linkedinImage, setLinkedinImage] = useState(linkedinWhite);
-    const githubRef = useRef<HTMLAnchorElement | null>(null);
-    const emailRef = useRef<HTMLAnchorElement | null>(null);
-    const linkedinRef = useRef<HTMLAnchorElement | null>(null);
-
-    useEffect(() => {
-        if (githubRef.current && emailRef.current && linkedinRef.current) {
-            githubRef.current.addEventListener("mouseover", () => setGithubImage(githubOrange));
-            githubRef.current.addEventListener("mouseout", () => setGithubImage(githubWhite));
-            emailRef.current.addEventListener("mouseover", () => setEmailImage(emailOrange));
-            emailRef.current.addEventListener("mouseout", () => setEmailImage(emailWhite));
-            linkedinRef.current.addEventListener("mouseover", () => setLinkedinImage(linkedinOrange));
-            linkedinRef.current.addEventListener("mouseout", () => setLinkedinImage(linkedinWhite));
-        }
-    }, []);
 
     return (
         <footer ref={ref} className={styles.Footer}>
@@ -34,8 +12,13 @@ const Footer = forwardRef((props: any, ref: any) => {
                 <div>
                     <p dangerouslySetInnerHTML={{ __html: t("MORE_ABOUT_ME") }}></p>
                     <div>
-                        <a ref={emailRef} href="mailto:sabarros.manuel@gmail.com">
-                            <img src={emailImage} alt="email" className={styles.email} />
+                        <a href="mailto:sabarros.manuel@gmail.com">
+                            <span className={styles.email}>
+                                <Image src="/assets/email-white.png" alt="email" layout="fill" priority />
+                            </span>
+                            <span className={styles.email}>
+                                <Image src="/assets/email-orange.png" alt="email" layout="fill" priority />
+                            </span>
                             sabarros.manuel@gmail.com
                         </a>
                     </div>
@@ -43,14 +26,24 @@ const Footer = forwardRef((props: any, ref: any) => {
                 <div>
                     <p>{t("FIND_ME")}</p>
                     <div>
-                        <a ref={githubRef} href="https://github.com/manusabarros" target="_blank" rel="noopener noreferrer">
-                            <img src={githubImage} alt="github" className={styles.github} />
+                        <a href="https://github.com/manusabarros" target="_blank" rel="noopener noreferrer">
+                            <span className={styles.github}>
+                                <Image src="/assets/github-white.png" alt="github" layout="fill" priority />
+                            </span>
+                            <span className={styles.github}>
+                                <Image src="/assets/github-orange.png" alt="github" layout="fill" priority />
+                            </span>
                             @manusabarros
                         </a>
                     </div>
                     <div>
-                        <a ref={linkedinRef} href="https://linkedin.com/in/manuel-sabarros" target="_blank" rel="noopener noreferrer">
-                            <img src={linkedinImage} alt="linkedin" className={styles.linkedin} />
+                        <a href="https://linkedin.com/in/manuel-sabarros" target="_blank" rel="noopener noreferrer">
+                            <span className={styles.linkedin}>
+                                <Image src="/assets/linkedin-white.png" alt="linkedin" layout="fill" priority />
+                            </span>
+                            <span className={styles.linkedin}>
+                                <Image src="/assets/linkedin-orange.png" alt="linkedin" layout="fill" priority />
+                            </span>
                             /in/manuel-sabarros
                         </a>
                     </div>

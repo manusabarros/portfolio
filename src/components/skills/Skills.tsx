@@ -1,9 +1,7 @@
-import { forwardRef } from "react";
 import styles from "./Skills.module.scss";
-import computer from "../../assets/computer.svg";
-import server from "../../assets/server.svg";
-import cloud from "../../assets/cloud.svg";
+import { forwardRef } from "react";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 const Skills = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
@@ -18,33 +16,39 @@ const Skills = forwardRef((props: any, ref: any) => {
                 <div>
                     <div>
                         <div className={styles.image}>
-                            <img src={computer} alt="computer" />
+                            <div>
+                                <Image src="/assets/computer.svg" alt="computer" layout="fill" priority />
+                            </div>
                         </div>
                         <p>FRONTEND</p>
                         <div className={styles.skills}>
-                            {frontendSkills.map((skill) => (
+                            {frontendSkills.map(skill => (
                                 <p key={skill}>{skill}</p>
                             ))}
                         </div>
                     </div>
                     <div>
                         <div className={styles.image}>
-                            <img src={server} alt="server" />
+                            <div>
+                                <Image src="/assets/server.svg" alt="server" layout="fill" priority />
+                            </div>
                         </div>
                         <p>BACKEND</p>
                         <div className={styles.skills}>
-                            {backendSkills.map((skill) => (
+                            {backendSkills.map(skill => (
                                 <p key={skill}>{skill}</p>
                             ))}
                         </div>
                     </div>
                     <div>
                         <div className={styles.image}>
-                            <img src={cloud} alt="cloud" />
+                            <div>
+                                <Image src="/assets/cloud.svg" alt="cloud" layout="fill" priority />
+                            </div>
                         </div>
                         <p>{t("OTHERS")}</p>
                         <div className={styles.skills}>
-                            {othersSkills.map((skill) => (
+                            {othersSkills.map(skill => (
                                 <p key={skill}>{skill}</p>
                             ))}
                         </div>
