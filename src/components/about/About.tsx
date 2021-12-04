@@ -31,7 +31,7 @@ const About = forwardRef(({ contact }: any, ref: any) => {
                         ))}
                     </div>
                     <div className={styles.profilePicture}>
-                        <Image src="/assets/profile-picture.png" alt="profile-pic" layout="fill" priority />
+                        <Image src="/assets/profile-picture.jpg" alt="profile-pic" layout="fill" priority />
                     </div>
                 </div>
                 <div className={styles.button}>

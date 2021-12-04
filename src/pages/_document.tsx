@@ -10,6 +10,16 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                    <meta name="author" content="Manuel Sabarrós" />
+
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:image" content="https://manusabarros.com/assets/profile-picture-192x192.png" />
+                    <meta name="twitter:creator" content="@manusabarros" />
+
+                    <meta property="og:type" content="website" />
+                    <meta property="og:site_name" content="Manu Sabarrós" />
+                    <meta property="og:image" content="https://manusabarros.com/assets/profile-picture-192x192.png" />
+
                     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JJ1MR3NXV"></script>
                     <script
                         dangerouslySetInnerHTML={{
