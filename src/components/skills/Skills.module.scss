@@ -31,16 +31,18 @@
                     align-items: center;
                     justify-content: center;
                     background-color: $black;
-                    img {
+                    > div {
                         width: 15vmin;
                         height: 15vmin;
+                        position: relative;
                     }
                     @media screen and (min-width: $tablet-large-width) {
                         width: 20vmin;
                         height: 20vmin;
-                        img {
+                        > div {
                             width: 10vmin;
                             height: 10vmin;
+                            position: relative;
                         }
                     }
                 }

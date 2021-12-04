@@ -1,8 +1,8 @@
-import { forwardRef } from "react";
 import styles from "./Home.module.scss";
-import coffeeGif from "../../assets/coffee.gif";
+import { forwardRef } from "react";
 import Name from "../name/Name";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 const Home = forwardRef((props: any, ref: any) => {
     const { t } = useTranslation();
@@ -21,7 +21,7 @@ const Home = forwardRef((props: any, ref: any) => {
                 </div>
                 <div className={styles.gif}>
                     <div>
-                        <img src={coffeeGif} alt="coffee-gif" />
+                        <Image src="/assets/coffee.gif" alt="coffee-gif" layout="fill" />
                     </div>
                 </div>
             </div>

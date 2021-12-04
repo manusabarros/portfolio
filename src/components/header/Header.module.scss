@@ -1,9 +1,9 @@
 @import "../../pages/variables.scss";
 
 .Header {
+    width: 100vw;
     min-height: $header-height;
     padding-right: $scrollbar-width;
-    width: calc(100vw - #{$scrollbar-width});
     top: 0;
     position: fixed;
     z-index: 1;
@@ -15,21 +15,27 @@
     }
     .links {
         justify-content: flex-start;
-        img {
-            margin-left: 2vmin;
-            cursor: pointer;
+        .image {
             width: 8vmin;
+            height: 8vmin;
+            cursor: pointer;
+            position: relative;
+            margin-left: 2vmin;
             @media screen and (min-width: $mobile-medium-width) {
                 width: 6vmin;
+                height: 6vmin;
             }
             @media screen and (min-width: $tablet-small-width) {
                 width: 5vmin;
+                height: 5vmin;
             }
             @media screen and (min-width: $tablet-small-width) and (max-height: $tablet-small-width) {
                 width: 6vmin;
+                height: 6vmin;
             }
             @media screen and (min-width: $tablet-large-width) {
                 width: 5vmin;
+                height: 5vmin;
             }
             @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                 display: none;
@@ -38,7 +44,7 @@
                 display: none;
             }
         }
-        > div {
+        .menu {
             overflow: hidden;
             position: absolute;
             transform: translateY(65%);

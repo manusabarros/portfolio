@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
+import { useEffect, useRef, useState } from "react";
 import About from "../components/about/About";
 import Footer from "../components/footer/Footer";
 import Header, { Links } from "../components/header/Header";
@@ -71,21 +71,23 @@ const Index = () => {
     }, []);
 
     return (
-        <div className={styles.Index}>
+        <>
             <Head>
                 <title>Manu Sabarrós</title>
                 <meta name="author" content="Manuel Sabarrós" />
                 <meta name="description" content="Manu Sabarrós' Portfolio. Software Developer based in Argentina" />
             </Head>
-            <Header onGoTo={goTo} color={headerColor} />
-            <main>
-                <Home ref={homeRef} />
-                <About ref={aboutRef} contact={contact} />
-                <Work ref={workRef} />
-                <Skills ref={skillsRef} />
-            </main>
-            <Footer ref={footerRef} />
-        </div>
+            <div className={styles.Index}>
+                <Header onGoTo={goTo} color={headerColor} />
+                <main>
+                    <Home ref={homeRef} />
+                    <About ref={aboutRef} contact={contact} />
+                    <Work ref={workRef} />
+                    <Skills ref={skillsRef} />
+                </main>
+                <Footer ref={footerRef} />
+            </div>
+        </>
     );
 };
 

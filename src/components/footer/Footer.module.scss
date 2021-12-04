@@ -58,65 +58,93 @@
                 margin-top: 5vmin;
                 a {
                     color: $white;
-                    font-size: 3.4vmin;
-                    white-space: nowrap;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    img {
+                    white-space: nowrap;
+                    position: relative;
+                    font-size: 3.4vmin;
+                    > span {
+                        position: relative;
+                        display: inline-block;
                         margin-right: 2vmin;
+                        &:first-of-type {
+                            visibility: visible;
+                        }
+                        &:last-of-type {
+                            left: 0;
+                            position: absolute;
+                            visibility: hidden;
+                        }
                     }
                     .github {
                         width: 6vmin;
+                        height: 6vmin;
                     }
                     .email {
                         width: 5.5vmin;
+                        height: 4vmin;
                     }
                     .linkedin {
                         width: 5vmin;
+                        height: 5vmin;
                     }
                     @media screen and (min-width: $tablet-small-width) {
                         font-size: 3vmin;
                         .github {
                             width: 5.2vmin;
+                            height: 5.2vmin;
                         }
                         .email {
                             width: 4.7vmin;
+                            height: 3.5vmin;
                         }
                         .linkedin {
                             width: 4.2vmin;
+                            height: 4.2vmin;
                         }
                     }
                     @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
                         font-size: 2.4vmin;
                         .github {
                             width: 4.5vmin;
+                            height: 4.5vmin;
                         }
                         .email {
                             width: 4vmin;
+                            height: 3vmin;
                         }
                         .linkedin {
                             width: 3.5vmin;
+                            height: 3.5vmin;
                         }
                     }
                     @media screen and (min-width: $desktop-medium-width) {
                         font-size: 2.4vmin;
                         .github {
                             width: 4.5vmin;
+                            height: 4.5vmin;
                         }
                         .email {
                             width: 4vmin;
+                            height: 3vmin;
                         }
                         .linkedin {
                             width: 3.5vmin;
+                            height: 3.5vmin;
                         }
                     }
                 }
-                a:visited {
-                    color: $white;
-                }
                 a:hover {
                     color: $orange;
+                    > span {
+                        &:first-of-type {
+                            visibility: hidden;
+                        }
+                        &:last-of-type {
+                            visibility: visible;
+                        }
+                    }
                 }
             }
         }

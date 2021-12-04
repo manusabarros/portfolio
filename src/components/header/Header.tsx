@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "next-i18next";
 import { Colors } from "../../pages/index";
-import menu from "../../assets/menu.svg";
 import Link from "next/link";
+import Image from "next/image";
 
 export enum Links {
     HOME = "HOME",
@@ -60,8 +60,10 @@ const Header = ({ onGoTo, color }: any) => {
     return (
         <header ref={headerRef} className={styles.Header}>
             <div className={styles.links}>
-                <img src={menu} alt="menu" onClick={toggleMenu} />
-                <div>
+                <div className={styles.image}>
+                    <Image src="/assets/menu.svg" alt="menu" onClick={toggleMenu} layout="fill" />
+                </div>
+                <div className={styles.menu}>
                     <div ref={menuRef}>
                         {links.map(link => (
                             <span key={link} onClick={goTo(link)}>

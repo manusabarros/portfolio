@@ -77,34 +77,59 @@
                     }
                     a {
                         color: $orange;
-                        white-space: nowrap;
-                        img {
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        > span {
+                            width: 3.6vmin;
                             height: 3.6vmin;
+                            position: relative;
+                            display: inline-block;
+                            margin-left: 1vmin;
+                            &:first-of-type {
+                                visibility: visible;
+                            }
+                            &:last-of-type {
+                                right: 0;
+                                position: absolute;
+                                visibility: hidden;
+                            }
                             @media screen and (min-width: $mobile-large-width) {
+                                width: 3.8vmin;
                                 height: 3.8vmin;
                             }
                             @media screen and (min-width: $tablet-small-width) {
+                                width: 3.1vmin;
                                 height: 3.1vmin;
                             }
                             @media screen and (min-width: $tablet-large-width) {
+                                width: 2.9vmin;
                                 height: 2.9vmin;
                             }
                             @media screen and (min-width: $tablet-large-width) and (max-height: $tablet-large-width) {
+                                width: 2.7vmin;
                                 height: 2.7vmin;
                             }
                             @media screen and (min-width: $desktop-medium-width) {
+                                width: 2.5vmin;
                                 height: 2.5vmin;
                             }
                             @media screen and (min-width: $desktop-large-width) and (max-height: $tablet-large-width) {
+                                width: 2.5vmin;
                                 height: 2.5vmin;
                             }
                         }
                     }
-                    a:visited {
-                        color: $orange;
-                    }
                     a:hover {
                         color: $darkgrey;
+                        > span {
+                            &:first-of-type {
+                                visibility: hidden;
+                            }
+                            &:last-of-type {
+                                visibility: visible;
+                            }
+                        }
                     }
                 }
                 .description {
@@ -123,7 +148,8 @@
                     @media screen and (min-width: $desktop-medium-width) {
                         font-size: 2.3vmin;
                     }
-                    a, a:visited {
+                    a,
+                    a:visited {
                         color: $orange;
                     }
                     a:hover {

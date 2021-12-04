@@ -55,19 +55,14 @@
         }
         .gif {
             overflow: hidden;
-            div {
-                $image-size: 35vmin;
-                width: $image-size;
-                height: $image-size;
+            > div {
+                width: 35vmin;
+                height: 35vmin;
                 background-color: $black;
                 border-radius: 50%;
                 animation-name: showGif;
                 animation-duration: 1s;
                 animation-fill-mode: forwards;
-                img {
-                    width: $image-size;
-                    height: $image-size;
-                }
             }
             @keyframes showGif {
                 from {
