@@ -19,10 +19,10 @@ const Work = forwardRef((props: any, ref: any) => {
                                 <a href="https://ortex.com" target="_blank" rel="noopener noreferrer">
                                     ORTEX
                                     <span>
-                                        <Image src="/assets/redirect-orange.png" alt="redirect" layout="fill" />
+                                        <Image src="/assets/redirect-orange.png" alt="redirect" layout="fill" priority />
                                     </span>
                                     <span>
-                                        <Image src="/assets/redirect-darkgrey.png" alt="redirect" layout="fill" />
+                                        <Image src="/assets/redirect-darkgrey.png" alt="redirect" layout="fill" priority />
                                     </span>
                                 </a>
                             </p>
@@ -75,10 +75,10 @@ const Work = forwardRef((props: any, ref: any) => {
                                 <a href="https://bombieri.com.ar" target="_blank" rel="noopener noreferrer">
                                     BOMBIERI
                                     <span>
-                                        <Image src="/assets/redirect-orange.png" alt="redirect" layout="fill" />
+                                        <Image src="/assets/redirect-orange.png" alt="redirect" layout="fill" priority />
                                     </span>
                                     <span>
-                                        <Image src="/assets/redirect-darkgrey.png" alt="redirect" layout="fill" />
+                                        <Image src="/assets/redirect-darkgrey.png" alt="redirect" layout="fill" priority />
                                     </span>
                                 </a>
                             </p>

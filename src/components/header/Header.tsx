@@ -61,7 +61,7 @@ const Header = ({ onGoTo, color }: any) => {
         <header ref={headerRef} className={styles.Header}>
             <div className={styles.links}>
                 <div className={styles.image}>
-                    <Image src="/assets/menu.svg" alt="menu" onClick={toggleMenu} layout="fill" />
+                    <Image src="/assets/menu.svg" alt="menu" onClick={toggleMenu} layout="fill" priority />
                 </div>
                 <div className={styles.menu}>
                     <div ref={menuRef}>

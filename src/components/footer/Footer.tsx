@@ -14,10 +14,10 @@ const Footer = forwardRef((props: any, ref: any) => {
                     <div>
                         <a href="mailto:sabarros.manuel@gmail.com">
                             <span className={styles.email}>
-                                <Image src="/assets/email-white.png" alt="email" layout="fill" />
+                                <Image src="/assets/email-white.png" alt="email" layout="fill" priority />
                             </span>
                             <span className={styles.email}>
-                                <Image src="/assets/email-orange.png" alt="email" layout="fill" />
+                                <Image src="/assets/email-orange.png" alt="email" layout="fill" priority />
                             </span>
                             sabarros.manuel@gmail.com
                         </a>
@@ -28,10 +28,10 @@ const Footer = forwardRef((props: any, ref: any) => {
                     <div>
                         <a href="https://github.com/manusabarros" target="_blank" rel="noopener noreferrer">
                             <span className={styles.github}>
-                                <Image src="/assets/github-white.png" alt="github" layout="fill" />
+                                <Image src="/assets/github-white.png" alt="github" layout="fill" priority />
                             </span>
                             <span className={styles.github}>
-                                <Image src="/assets/github-orange.png" alt="github" layout="fill" />
+                                <Image src="/assets/github-orange.png" alt="github" layout="fill" priority />
                             </span>
                             @manusabarros
                         </a>
@@ -39,10 +39,10 @@ const Footer = forwardRef((props: any, ref: any) => {
                     <div>
                         <a href="https://linkedin.com/in/manuel-sabarros" target="_blank" rel="noopener noreferrer">
                             <span className={styles.linkedin}>
-                                <Image src="/assets/linkedin-white.png" alt="linkedin" layout="fill" />
+                                <Image src="/assets/linkedin-white.png" alt="linkedin" layout="fill" priority />
                             </span>
                             <span className={styles.linkedin}>
-                                <Image src="/assets/linkedin-orange.png" alt="linkedin" layout="fill" />
+                                <Image src="/assets/linkedin-orange.png" alt="linkedin" layout="fill" priority />
                             </span>
                             /in/manuel-sabarros
                         </a>
