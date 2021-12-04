@@ -4,9 +4,10 @@
     width: 100vw;
     min-height: $header-height;
     padding-right: $scrollbar-width;
-    top: 0;
+    transition: background-color 500ms;
     position: fixed;
     z-index: 1;
+    top: 0;
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
     > div {
@@ -141,8 +142,9 @@
         }
     }
     .name {
-        justify-content: center;
         text-align: center;
+        justify-content: center;
+        transition: color 500ms;
         span {
             margin: 1vmin;
             font-size: 5vmin;

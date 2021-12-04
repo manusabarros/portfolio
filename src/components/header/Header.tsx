@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "next-i18next";
 import { Colors } from "../../pages/index";
@@ -15,29 +15,14 @@ export enum Links {
 
 const links = [Links.HOME, Links.ABOUT, Links.WORK, Links.SKILLS, Links.CONTACT];
 
-const animationOptions: KeyframeAnimationOptions = { duration: 500, fill: "forwards" };
-
-const Header = ({ onGoTo, color }: any) => {
+const Header = ({ onGoTo, color: backgroundColor }: any) => {
     const { t } = useTranslation();
-    const headerRef = useRef<HTMLElement | null>(null);
-    const menuRef = useRef<HTMLDivElement | null>(null);
-    const nameRef = useRef<HTMLElement | null>(null);
-    const colorRef = useRef(color);
-
-    useEffect(() => {
-        if (headerRef.current && nameRef.current) {
-            headerRef.current.animate({ backgroundColor: [colorRef.current, color] }, animationOptions);
-            if (color === colorRef.current) nameRef.current.animate({ color: [color, Colors.ORANGE] }, animationOptions);
-            else nameRef.current.animate({ color: [color, colorRef.current] }, animationOptions);
-            colorRef.current = color;
-        }
-    }, [color]);
+    const menuRef = useRef<HTMLDivElement>();
 
     const goTo = (link: any) => () => onGoTo(link);
 
     const closeMenu = () => {
         if (menuRef.current) {
-            console.log("CLOSE MENU");
             menuRef.current.classList.remove(styles.showMenu);
             menuRef.current.classList.add(styles.hideMenu);
             document.removeEventListener("click", closeMenu);
@@ -58,7 +43,7 @@ const Header = ({ onGoTo, color }: any) => {
     };
 
     return (
-        <header ref={headerRef} className={styles.Header}>
+        <header className={styles.Header} style={{ backgroundColor }}>
             <div className={styles.links}>
                 <div className={styles.image}>
                     <Image src="/assets/menu.svg" alt="menu" onClick={toggleMenu} layout="fill" priority />
@@ -73,8 +58,8 @@ const Header = ({ onGoTo, color }: any) => {
                     </div>
                 </div>
             </div>
-            <div className={styles.name}>
-                <span ref={nameRef}>
+            <div className={styles.name} style={{ color: backgroundColor === Colors.WHITE ? Colors.ORANGE : Colors.WHITE }}>
+                <span>
                     manuel
                     <br />
                     sabarrós
