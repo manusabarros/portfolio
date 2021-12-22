@@ -75,18 +75,18 @@ const Index = () => {
             <Head>
                 <title>Manu Sabarrós</title>
                 <link rel="canonical" href="https://manusabarros.com/" />
-                <meta name="description" content="Manuel Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <meta name="description" content="Manuel Sabarrós' Portfolio. Software Developer based in Portugal" />
                 <meta
                     name="keywords"
                     content="Manuel Sabarrós, Manu Sabarrós, software, developer, frontend, front end, front-end, backend, back end, back-end, fullstack, full stack, full-stack, web developer, mobile developer, react developer, react, next js, next.js, react native, node js"
                 />
 
                 <meta name="twitter:title" content="Manu Sabarrós" />
-                <meta name="twitter:description" content="Manuel Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <meta name="twitter:description" content="Manuel Sabarrós' Portfolio. Software Developer based in Portugal" />
                 <meta name="twitter:url" content="https://manusabarros.com/" />
 
                 <meta property="og:title" content="Manu Sabarrós" />
-                <meta property="og:description" content="Manuel Sabarrós' Portfolio. Software Developer based in Argentina" />
+                <meta property="og:description" content="Manuel Sabarrós' Portfolio. Software Developer based in Portugal" />
                 <meta property="og:url" content="https://manusabarros.com/" />
             </Head>
             <div className={styles.Index}>
