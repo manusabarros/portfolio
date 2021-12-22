@@ -1,6 +1,6 @@
 {
     "HELLO": "Hello! I'm",
-    "A_DEVELOPER": "a <span>developer</span> based in Argentina",
+    "A_DEVELOPER": "a <span>developer</span> based in Portugal",
     "HOME": "Home",
     "ABOUT": "About",
     "WORK": "Work",
@@ -9,7 +9,7 @@
     "NICE_TO_MEET_YOU_1": "Hi! Nice to meet you!",
     "NICE_TO_MEET_YOU_2": "My name is",
     "NICE_TO_MEET_YOU_3": "and I'm a software developer",
-    "NICE_TO_MEET_YOU_4": "living in Argentina.",
+    "NICE_TO_MEET_YOU_4": "living in Portugal.",
     "MY_EXPERIENCE": "I have experience in fullstack development, but my main expertise is the frontend world. I love developing beautiful websites and mobile apps and creating platforms with great design.",
     "TECH_IS_MY_PASSION": "Technology is my passion! I'm always learning new things to add to my skill set, especially modern ones, so that I can help by adding value to projects and delivering a high quality product.",
     "BUSINESS_ANALYSIS_EASE": "And last but not least, I have ease for business analysis due to the degree I'm currently studying, so I can collaborate with solutions for many areas of an organization.",
