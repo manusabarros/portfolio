@@ -74,6 +74,8 @@ const Index = () => {
         window.addEventListener("resize", verifyHeaderColor);
     }, []);
 
+    return null;
+
     return (
         <>
             <Head>

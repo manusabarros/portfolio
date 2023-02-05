@@ -54,7 +54,7 @@ const HomePage = () => {
         pos="fixed"
         top="20px"
         right="20px"
-        zIndex={1}
+        zIndex={2}
         onClick={toggleColorMode}
       />
       <Box h={300} pos="relative">
