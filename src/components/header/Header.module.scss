@@ -171,14 +171,15 @@
     .languages {
         justify-content: flex-end;
         font-size: 3.5vmin;
-        span {
+        a {
+            color: unset;
             margin: 0 1vmin;
             cursor: pointer;
         }
-        span:hover {
+        a:hover {
             color: $lightgrey;
         }
-        span:last-child {
+        a:last-child {
             margin-right: 2vmin;
         }
         @media screen and (min-width: $mobile-medium-width) {

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "next-i18next";
-import { Colors } from "../../pages/index";
+import { Colors } from "../../pages/v1/index";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,7 +17,7 @@ const links = [Links.HOME, Links.ABOUT, Links.WORK, Links.SKILLS, Links.CONTACT]
 
 const Header = ({ onGoTo, color: backgroundColor }: any) => {
     const { t } = useTranslation();
-    const menuRef = useRef<HTMLDivElement>();
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const goTo = (link: any) => () => onGoTo(link);
 
@@ -66,13 +66,9 @@ const Header = ({ onGoTo, color: backgroundColor }: any) => {
                 </span>
             </div>
             <div className={styles.languages}>
-                <Link href="/" locale="en" scroll={false}>
-                    <span>EN</span>
-                </Link>
+                <Link href="/" locale="en" scroll={false}>EN</Link>
                 /
-                <Link href="/" locale="es" scroll={false}>
-                    <span>ES</span>
-                </Link>
+                <Link href="/" locale="es" scroll={false}>ES</Link>
             </div>
         </header>
     );
