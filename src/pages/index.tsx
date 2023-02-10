@@ -15,6 +15,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Image from "@/components/Image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Experience from "@/components/Experience";
 import Technology from "@/components/Technology";
 import Head from "next/head";
@@ -22,8 +24,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 
 const HomePage = () => {
   const { colorMode } = useColorMode();
@@ -301,7 +301,7 @@ const HomePage = () => {
             <Text align="justify">
               In October 2020, I gave a live virtual talk for university students about the process
               of digital transformation in companies, and how digital transformation helps growth
-              even in times of crisis. Click{" "}
+              even in times of crisis.{" "}
               <Link
                 fontWeight={700}
                 color="teal.400"
@@ -309,9 +309,8 @@ const HomePage = () => {
                 href="https://www.youtube.com/watch?v=7fnpmdUoJb0"
                 target="_blank"
               >
-                here
-              </Link>{" "}
-              to take a look at it!
+                Take a look at it!
+              </Link>
             </Text>
             <VisuallyHidden
               mt="0 !important"
