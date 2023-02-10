@@ -43,10 +43,7 @@ const HomePage = () => {
 
   const goToElement = (
     link: "about-me" | "experience" | "education" | "participations" | "technologies"
-  ) => {
-    console.log(elementsRefs[link].current?.scrollIntoView);
-    elementsRefs[link].current?.scrollIntoView({ behavior: "smooth" });
-  };
+  ) => elementsRefs[link].current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <>
