@@ -1,32 +1,52 @@
+import { useRef } from "react";
 import {
   Box,
+  chakra,
   Divider,
   Heading,
   HStack,
-  IconButton,
   Link,
   ListItem,
   Stack,
   Text,
   UnorderedList,
   useColorMode,
+  VisuallyHidden,
   VStack,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Image from "@/components/Image";
 import Experience from "@/components/Experience";
 import Technology from "@/components/Technology";
-import getConfig from "next/config";
 import Head from "next/head";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-
-const { publicRuntimeConfig } = getConfig();
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const HomePage = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
+  const aboutMeRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
+  const participationsRef = useRef<HTMLDivElement>(null);
+  const technologiesRef = useRef<HTMLDivElement>(null);
+
+  const elementsRefs = {
+    "about-me": aboutMeRef,
+    experience: experienceRef,
+    education: educationRef,
+    participations: participationsRef,
+    technologies: technologiesRef,
+  };
+
+  const goToElement = (
+    link: "about-me" | "experience" | "education" | "participations" | "technologies"
+  ) => {
+    console.log(elementsRefs[link].current?.scrollIntoView);
+    elementsRefs[link].current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -72,18 +92,8 @@ const HomePage = () => {
           scrollbar-width: none; /* Firefox */
         }
       `}</style>
-      <Box pos="relative">
-        <IconButton
-          icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-          aria-label="Change Theme"
-          bgColor={colorMode === "dark" ? "whiteAlpha.100" : "blackAlpha.100"}
-          _hover={{ bgColor: colorMode === "dark" ? "whiteAlpha.300" : "blackAlpha.300" }}
-          pos="fixed"
-          top="20px"
-          right="20px"
-          zIndex={2}
-          onClick={toggleColorMode}
-        />
+      <Header onClick={goToElement} />
+      <chakra.main pt={14} pb={20}>
         <Box h={300} pos="relative">
           <Image
             src="/assets/cover.jpg"
@@ -108,7 +118,7 @@ const HomePage = () => {
             <Image src="/assets/profile-picture.jpg" alt="manusabarros" fill borderRadius="full" />
           </Box>
           <Heading size="lg" fontSize="2xl">
-            Manuel Sabarrós
+            Manu Sabarrós
           </Heading>
           <Heading size="md">Frontend Engineer</Heading>
           <Link href="mailto:hello@manusabarros.com" _hover={{ color: "gray.500" }}>
@@ -144,7 +154,7 @@ const HomePage = () => {
           </HStack>
         </VStack>
         <Box maxW={800} p={5} pb={0} m="auto">
-          <VStack align="start">
+          <VStack align="start" pos="relative">
             <Heading size="md">About Me</Heading>
             <Text align="justify">
               Hi! Nice to meet you! My name is Manuel Sabarrós and I&apos;m a software developer
@@ -165,9 +175,10 @@ const HomePage = () => {
               currently studying, so I can collaborate with solutions for many areas of an
               organization.
             </Text>
+            <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={aboutMeRef} />
           </VStack>
           <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
-          <VStack align="start">
+          <VStack align="start" pos="relative">
             <Heading size="md" mb={2}>
               Experience
             </Heading>
@@ -264,9 +275,10 @@ const HomePage = () => {
                 </Experience>
               </SwiperSlide>
             </Swiper>
+            <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={experienceRef} />
           </VStack>
           <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
-          <VStack align="start">
+          <VStack align="start" pos="relative">
             <Heading size="md">Education</Heading>
             <Heading size="sm" fontSize="lg">
               Bachelor&apos;s in Industrial Management
@@ -281,9 +293,10 @@ const HomePage = () => {
               provides to companies.
             </Text>
             <Text align="justify">My favourite fields? Marketing and Operational Research.</Text>
+            <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={educationRef} />
           </VStack>
           <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
-          <VStack align="start">
+          <VStack align="start" pos="relative">
             <Heading size="md">Participations</Heading>
             <Heading size="sm" fontSize="lg">
               Digital Transformation Talk
@@ -303,9 +316,15 @@ const HomePage = () => {
               </Link>{" "}
               to take a look at it!
             </Text>
+            <VisuallyHidden
+              mt="0 !important"
+              pos="absolute"
+              top="-4.5rem"
+              ref={participationsRef}
+            />
           </VStack>
           <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
-          <VStack align="start">
+          <VStack align="start" pos="relative">
             <Heading size="md" mb={2}>
               Technologies
             </Heading>
@@ -353,12 +372,11 @@ const HomePage = () => {
                 ]}
               />
             </Stack>
+            <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={technologiesRef} />
           </VStack>
         </Box>
-        <Text pos="absolute" p={2} right={0} color="gray.500">
-          v{publicRuntimeConfig?.version}
-        </Text>
-      </Box>
+      </chakra.main>
+      <Footer />
     </>
   );
 };

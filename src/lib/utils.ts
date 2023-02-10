@@ -9,11 +9,7 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-const Heading = defineStyleConfig({
-  baseStyle: props => ({
-    ...nunitoBold.style,
-  }),
-});
+const Heading = defineStyleConfig({ baseStyle: nunitoBold.style });
 
 export const theme = extendTheme({
   config,
