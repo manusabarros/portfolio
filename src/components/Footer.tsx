@@ -19,7 +19,7 @@ const Footer = () => {
     >
       <Text fontSize={14}>Made with ❤️ by Manu Sabarrós</Text>
       <Text pos="absolute" right={4} color="gray.400">
-        v{publicRuntimeConfig?.version}
+        v{publicRuntimeConfig.appVersion}
       </Text>
     </Center>
   );

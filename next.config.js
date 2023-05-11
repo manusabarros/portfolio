@@ -1,4 +1,2 @@
-const { version } = require("./package.json");
-
 /** @type {import('next').NextConfig} */
-module.exports = { publicRuntimeConfig: { version } };
+module.exports = { publicRuntimeConfig: { appVersion: process.env.npm_package_version } };

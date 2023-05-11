@@ -1,5 +1,5 @@
 import { defineStyleConfig, extendTheme, StyleFunctionProps, ThemeConfig } from "@chakra-ui/react";
-import { Nunito } from "@next/font/google";
+import { Nunito } from "next/font/google";
 
 const nunito = Nunito({ subsets: ["latin"], weight: "500" });
 const nunitoBold = Nunito({ subsets: ["latin"], weight: "700" });
