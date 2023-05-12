@@ -195,8 +195,8 @@ const HomePage = () => {
                   dates={["Oct 2022 - Present"]}
                 >
                   <Text align="justify">
-                    Manual is a company focused on men&apos;s health, and in my current job, I work
-                    as a Frontend Engineer dedicated to developing new features on the web
+                    Manual is a UK company focused on men&apos;s health, and in my current job, I
+                    work as a Frontend Engineer dedicated to developing new features on the web
                     application in order to improve the user experience when it comes to taking care
                     of their health. Technologies: TypeScript, React & Next.js.
                   </Text>
@@ -212,9 +212,10 @@ const HomePage = () => {
                   dates={["Mar 2021 - Sep 2022"]}
                 >
                   <Text align="justify">
-                    ORTEX is a UK financial analytics company in which I worked as a Frontend
-                    Engineer developing from scratch the new web application that would improve the
-                    user experience with the platform. Technologies: TypeScript, React & Next.js.
+                    ORTEX is a financial analytics company based in the UK in which I worked as a
+                    Frontend Engineer developing from scratch the new web application that would
+                    improve the user experience with the platform. Technologies: TypeScript, React &
+                    Next.js.
                   </Text>
                 </Experience>
               </SwiperSlide>
