@@ -168,9 +168,8 @@ const HomePage = () => {
               a high quality product.
             </Text>
             <Text align="justify">
-              And last but not least, I have ease for business analysis due to the degree I&apos;m
-              currently studying, so I can collaborate with solutions for many areas of an
-              organization.
+              And last but not least, I have ease for business analysis due to the degree I studied,
+              so I can collaborate with solutions for many areas of an organization.
             </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={aboutMeRef} />
           </VStack>
@@ -282,8 +281,8 @@ const HomePage = () => {
               Bachelor&apos;s in Industrial Management
             </Heading>
             <Text align="justify">
-              Since 2015, I&apos;m studying the bachelor&apos;s degree in industrial management in
-              the National Technological University (UTN). I finished 4° year.
+              In 2015, I started studying the bachelor&apos;s degree in industrial management in the
+              National Technological University (UTN). I finished 4° year.
             </Text>
             <Text align="justify">
               This career helped me a lot to understand business, its processes, interactions, and
