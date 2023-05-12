@@ -195,10 +195,10 @@ const HomePage = () => {
                   dates={["Oct 2022 - Present"]}
                 >
                   <Text align="justify">
-                    Manual is a company focused on improving men&apos;s health, and in my current
-                    role, I am dedicated to developing new features on the website that help
-                    men&apos;s experience when it comes to taking care of their health.
-                    Technologies: React & Next.js.
+                    Manual is a company focused on men&apos;s health, and in my current job, I work
+                    as a Frontend Engineer dedicated to developing new features on the web
+                    application in order to improve the user experience when it comes to taking care
+                    of their health. Technologies: TypeScript, React & Next.js.
                   </Text>
                 </Experience>
               </SwiperSlide>
@@ -212,10 +212,9 @@ const HomePage = () => {
                   dates={["Mar 2021 - Sep 2022"]}
                 >
                   <Text align="justify">
-                    After learning a lot from my last experiences, I felt it was time to take a leap
-                    into an international experience. So I arrived at this fantastic fintech where I
-                    was dedicated to developing the new web application that would improve the user
-                    experience with the platform. Technologies: React & Next.js.
+                    ORTEX is a UK financial analytics company in which I worked as a Frontend
+                    Engineer developing from scratch the new web application that would improve the
+                    user experience with the platform. Technologies: TypeScript, React & Next.js.
                   </Text>
                 </Experience>
               </SwiperSlide>
@@ -255,10 +254,11 @@ const HomePage = () => {
                 >
                   <VStack align="start">
                     <Text align="justify">
-                      I started as a frontend developer, but after a few month I moved to an agile
-                      team for a client in the insurance industry, and in there, my first works were
-                      related to the backend. Then I focused on the client side of the applications
-                      we developed.
+                      My first job as a software developer was for a software factory where I worked
+                      for a client in the insurance industry. I started as a frontend developer and
+                      after a few months, I moved to an agile team in which my first works were
+                      related to the backend, but then I focused on the client side of the
+                      applications we developed.
                     </Text>
                     <Text>What I did:</Text>
                     <UnorderedList listStylePos="inside">
