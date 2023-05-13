@@ -84,17 +84,9 @@ const HomePage = () => {
           display: flex;
           align-items: center;
         }
-        .swiper:hover .swiper-custom-button-prev,
-        .swiper:hover .swiper-custom-button-next {
-          display: inline-flex;
-        }
         .swiper-slide {
           width: 300px;
           height: 185px;
-        }
-        .swiper-custom-button-prev,
-        .swiper-custom-button-next {
-          display: none;
         }
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
