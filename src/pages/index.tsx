@@ -5,6 +5,7 @@ import {
   Divider,
   Heading,
   HStack,
+  IconButton,
   Link,
   ListItem,
   Stack,
@@ -14,6 +15,7 @@ import {
   VisuallyHidden,
   VStack,
 } from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import Image from "@/components/Image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,8 +23,9 @@ import Experience from "@/components/Experience";
 import Technology from "@/components/Technology";
 import Head from "next/head";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const HomePage = () => {
@@ -32,6 +35,8 @@ const HomePage = () => {
   const educationRef = useRef<HTMLDivElement>(null);
   const participationsRef = useRef<HTMLDivElement>(null);
   const technologiesRef = useRef<HTMLDivElement>(null);
+  const swiperPrevBtnRef = useRef<HTMLButtonElement>(null);
+  const swiperNextBtnRef = useRef<HTMLButtonElement>(null);
 
   const elementsRefs = {
     "about-me": aboutMeRef,
@@ -76,10 +81,20 @@ const HomePage = () => {
       <style jsx global>{`
         .swiper {
           width: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .swiper:hover .swiper-custom-button-prev,
+        .swiper:hover .swiper-custom-button-next {
+          display: inline-flex;
         }
         .swiper-slide {
           width: 300px;
           height: 185px;
+        }
+        .swiper-custom-button-prev,
+        .swiper-custom-button-next {
+          display: none;
         }
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
@@ -180,9 +195,15 @@ const HomePage = () => {
             </Heading>
             <Swiper
               slidesPerView="auto"
-              modules={[Pagination]}
-              pagination={{ enabled: false }}
               spaceBetween={20}
+              role="group"
+              modules={[Navigation, Pagination]}
+              navigation={{
+                enabled: true,
+                prevEl: swiperPrevBtnRef.current,
+                nextEl: swiperNextBtnRef.current,
+              }}
+              pagination={{ enabled: false }}
             >
               <SwiperSlide>
                 <Experience
@@ -271,6 +292,40 @@ const HomePage = () => {
                   </VStack>
                 </Experience>
               </SwiperSlide>
+              <IconButton
+                ref={swiperPrevBtnRef}
+                icon={<ChevronLeftIcon />}
+                aria-label="Prev Experience"
+                display="none"
+                w={5}
+                h={10}
+                minW={5}
+                fontSize={40}
+                pos="absolute"
+                zIndex={1}
+                left={2}
+                bg="none"
+                opacity={0.7}
+                _groupHover={{ display: "inline-flex" }}
+                _hover={{ bg: "none", opacity: 1, _disabled: { opacity: 0.4 } }}
+              />
+              <IconButton
+                ref={swiperNextBtnRef}
+                icon={<ChevronRightIcon />}
+                aria-label="Next Experience"
+                display="none"
+                w={5}
+                h={10}
+                minW={5}
+                fontSize={40}
+                pos="absolute"
+                zIndex={1}
+                right={2}
+                bg="none"
+                opacity={0.7}
+                _groupHover={{ display: "inline-flex" }}
+                _hover={{ bg: "none", opacity: 1, _disabled: { opacity: 0.4 } }}
+              />
             </Swiper>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={experienceRef} />
           </VStack>
