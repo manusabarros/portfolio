@@ -1,9 +1,7 @@
+import { FC } from "react";
 import { Center, Text, useColorMode } from "@chakra-ui/react";
-import getConfig from "next/config";
 
-const { publicRuntimeConfig } = getConfig();
-
-const Footer = () => {
+const Footer: FC<{ version: string }> = ({ version }) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -19,7 +17,7 @@ const Footer = () => {
     >
       <Text fontSize={14}>Made with ❤️ by Manu Sabarrós</Text>
       <Text pos="absolute" right={4} color="gray.400">
-        v{publicRuntimeConfig.appVersion}
+        v{version}
       </Text>
     </Center>
   );

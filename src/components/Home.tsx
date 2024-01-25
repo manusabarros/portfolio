@@ -1,34 +1,35 @@
-import { useRef } from "react";
+"use client";
+
+import { FC, useRef } from "react";
+import Header from "@/components/Header";
+import Image from "@/components/Image";
+import Experience from "@/components/Experience";
+import Technology from "@/components/Technology";
+import Footer from "@/components/Footer";
 import {
   Box,
-  chakra,
   Divider,
-  Heading,
   HStack,
+  Heading,
   IconButton,
-  Link,
   ListItem,
   Stack,
   Text,
   UnorderedList,
-  useColorMode,
-  VisuallyHidden,
   VStack,
+  VisuallyHidden,
+  chakra,
+  useColorMode,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import Image from "@/components/Image";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Experience from "@/components/Experience";
-import Technology from "@/components/Technology";
-import Head from "next/head";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const HomePage = () => {
+const Home: FC<{ version: string }> = ({ version }) => {
   const { colorMode } = useColorMode();
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
@@ -52,32 +53,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Head>
-        <title>Manu Sabarrós</title>
-        <link rel="canonical" href="https://manusabarros.com/" />
-        <meta
-          name="description"
-          content="Manuel Sabarrós' Portfolio. Software Developer based in Portugal"
-        />
-        <meta
-          name="keywords"
-          content="Manuel Sabarrós, Manu Sabarrós, software, developer, frontend, front end, front-end, backend, back end, back-end, fullstack, full stack, full-stack, web developer, mobile developer, react developer, react, next js, next.js, react native, node js"
-        />
-
-        <meta name="twitter:title" content="Manu Sabarrós" />
-        <meta
-          name="twitter:description"
-          content="Manuel Sabarrós' Portfolio. Software Developer based in Portugal"
-        />
-        <meta name="twitter:url" content="https://manusabarros.com/" />
-
-        <meta property="og:title" content="Manu Sabarrós" />
-        <meta
-          property="og:description"
-          content="Manuel Sabarrós' Portfolio. Software Developer based in Portugal"
-        />
-        <meta property="og:url" content="https://manusabarros.com/" />
-      </Head>
       <style jsx global>{`
         .swiper {
           width: 100%;
@@ -419,9 +394,9 @@ const HomePage = () => {
           </VStack>
         </Box>
       </chakra.main>
-      <Footer />
+      <Footer version={version} />
     </>
   );
 };
 
-export default HomePage;
+export default Home;
