@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 import Providers from "@/lib/providers";
 import { Metadata } from "next";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   authors: [{ name: "Manuel Sabarrós", url: "https://manusabarros.com" }],
@@ -47,17 +48,8 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-8JJ1MR3NXV" />
-        <Script id="googletagmanager">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-8JJ1MR3NXV');
-          `}
-        </Script>
         <Providers>{children}</Providers>
+        <GoogleAnalytics gaId="G-8JJ1MR3NXV" />
       </body>
     </html>
   );
