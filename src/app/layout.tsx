@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
 import Providers from "@/lib/providers";
 import { Metadata } from "next";
-import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   authors: [{ name: "Manuel Sabarrós", url: "https://manusabarros.com" }],
@@ -50,6 +50,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
       <body>
         <Providers>{children}</Providers>
         <GoogleAnalytics gaId="G-8JJ1MR3NXV" />
+        <SpeedInsights />
       </body>
     </html>
   );
