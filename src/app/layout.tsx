@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <Provider>{children}</Provider>
         <GoogleAnalytics gaId="G-8JJ1MR3NXV" />

@@ -12,8 +12,8 @@ import {
   MenuTrigger,
   Portal,
 } from "@chakra-ui/react";
-import { useColorMode } from "@/components/ui/color-mode";
-import { LuMenu, LuMoon, LuSun } from "react-icons/lu";
+import { LuMenu } from "react-icons/lu";
+import { ColorModeButton } from "@/components/ui/color-mode";
 
 const links = ["about-me", "experience", "education", "participations", "technologies"] as const;
 
@@ -22,8 +22,6 @@ const Header: FC<{
     link: "about-me" | "experience" | "education" | "participations" | "technologies"
   ) => void;
 }> = ({ onClick }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <HStack
       as="header"
@@ -34,7 +32,7 @@ const Header: FC<{
       pos="fixed"
       top={0}
       zIndex={2}
-      shadow={colorMode === "dark" ? "dark-lg" : "md"}
+      shadow={{ _dark: "lg", _light: "md" }}
       bgColor="bg.subtle"
     >
       <HStack hideBelow="md">
@@ -54,8 +52,8 @@ const Header: FC<{
         ))}
       </HStack>
       <MenuRoot>
-        <MenuTrigger hideFrom="md">
-          <IconButton variant="subtle">
+        <MenuTrigger hideFrom="md" asChild>
+          <IconButton variant="subtle" aria-label="Toggle Menu" outline="none">
             <LuMenu />
           </IconButton>
         </MenuTrigger>
@@ -77,9 +75,7 @@ const Header: FC<{
           </MenuPositioner>
         </Portal>
       </MenuRoot>
-      <IconButton variant="subtle" aria-label="Change Theme" onClick={toggleColorMode}>
-        {colorMode === "dark" ? <LuSun /> : <LuMoon />}
-      </IconButton>
+      <ColorModeButton variant="subtle" />
     </HStack>
   );
 };

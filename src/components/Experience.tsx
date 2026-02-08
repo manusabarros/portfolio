@@ -1,6 +1,5 @@
 import { Children, FC, ReactNode } from "react";
 import NextImage from "next/image";
-import { useColorMode } from "@/components/ui/color-mode";
 import {
   Box,
   Button,
@@ -9,8 +8,6 @@ import {
   CardHeader,
   CardRoot,
   CloseButton,
-  Dialog,
-  DialogActionTrigger,
   DialogBackdrop,
   DialogBody,
   DialogCloseTrigger,
@@ -27,7 +24,6 @@ import {
   Portal,
   Separator,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 
 const space = 3;
@@ -42,8 +38,6 @@ const Experience: FC<{
   children?: ReactNode;
 }> = ({ imageSrc, imageAlt, role, companyName, companyUrl, dates, children }) => {
   const arrayChildren = Children.toArray(children);
-  const { open, onOpen, onClose } = useDisclosure();
-  const { colorMode } = useColorMode();
 
   return (
     <CardRoot
@@ -78,7 +72,7 @@ const Experience: FC<{
       <Separator
         mx={space}
         w={`calc(100% - var(--chakra-space-${space}) * 2)`}
-        borderColor={colorMode === "dark" ? "gray.600" : "gray.300"}
+        borderColor={{ _dark: "gray.600", _light: "gray.300" }}
       />
       <CardFooter p={space} justifyContent="flex-end">
         <DialogRoot placement="center">
