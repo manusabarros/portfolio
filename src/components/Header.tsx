@@ -1,17 +1,19 @@
+"use client";
+
 import { FC } from "react";
 import {
   Button,
-  Hide,
   HStack,
   IconButton,
-  Menu,
-  MenuButton,
+  MenuContent,
   MenuItem,
-  MenuList,
-  Show,
-  useColorMode,
+  MenuPositioner,
+  MenuRoot,
+  MenuTrigger,
+  Portal,
 } from "@chakra-ui/react";
-import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { useColorMode } from "@/components/ui/color-mode";
+import { LuMenu, LuMoon, LuSun } from "react-icons/lu";
 
 const links = ["about-me", "experience", "education", "participations", "technologies"] as const;
 
@@ -33,58 +35,51 @@ const Header: FC<{
       top={0}
       zIndex={2}
       shadow={colorMode === "dark" ? "dark-lg" : "md"}
-      bgColor={colorMode === "dark" ? "gray.800" : "gray.50"}
+      bgColor="bg.subtle"
     >
-      <Show breakpoint="(min-width: 480px)">
-        <HStack>
-          {links.map(link => (
-            <Button
-              key={link}
-              h="unset"
-              fontSize={14}
-              p={0}
-              fontWeight="normal"
-              textTransform="capitalize"
-              bgColor="unset"
-              _hover={{ bgColor: "unset", color: "gray.500" }}
-              onClick={() => onClick(link)}
-            >
-              {link.replace("-", " ")}
-            </Button>
-          ))}
-        </HStack>
-      </Show>
-      <Menu>
-        <Hide breakpoint="(min-width: 480px)">
-          <MenuButton
-            as={IconButton}
-            icon={<HamburgerIcon />}
-            bgColor={colorMode === "dark" ? "whiteAlpha.50" : "blackAlpha.50"}
-            _hover={{ bgColor: colorMode === "dark" ? "whiteAlpha.200" : "blackAlpha.200" }}
-            _active={{ bgColor: colorMode === "dark" ? "whiteAlpha.200" : "blackAlpha.200" }}
-          />
-        </Hide>
-        <MenuList>
-          {links.map(link => (
-            <MenuItem
-              key={link}
-              fontSize={14}
-              textTransform="capitalize"
-              _focus={{ bgColor: colorMode === "dark" ? "whiteAlpha.200" : "blackAlpha.200" }}
-              onClick={() => setTimeout(() => onClick(link), 0)}
-            >
-              {link.replace("-", " ")}
-            </MenuItem>
-          ))}
-        </MenuList>
-      </Menu>
-      <IconButton
-        icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-        aria-label="Change Theme"
-        bgColor={colorMode === "dark" ? "whiteAlpha.50" : "blackAlpha.50"}
-        _hover={{ bgColor: colorMode === "dark" ? "whiteAlpha.200" : "blackAlpha.200" }}
-        onClick={toggleColorMode}
-      />
+      <HStack hideBelow="md">
+        {links.map(link => (
+          <Button
+            key={link}
+            textTransform="capitalize"
+            h="unset"
+            p={0}
+            color="fg"
+            bgColor="unset"
+            _hover={{ color: "gray.500" }}
+            onClick={() => onClick(link)}
+          >
+            {link.replace("-", " ")}
+          </Button>
+        ))}
+      </HStack>
+      <MenuRoot>
+        <MenuTrigger hideFrom="md">
+          <IconButton variant="subtle">
+            <LuMenu />
+          </IconButton>
+        </MenuTrigger>
+        <Portal>
+          <MenuPositioner>
+            <MenuContent>
+              {links.map(link => (
+                <MenuItem
+                  key={link}
+                  value={link}
+                  fontSize="sm"
+                  textTransform="capitalize"
+                  onClick={() => setTimeout(() => onClick(link), 0)}
+                >
+                  {link.replace("-", " ")}
+                </MenuItem>
+              ))}
+            </MenuContent>
+          </MenuPositioner>
+        </Portal>
+      </MenuRoot>
+      <IconButton variant="subtle" aria-label="Change Theme" onClick={toggleColorMode}>
+        {colorMode === "dark" ? <LuSun /> : <LuMoon />}
+      </IconButton>
     </HStack>
   );
 };

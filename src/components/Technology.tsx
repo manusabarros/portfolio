@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Box, Center, Heading, Text, useColorMode, VStack } from "@chakra-ui/react";
-import Image from "@/components/Image";
+import NextImage from "next/image";
+import { Box, Center, Heading, Image, Text, VStack } from "@chakra-ui/react";
 
 const Technology: FC<{
   title: string;
@@ -8,38 +8,16 @@ const Technology: FC<{
   imageAlt: string;
   technologies: string[];
 }> = ({ title, imageSrc, imageAlt, technologies }) => {
-  const { colorMode } = useColorMode();
-
   return (
-    <VStack flex={1} spacing={3}>
-      <Center
-        width="80px"
-        height="80px"
-        bgColor={colorMode === "dark" ? "gray.50" : "gray.800"}
-        borderRadius="full"
-      >
-        <Box width="40px" height="40px" pos="relative">
-          {colorMode === "dark" ? (
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              filter="invert(1)"
-              // @ts-ignore
-              fill
-            />
-          ) : (
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              // @ts-ignore
-              fill
-            />
-          )}
+    <VStack flex={1} gap={3}>
+      <Center w="80px" h="80px" bgColor="fg" borderRadius="full">
+        <Box w="40px" h="40px" pos="relative">
+          <Image objectFit="contain" _dark={{ filter: "invert(1)" }} asChild>
+            <NextImage src={imageSrc} alt={imageAlt} fill />
+          </Image>
         </Box>
       </Center>
-      <Heading size="sm" fontSize="lg">
-        {title}
-      </Heading>
+      <Heading size="lg">{title}</Heading>
       <VStack>
         {technologies.map(tech => (
           <Text key={tech} whiteSpace="nowrap">

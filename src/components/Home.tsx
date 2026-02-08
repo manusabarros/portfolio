@@ -2,27 +2,27 @@
 
 import { FC, useRef } from "react";
 import Header from "@/components/Header";
-import Image from "@/components/Image";
 import Experience from "@/components/Experience";
 import Technology from "@/components/Technology";
 import Footer from "@/components/Footer";
 import {
   Box,
-  Divider,
   HStack,
   Heading,
   IconButton,
+  Image,
+  Link,
   ListItem,
+  ListRoot,
+  Separator,
   Stack,
   Text,
-  UnorderedList,
   VStack,
   VisuallyHidden,
   chakra,
-  useColorMode,
 } from "@chakra-ui/react";
-import { Link } from "@chakra-ui/next-js";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import NextImage from "next/image";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -30,14 +30,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Home: FC<{ version: string }> = ({ version }) => {
-  const { colorMode } = useColorMode();
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
   const participationsRef = useRef<HTMLDivElement>(null);
   const technologiesRef = useRef<HTMLDivElement>(null);
-  const swiperPrevBtnRef = useRef<HTMLButtonElement>(null);
-  const swiperNextBtnRef = useRef<HTMLButtonElement>(null);
 
   const elementsRefs = {
     "about-me": aboutMeRef,
@@ -61,7 +58,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
         }
         .swiper-slide {
           width: 300px;
-          height: 185px;
+          height: unset;
         }
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
@@ -74,14 +71,9 @@ const Home: FC<{ version: string }> = ({ version }) => {
       <Header onClick={goToElement} />
       <chakra.main pt={14} pb={20}>
         <Box h={300} pos="relative">
-          <Image
-            src="/assets/cover.jpg"
-            alt="cover"
-            // @ts-ignore
-            fill
-            objectFit="cover"
-            objectPosition="bottom"
-          />
+          <Image objectFit="cover" objectPosition="bottom" asChild>
+            <NextImage src="/assets/cover.jpg" alt="cover" fill />
+          </Image>
         </Box>
         <VStack mt={-50}>
           <Box
@@ -93,82 +85,81 @@ const Home: FC<{ version: string }> = ({ version }) => {
             boxShadow="xl"
             mb={2}
           >
-            {/* @ts-ignore */}
-            <Image src="/assets/profile-picture.jpg" alt="manusabarros" fill borderRadius="full" />
+            <Image borderRadius="full" asChild>
+              <NextImage src="/assets/profile-picture.jpg" alt="manusabarros" fill />
+            </Image>
           </Box>
-          <Heading size="lg" fontSize="2xl">
-            Manu Sabarrós
-          </Heading>
-          <Heading size="md">Frontend Engineer</Heading>
-          <Link href="mailto:hello@manusabarros.com" _hover={{ color: "gray.500" }}>
+          <Heading size="2xl">Manu Sabarros</Heading>
+          <Heading size="xl">Frontend Engineer</Heading>
+          <Link
+            href="mailto:hello@manusabarros.com"
+            _hover={{ color: "gray.500" }}
+            _focus={{ outline: "none" }}
+          >
             hello@manusabarros.com
           </Link>
           <HStack>
-            <Link href="https://www.linkedin.com/in/manuel-sabarros" target="_blank">
-              <Box w="30px" h="30px" pos="relative">
-                {/* @ts-ignore */}
-                <Image src="/assets/linkedin.png" alt="linkedin" fill />
-              </Box>
+            <Link
+              href="https://www.linkedin.com/in/manuel-sabarros"
+              target="_blank"
+              w="30px"
+              h="30px"
+              pos="relative"
+              _focus={{ outline: "none" }}
+            >
+              <Image asChild>
+                <NextImage src="/assets/linkedin.png" alt="linkedin" fill />
+              </Image>
             </Link>
-            <Link href="https://github.com/manusabarros" target="_blank">
-              <Box w="30px" h="30px" pos="relative">
-                {colorMode === "dark" ? (
-                  <Image
-                    src="/assets/github.png"
-                    alt="linkedin"
-                    filter="invert(1)"
-                    // @ts-ignore
-                    fill
-                  />
-                ) : (
-                  <Image
-                    src="/assets/github.png"
-                    alt="linkedin"
-                    // @ts-ignore
-                    fill
-                  />
-                )}
-              </Box>
+            <Link
+              href="https://github.com/manusabarros"
+              target="_blank"
+              w="30px"
+              h="30px"
+              pos="relative"
+              _focus={{ outline: "none" }}
+            >
+              <Image _dark={{ filter: "invert(1)" }} asChild>
+                <NextImage src="/assets/github.png" alt="github" fill />
+              </Image>
             </Link>
           </HStack>
         </VStack>
         <Box maxW={800} p={5} pb={0} m="auto">
           <VStack align="start" pos="relative">
-            <Heading size="md">About Me</Heading>
-            <Text align="justify">
-              Hi! Nice to meet you! My name is Manuel Sabarrós and I&apos;m a software developer
+            <Heading size="xl">About Me</Heading>
+            <Text textAlign="justify">
+              Hi! Nice to meet you! My name is Manuel Sabarros and I&apos;m a software developer
               living in Portugal.
             </Text>
-            <Text align="justify">
+            <Text textAlign="justify">
               I have experience in fullstack development, but my main expertise is the frontend
               world. I love developing beautiful websites and mobile apps and creating platforms
               with great design.
             </Text>
-            <Text align="justify">
+            <Text textAlign="justify">
               Technology is my passion! I&apos;m always learning new things to add to my skill set,
               especially modern ones, so that I can help by adding value to projects and delivering
               a high quality product.
             </Text>
-            <Text align="justify">
+            <Text textAlign="justify">
               And last but not least, I have ease for business analysis due to the degree I studied,
               so I can collaborate with solutions for many areas of an organization.
             </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={aboutMeRef} />
           </VStack>
-          <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
+          <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
-            <Heading size="md" mb={2}>
-              Experience
-            </Heading>
+            <Heading size="xl">Experience</Heading>
             <Swiper
               slidesPerView="auto"
               spaceBetween={20}
-              role="group"
+              className="group"
               modules={[Navigation, Pagination]}
               navigation={{
                 enabled: true,
-                prevEl: swiperPrevBtnRef.current,
-                nextEl: swiperNextBtnRef.current,
+                prevEl: "#prev-button",
+                nextEl: "#next-button",
               }}
               pagination={{ enabled: false }}
             >
@@ -181,7 +172,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
                   companyUrl="https://manual.co"
                   dates={["Oct 2022 - Present"]}
                 >
-                  <Text align="justify">
+                  <Text textAlign="justify">
                     Manual is a UK company focused on men&apos;s health, and in my current job, I
                     work as a Frontend Engineer dedicated to developing new features on the web
                     application in order to improve the user experience when it comes to taking care
@@ -198,7 +189,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
                   companyUrl="https://ortex.com"
                   dates={["Mar 2021 - Sep 2022"]}
                 >
-                  <Text align="justify">
+                  <Text textAlign="justify">
                     ORTEX is a financial analytics company based in the UK in which I worked as a
                     Frontend Engineer developing from scratch the new web application that would
                     improve the user experience with the platform. Technologies: TypeScript, React &
@@ -216,18 +207,18 @@ const Home: FC<{ version: string }> = ({ version }) => {
                   dates={["Sep 2020 - Nov 2020", "May 2021 - Jul 2021"]}
                 >
                   <VStack align="start">
-                    <Text align="justify">
+                    <Text textAlign="justify">
                       On 2 occasions, I taught the basics of web development in a programme
                       implemented by BOMBIERI and the regional faculty to promote the local industry
                       and give the opportunity to people who wanted to take their first steps in the
                       IT world.
                     </Text>
-                    <UnorderedList listStylePos="inside">
+                    <ListRoot listStylePos="inside">
                       <ListItem>Course Duration: 90hs (10 weeks).</ListItem>
                       <ListItem>
                         Curriculum: HTML, CSS, BootStrap, JavaScript, jQuery, GIT & GitHub.
                       </ListItem>
-                    </UnorderedList>
+                    </ListRoot>
                   </VStack>
                 </Experience>
               </SwiperSlide>
@@ -241,7 +232,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
                   dates={["Sep 2019 - Feb 2021"]}
                 >
                   <VStack align="start">
-                    <Text align="justify">
+                    <Text textAlign="justify">
                       My first job as a software developer was for a software factory where I worked
                       for a client in the insurance industry. I started as a frontend developer and
                       after a few months, I moved to an agile team in which my first works were
@@ -249,78 +240,86 @@ const Home: FC<{ version: string }> = ({ version }) => {
                       applications we developed.
                     </Text>
                     <Text>What I did:</Text>
-                    <UnorderedList listStylePos="inside">
+                    <ListRoot listStylePos="inside">
                       <ListItem>Responsive web and mobile development (Angular & Ionic).</ListItem>
                       <ListItem>
                         APIs and web services consumption and development (Java & Spring).
                       </ListItem>
                       <ListItem>Agile Methodologies (SCRUM).</ListItem>
-                    </UnorderedList>
+                    </ListRoot>
                   </VStack>
                 </Experience>
               </SwiperSlide>
               <IconButton
-                ref={swiperPrevBtnRef}
-                icon={<ChevronLeftIcon />}
+                id="prev-button"
                 aria-label="Prev Experience"
+                variant="ghost"
+                size="lg"
                 display="none"
-                w={5}
-                h={10}
-                minW={5}
-                fontSize={40}
                 pos="absolute"
                 zIndex={1}
                 left={2}
-                bg="none"
                 opacity={0.7}
+                _disabled={{ opacity: 0.4 }}
+                _hover={{ bg: "none", opacity: 1 }}
                 _groupHover={{ display: "inline-flex" }}
-                _hover={{ bg: "none", opacity: 1, _disabled: { opacity: 0.4 } }}
-              />
+                css={{
+                  "& > svg": {
+                    width: 10,
+                    height: 10,
+                  },
+                }}
+              >
+                <FaChevronLeft />
+              </IconButton>
               <IconButton
-                ref={swiperNextBtnRef}
-                icon={<ChevronRightIcon />}
+                id="next-button"
                 aria-label="Next Experience"
+                variant="ghost"
+                size="lg"
                 display="none"
-                w={5}
-                h={10}
-                minW={5}
-                fontSize={40}
                 pos="absolute"
                 zIndex={1}
                 right={2}
-                bg="none"
                 opacity={0.7}
+                _disabled={{ opacity: 0.4 }}
+                _hover={{ bg: "none", opacity: 1 }}
                 _groupHover={{ display: "inline-flex" }}
-                _hover={{ bg: "none", opacity: 1, _disabled: { opacity: 0.4 } }}
-              />
+                css={{
+                  "& > svg": {
+                    width: 10,
+                    height: 10,
+                  },
+                }}
+              >
+                <FaChevronRight />
+              </IconButton>
             </Swiper>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={experienceRef} />
           </VStack>
-          <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
+          <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
-            <Heading size="md">Education</Heading>
-            <Heading size="sm" fontSize="lg">
-              Bachelor&apos;s in Industrial Management
-            </Heading>
-            <Text align="justify">
+            <Heading size="xl">Education</Heading>
+            <Heading size="lg">Bachelor&apos;s in Industrial Management</Heading>
+            <Text textAlign="justify">
               In 2015, I started studying the bachelor&apos;s degree in industrial management in the
               National Technological University (UTN). I finished 4° year.
             </Text>
-            <Text align="justify">
+            <Text textAlign="justify">
               This career helped me a lot to understand business, its processes, interactions, and
               above all, the relationship with technology and the help that software development
               provides to companies.
             </Text>
-            <Text align="justify">My favourite fields? Marketing and Operational Research.</Text>
+            <Text textAlign="justify">
+              My favourite fields? Marketing and Operational Research.
+            </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={educationRef} />
           </VStack>
-          <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
+          <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
-            <Heading size="md">Participations</Heading>
-            <Heading size="sm" fontSize="lg">
-              Digital Transformation Talk
-            </Heading>
-            <Text align="justify">
+            <Heading size="xl">Participations</Heading>
+            <Heading size="lg">Digital Transformation Talk</Heading>
+            <Text textAlign="justify">
               In October 2020, I gave a live virtual talk for university students about the process
               of digital transformation in companies, and how digital transformation helps growth
               even in times of crisis.{" "}
@@ -341,14 +340,12 @@ const Home: FC<{ version: string }> = ({ version }) => {
               ref={participationsRef}
             />
           </VStack>
-          <Divider my={4} borderColor={colorMode === "dark" ? "gray.600" : "gray.300"} />
+          <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
-            <Heading size="md" mb={2}>
-              Technologies
-            </Heading>
+            <Heading size="xl">Technologies</Heading>
             <Stack
               direction={["column", "row"]}
-              spacing={4}
+              gap={4}
               w="100%"
               overflow="auto"
               className="hide-scrollbar"
