@@ -165,25 +165,65 @@ const Home: FC<{ version: string }> = ({ version }) => {
             >
               <SwiperSlide>
                 <Experience
-                  imageSrc="/assets/manual.jpeg"
-                  imageAlt="profile-picture"
+                  imageSrc="/assets/primeit.png"
+                  imageAlt="primeit-logo"
+                  role="Frontend Engineer"
+                  companyName="PrimeIT"
+                  companyUrl="https://primeit.pt"
+                  dates={["Sep 2025 - Present"]}
+                >
+                  <Text textAlign="justify">
+                    At PrimeIT, I worked for a client in the sports betting industry as a Frontend
+                    Engineer, enhancing the user experience across web and mobile platforms. I
+                    improved key stages of the betting flow, including odds selection, bet slip
+                    experience, bet placement, and real-time bet tracking, focusing on clarity,
+                    responsiveness, and a smooth interaction experience. Main technologies: React,
+                    React Native, Next.js, Redux, TypeScript, GraphQL, Jest & WebdriverIO.
+                  </Text>
+                </Experience>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Experience
+                  imageSrc="/assets/actdigital.png"
+                  imageAlt="actdigital-logo"
+                  role="Frontend Engineer"
+                  companyName="act digital"
+                  companyUrl="https://actdigital.com"
+                  dates={["Jun 2025 - Aug 2025"]}
+                >
+                  <Text textAlign="justify">
+                    At act digital, I worked for a client in the financial industry as a Frontend
+                    Engineer on the MVP of a meeting management platform. The application integrated
+                    with digital meeting systems, generating automated transcriptions and AI-powered
+                    summaries to enhance productivity and support decision-making. I focused on
+                    developing core features of the web application, ensuring performance,
+                    usability, and smooth integration. Main technologies: React, TypeScript &
+                    styled-components.
+                  </Text>
+                </Experience>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Experience
+                  imageSrc="/assets/manual.png"
+                  imageAlt="manual-logo"
                   role="Frontend Engineer"
                   companyName="MANUAL"
                   companyUrl="https://manual.co"
-                  dates={["Oct 2022 - Present"]}
+                  dates={["Oct 2022 - May 2025"]}
                 >
                   <Text textAlign="justify">
-                    Manual is a UK company focused on men&apos;s health, and in my current job, I
-                    work as a Frontend Engineer dedicated to developing new features on the web
+                    Manual is a UK company focused on men&apos;s health, and in this role, I worked
+                    as a Frontend Engineer dedicated to developing new features on the web
                     application in order to improve the user experience when it comes to taking care
-                    of their health. Technologies: TypeScript, React & Next.js.
+                    of their health. Main technologies: React, Next.js, Redux, TypeScript, A/B
+                    testing, Sanity, Storybook & styled-components.
                   </Text>
                 </Experience>
               </SwiperSlide>
               <SwiperSlide>
                 <Experience
                   imageSrc="/assets/ortex.png"
-                  imageAlt="profile-picture"
+                  imageAlt="ortex-logo"
                   role="Frontend Engineer"
                   companyName="ORTEX"
                   companyUrl="https://ortex.com"
@@ -192,15 +232,15 @@ const Home: FC<{ version: string }> = ({ version }) => {
                   <Text textAlign="justify">
                     ORTEX is a financial analytics company based in the UK in which I worked as a
                     Frontend Engineer developing from scratch the new web application that would
-                    improve the user experience with the platform. Technologies: TypeScript, React &
-                    Next.js.
+                    improve the user experience with the platform. Main technologies: React,
+                    Next.js, TypeScript & WebSockets.
                   </Text>
                 </Experience>
               </SwiperSlide>
               <SwiperSlide>
                 <Experience
                   imageSrc="/assets/bombieri.png"
-                  imageAlt="profile-picture"
+                  imageAlt="bombieri-logo"
                   role="Programming Teacher"
                   companyName="BOMBIERI"
                   companyUrl="https://cdeluruguay.gob.ar/concepcion-de-programadores/"
@@ -225,7 +265,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
               <SwiperSlide>
                 <Experience
                   imageSrc="/assets/bombieri.png"
-                  imageAlt="profile-picture"
+                  imageAlt="bombieri-logo"
                   role="Frontend Developer"
                   companyName="BOMBIERI"
                   companyUrl="https://bombieri.us"
