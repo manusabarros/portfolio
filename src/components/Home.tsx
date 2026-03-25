@@ -134,9 +134,14 @@ const Home: FC<{ version: string }> = ({ version }) => {
             </Text>
             <Text textAlign="justify">
               Self-taught at heart, I'm constantly picking up new technologies and turning them into
-              practical skills. New frameworks, new paradigms, new ideas, I actively seek them out.
+              practical skills. New frameworks, new paradigms, new ideas — I actively seek them out.
               What drives me isn't just building things, but building things with real impact and
               owning them end to end.
+            </Text>
+            <Text textAlign="justify">
+              I also enjoy the human side of engineering — mentoring developers, passing on what I
+              know, and helping teams grow alongside the product. I believe knowledge compounds when
+              you share it.
             </Text>
             <Text textAlign="justify">
               With a background in business analysis, I bridge the gap between engineering and
@@ -336,29 +341,24 @@ const Home: FC<{ version: string }> = ({ version }) => {
           <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
             <Heading size="xl">Education</Heading>
-            <Heading size="lg">Bachelor&apos;s in Industrial Management</Heading>
+            <Heading size="lg">
+              Bachelor's in Industrial Management — UTN, Argentina — Completed 4 years of study
+            </Heading>
             <Text textAlign="justify">
-              In 2015, I started studying the bachelor&apos;s degree in industrial management in the
-              National Technological University (UTN). I finished 4° year.
-            </Text>
-            <Text textAlign="justify">
-              This career helped me a lot to understand business, its processes, interactions, and
-              above all, the relationship with technology and the help that software development
-              provides to companies.
-            </Text>
-            <Text textAlign="justify">
-              My favourite fields? Marketing and Operational Research.
+              This degree shaped the way I think about business — its processes, its internal
+              dynamics, and how software creates real value for organizations. My areas of deepest
+              interest were Marketing and Operational Research.
             </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={educationRef} />
           </VStack>
           <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
-            <Heading size="xl">Participations</Heading>
-            <Heading size="lg">Digital Transformation Talk</Heading>
+            <Heading size="xl">Talks</Heading>
+            <Heading size="lg">Digital Transformation — October 2020</Heading>
             <Text textAlign="justify">
-              In October 2020, I gave a live virtual talk for university students about the process
-              of digital transformation in companies, and how digital transformation helps growth
-              even in times of crisis.{" "}
+              Invited as a speaker for a virtual talk addressed to university students, covering how
+              companies navigate digital transformation and why it becomes a critical driver of
+              growth during times of uncertainty and crisis.{" "}
               <Link
                 fontWeight={700}
                 color="teal.400"
@@ -366,7 +366,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
                 href="https://www.youtube.com/watch?v=7fnpmdUoJb0"
                 target="_blank"
               >
-                Take a look at it!
+                Watch the recording!
               </Link>
             </Text>
             <VisuallyHidden
