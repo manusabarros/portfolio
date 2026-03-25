@@ -129,22 +129,18 @@ const Home: FC<{ version: string }> = ({ version }) => {
           <VStack align="start" pos="relative">
             <Heading size="xl">About Me</Heading>
             <Text textAlign="justify">
-              Hi! Nice to meet you! My name is Manuel Sabarros and I&apos;m a software developer
-              living in Portugal.
+              I'm Manuel, a developer who genuinely loves the craft. Based in Portugal, I specialize
+              in frontend — but I'm comfortable across the full stack when the work calls for it.
             </Text>
             <Text textAlign="justify">
-              I have experience in fullstack development, but my main expertise is the frontend
-              world. I love developing beautiful websites and mobile apps and creating platforms
-              with great design.
+              Self-taught at heart, I'm constantly picking up new technologies and turning them into
+              practical skills. New frameworks, new paradigms, new ideas — I actively seek them out.
+              What drives me isn't just building things, but building things with real impact and
+              owning them end to end.
             </Text>
             <Text textAlign="justify">
-              Technology is my passion! I&apos;m always learning new things to add to my skill set,
-              especially modern ones, so that I can help by adding value to projects and delivering
-              a high quality product.
-            </Text>
-            <Text textAlign="justify">
-              And last but not least, I have ease for business analysis due to the degree I studied,
-              so I can collaborate with solutions for many areas of an organization.
+              With a background in business analysis, I bridge the gap between engineering and
+              strategy, which means I can speak the language on both sides of the table.
             </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={aboutMeRef} />
           </VStack>
@@ -216,7 +212,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
                     as a Frontend Engineer dedicated to developing new features on the web
                     application in order to improve the user experience when it comes to taking care
                     of their health. Main technologies: React, Next.js, Redux, TypeScript, A/B
-                    testing, Sanity, Storybook & styled-components.
+                    testing, Sanity, Storybook, styled-components & Microfrontends.
                   </Text>
                 </Experience>
               </SwiperSlide>
