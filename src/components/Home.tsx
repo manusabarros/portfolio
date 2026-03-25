@@ -130,11 +130,11 @@ const Home: FC<{ version: string }> = ({ version }) => {
             <Heading size="xl">About Me</Heading>
             <Text textAlign="justify">
               I'm Manuel, a developer who genuinely loves the craft. Based in Portugal, I specialize
-              in frontend — but I'm comfortable across the full stack when the work calls for it.
+              in frontend, but I'm comfortable across the full stack when the work calls for it.
             </Text>
             <Text textAlign="justify">
               Self-taught at heart, I'm constantly picking up new technologies and turning them into
-              practical skills. New frameworks, new paradigms, new ideas — I actively seek them out.
+              practical skills. New frameworks, new paradigms, new ideas, I actively seek them out.
               What drives me isn't just building things, but building things with real impact and
               owning them end to end.
             </Text>
