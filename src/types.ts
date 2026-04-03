@@ -1,0 +1,1 @@
+export type Link = "about-me" | "experience" | "education" | "talks" | "technologies";

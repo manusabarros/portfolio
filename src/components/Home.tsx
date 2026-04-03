@@ -5,13 +5,14 @@ import Header from "@/components/Header";
 import Experience from "@/components/Experience";
 import Technology from "@/components/Technology";
 import Footer from "@/components/Footer";
+import { Link } from "@/types";
 import {
   Box,
   HStack,
   Heading,
   IconButton,
   Image,
-  Link,
+  Link as ChakraLink,
   ListItem,
   ListRoot,
   Separator,
@@ -33,20 +34,19 @@ const Home: FC<{ version: string }> = ({ version }) => {
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
-  const participationsRef = useRef<HTMLDivElement>(null);
+  const talksRef = useRef<HTMLDivElement>(null);
   const technologiesRef = useRef<HTMLDivElement>(null);
 
-  const elementsRefs = {
+  const elementsRefs: Record<Link, React.RefObject<HTMLDivElement | null>> = {
     "about-me": aboutMeRef,
     experience: experienceRef,
     education: educationRef,
-    participations: participationsRef,
+    talks: talksRef,
     technologies: technologiesRef,
   };
 
-  const goToElement = (
-    link: "about-me" | "experience" | "education" | "participations" | "technologies"
-  ) => elementsRefs[link].current?.scrollIntoView({ behavior: "smooth" });
+  const goToElement = (link: Link) =>
+    elementsRefs[link].current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <>
@@ -91,15 +91,15 @@ const Home: FC<{ version: string }> = ({ version }) => {
           </Box>
           <Heading size="2xl">Manu Sabarros</Heading>
           <Heading size="xl">Frontend Engineer</Heading>
-          <Link
+          <ChakraLink
             href="mailto:hello@manusabarros.com"
             _hover={{ color: "gray.500" }}
             _focus={{ outline: "none" }}
           >
             hello@manusabarros.com
-          </Link>
+          </ChakraLink>
           <HStack>
-            <Link
+            <ChakraLink
               href="https://www.linkedin.com/in/manuel-sabarros"
               target="_blank"
               w="30px"
@@ -110,8 +110,8 @@ const Home: FC<{ version: string }> = ({ version }) => {
               <Image asChild>
                 <NextImage src="/assets/linkedin.png" alt="linkedin" fill />
               </Image>
-            </Link>
-            <Link
+            </ChakraLink>
+            <ChakraLink
               href="https://github.com/manusabarros"
               target="_blank"
               w="30px"
@@ -122,7 +122,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
               <Image _dark={{ filter: "invert(1)" }} asChild>
                 <NextImage src="/assets/github.png" alt="github" fill />
               </Image>
-            </Link>
+            </ChakraLink>
           </HStack>
         </VStack>
         <Box maxW={800} p={5} pb={0} m="auto">
@@ -360,25 +360,20 @@ const Home: FC<{ version: string }> = ({ version }) => {
             <Heading size="xl">Participations</Heading>
             <Heading size="lg">Digital Transformation Talk</Heading>
             <Text textAlign="justify">
-              In October 2020, I gave a live virtual talk for university students about the process
-              of digital transformation in companies, and how digital transformation helps growth
-              even in times of crisis.{" "}
-              <Link
+              Invited as a speaker for a virtual talk addressed to university students, covering how
+              companies navigate digital transformation and why it becomes a critical driver of
+              growth during times of uncertainty and crisis.{" "}
+              <ChakraLink
                 fontWeight={700}
                 color="teal.400"
                 _hover={{ color: "teal.600" }}
                 href="https://www.youtube.com/watch?v=7fnpmdUoJb0"
                 target="_blank"
               >
-                Take a look at it!
-              </Link>
+                Watch the recording!
+              </ChakraLink>
             </Text>
-            <VisuallyHidden
-              mt="0 !important"
-              pos="absolute"
-              top="-4.5rem"
-              ref={participationsRef}
-            />
+            <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={talksRef} />
           </VStack>
           <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">

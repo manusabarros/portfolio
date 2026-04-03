@@ -1,6 +1,7 @@
 "use client";
 
 import { FC } from "react";
+import { Link } from "@/types";
 import {
   Button,
   HStack,
@@ -15,12 +16,10 @@ import {
 import { LuMenu } from "react-icons/lu";
 import { ColorModeButton } from "@/components/ui/color-mode";
 
-const links = ["about-me", "experience", "education", "participations", "technologies"] as const;
+const links: Link[] = ["about-me", "experience", "education", "talks", "technologies"];
 
 const Header: FC<{
-  onClick: (
-    link: "about-me" | "experience" | "education" | "participations" | "technologies"
-  ) => void;
+  onClick: (link: Link) => void;
 }> = ({ onClick }) => {
   return (
     <HStack
