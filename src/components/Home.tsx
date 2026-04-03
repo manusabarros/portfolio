@@ -129,22 +129,23 @@ const Home: FC<{ version: string }> = ({ version }) => {
           <VStack align="start" pos="relative">
             <Heading size="xl">About Me</Heading>
             <Text textAlign="justify">
-              Hi! Nice to meet you! My name is Manuel Sabarros and I&apos;m a software developer
-              living in Portugal.
+              I'm Manuel, a developer who genuinely loves the craft. Based in Portugal, I specialize
+              in frontend, but I'm comfortable across the full stack when the work calls for it.
             </Text>
             <Text textAlign="justify">
-              I have experience in fullstack development, but my main expertise is the frontend
-              world. I love developing beautiful websites and mobile apps and creating platforms
-              with great design.
+              Self-taught at heart, I'm constantly picking up new technologies and turning them into
+              practical skills. New frameworks, new paradigms, new ideas — I actively seek them out.
+              What drives me isn't just building things, but building things with real impact and
+              owning them end to end.
             </Text>
             <Text textAlign="justify">
-              Technology is my passion! I&apos;m always learning new things to add to my skill set,
-              especially modern ones, so that I can help by adding value to projects and delivering
-              a high quality product.
+              I also enjoy the human side of engineering — mentoring developers, passing on what I
+              know, and helping teams grow alongside the product. I believe knowledge compounds when
+              you share it.
             </Text>
             <Text textAlign="justify">
-              And last but not least, I have ease for business analysis due to the degree I studied,
-              so I can collaborate with solutions for many areas of an organization.
+              With a background in business analysis, I bridge the gap between engineering and
+              strategy, which means I can speak the language on both sides of the table.
             </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={aboutMeRef} />
           </VStack>
@@ -216,7 +217,7 @@ const Home: FC<{ version: string }> = ({ version }) => {
                     as a Frontend Engineer dedicated to developing new features on the web
                     application in order to improve the user experience when it comes to taking care
                     of their health. Main technologies: React, Next.js, Redux, TypeScript, A/B
-                    testing, Sanity, Storybook & styled-components.
+                    testing, Sanity, Storybook, styled-components & Microfrontends.
                   </Text>
                 </Experience>
               </SwiperSlide>
@@ -340,25 +341,20 @@ const Home: FC<{ version: string }> = ({ version }) => {
           <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
             <Heading size="xl">Education</Heading>
-            <Heading size="lg">Bachelor&apos;s in Industrial Management</Heading>
+            <Heading size="lg">
+              Bachelor's in Industrial Management — UTN, Argentina — Completed 4 years of study
+            </Heading>
             <Text textAlign="justify">
-              In 2015, I started studying the bachelor&apos;s degree in industrial management in the
-              National Technological University (UTN). I finished 4° year.
-            </Text>
-            <Text textAlign="justify">
-              This career helped me a lot to understand business, its processes, interactions, and
-              above all, the relationship with technology and the help that software development
-              provides to companies.
-            </Text>
-            <Text textAlign="justify">
-              My favourite fields? Marketing and Operational Research.
+              This degree shaped the way I think about business — its processes, its internal
+              dynamics, and how software creates real value for organizations. My areas of deepest
+              interest were Marketing and Operational Research.
             </Text>
             <VisuallyHidden mt="0 !important" pos="absolute" top="-4.5rem" ref={educationRef} />
           </VStack>
           <Separator my={4} borderColor={{ _dark: "gray.600", _light: "gray.300" }} />
           <VStack align="start" pos="relative">
-            <Heading size="xl">Participations</Heading>
-            <Heading size="lg">Digital Transformation Talk</Heading>
+            <Heading size="xl">Talks</Heading>
+            <Heading size="lg">Digital Transformation — October 2020</Heading>
             <Text textAlign="justify">
               Invited as a speaker for a virtual talk addressed to university students, covering how
               companies navigate digital transformation and why it becomes a critical driver of
